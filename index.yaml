@@ -1,0 +1,123 @@
+apiVersion: v1
+entries:
+  api:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:06.436863323Z"
+    description: A Helm chart for the WBStack API
+    digest: 32c8b1aba0eb72bd68724b8f25cfaf1786778054db525f1554caf4f6f3c551ab
+    name: api
+    urls:
+    - https://github.com/wbstack/charts/releases/download/api-0.2.0/api-0.2.0.tgz
+    version: 0.2.0
+  mediawiki:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:06.59239495Z"
+    description: A Helm chart for Kubernetes
+    digest: c978a20625a1a200ed4b67438ad4acffb315ab44b90d3aefd61c9b470d432edb
+    name: mediawiki
+    urls:
+    - https://github.com/wbstack/charts/releases/download/mediawiki-0.1.0/mediawiki-0.1.0.tgz
+    version: 0.1.0
+  queryservice:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:06.840380063Z"
+    description: A Helm chart for Kubernetes
+    digest: dea90fb9a1e28197bc09f591bfa9c554234ab4286b67e1633e952a547ed4fca9
+    name: queryservice
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-0.1.0/queryservice-0.1.0.tgz
+    version: 0.1.0
+  queryservice-gateway:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:06.983011038Z"
+    description: A Helm chart for Kubernetes
+    digest: 4b44cc0a2bc22e0f76be57787e298de84ad3a2b264610ecb2e9f346cfefcdd6c
+    name: queryservice-gateway
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-gateway-0.1.0/queryservice-gateway-0.1.0.tgz
+    version: 0.1.0
+  queryservice-ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:07.116471106Z"
+    description: A Helm chart for Kubernetes
+    digest: 9f3a225fa8f5152ee2b21c17c37446ddff0ebb9571029d81273f883a06933227
+    name: queryservice-ui
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-ui-0.1.0/queryservice-ui-0.1.0.tgz
+    version: 0.1.0
+  queryservice-updater:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:07.301694882Z"
+    description: A Helm chart for Kubernetes
+    digest: 5edf4743df9259fc93081a96b06339af174f0286419a2ea2fe115ee20c167399
+    name: queryservice-updater
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-updater-0.1.0/queryservice-updater-0.1.0.tgz
+    version: 0.1.0
+  tool-cradle:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:07.47095037Z"
+    description: A Helm chart for Kubernetes
+    digest: f504562409b3e104a408c0aa612024df642b8eea5be68201e654aebd9390278c
+    name: tool-cradle
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-cradle-0.1.0/tool-cradle-0.1.0.tgz
+    version: 0.1.0
+  tool-quickstatements:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:07.62247275Z"
+    description: A Helm chart for Kubernetes
+    digest: cefd6f8af70684681df8b05d144b6085bb0f530136a6a3013b61d9cca518ab17
+    name: tool-quickstatements
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-quickstatements-0.1.0/tool-quickstatements-0.1.0.tgz
+    version: 0.1.0
+  tool-widar:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:07.749036836Z"
+    description: A Helm chart for Kubernetes
+    digest: a4cb0770e552b21387d2d91eac8e8c1dd9f1904a668ae5f0d263fec07a00c4f3
+    name: tool-widar
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-widar-0.1.0/tool-widar-0.1.0.tgz
+    version: 0.1.0
+  ui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:07.907293396Z"
+    description: A Helm chart for Kubernetes
+    digest: e8266be96831e13ed85767f9faceb743dcd9efdb501b991b6e62632ac47d7843
+    name: ui
+    urls:
+    - https://github.com/wbstack/charts/releases/download/ui-0.1.0/ui-0.1.0.tgz
+    version: 0.1.0
+  wbstack-clusterissuers:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:08.063974047Z"
+    description: A Helm chart for Kubernetes
+    digest: e178bbd765f7cf2d16c2d107f474a8be6c347e325211eac520194a5960d27609
+    name: wbstack-clusterissuers
+    urls:
+    - https://github.com/wbstack/charts/releases/download/wbstack-clusterissuers-0.1.0/wbstack-clusterissuers-0.1.0.tgz
+    version: 0.1.0
+  wbstack-opencura-ingress:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-12T22:01:08.250700458Z"
+    description: A Helm chart for Kubernetes
+    digest: b040d47365aecffb2a5ceb5cd1e79df65acd3b077dcfc2d7e99a19ac9df3b3d2
+    name: wbstack-opencura-ingress
+    urls:
+    - https://github.com/wbstack/charts/releases/download/wbstack-opencura-ingress-0.1.0/wbstack-opencura-ingress-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-10-12T22:01:06.264880402Z"
