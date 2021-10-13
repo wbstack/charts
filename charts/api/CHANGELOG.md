@@ -4,7 +4,7 @@ This chart does not yet follow SemVer.
 
 ## 0.3.0
 
-- Use a k8s secret instead of a plaintext value for the mailgun secret
+- Optionally use a k8s secret instead of a plaintext value for the mailgun secret
 
 ## 0.2.0
 
