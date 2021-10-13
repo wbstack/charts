@@ -26,13 +26,16 @@ jobs:
 
       - name: Run chart-testing (list-changed)
         id: list-changed
-        run: |
+        run: >
           changed=$(ct list-changed --target-branch main)
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
+          else
+            echo "No chart changes detected, skipping tests."
           fi
 
       - name: Run chart-testing (lint)
+        if: steps.list-changed.outputs.changed == 'true'
         run: ct lint
 
       # - name: Create kind cluster
