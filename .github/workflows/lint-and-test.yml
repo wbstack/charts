@@ -27,7 +27,7 @@ jobs:
       - name: Run chart-testing (list-changed)
         id: list-changed
         run: |
-          changed=$(ct list-changed --target-branch main)
+          changed=$(ct list-changed --config ct.yml)
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
           else
@@ -36,7 +36,7 @@ jobs:
 
       - name: Run chart-testing (lint)
         if: steps.list-changed.outputs.changed == 'true'
-        run: ct lint
+        run: ct lint --config ct.yml
 
       # - name: Create kind cluster
       #   uses: helm/kind-action@v1.2.0
