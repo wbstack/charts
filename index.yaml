@@ -23,6 +23,15 @@ entries:
   queryservice:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-10-13T09:23:29.904059552Z"
+    description: A Helm chart for Kubernetes
+    digest: 02b5f74970874f3105f4d5d73b568f8c3db1174a4b3d8d8a691ac5dc9d5e8f42
+    name: queryservice
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-0.1.1/queryservice-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-10-12T22:01:06.840380063Z"
     description: A Helm chart for Kubernetes
     digest: dea90fb9a1e28197bc09f591bfa9c554234ab4286b67e1633e952a547ed4fca9
