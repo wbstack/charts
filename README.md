@@ -30,7 +30,7 @@ Anything merged into the `main` branch will result in releasing of new charts.
 
 Releasing is powered by a github action.
 
-Versions are build and tagged and created as github releases.
+Versions are built and tagged and created as github releases.
 
 Github pages hosts the manifest file for all releases which is build on every release.
 
