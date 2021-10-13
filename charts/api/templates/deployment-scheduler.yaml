@@ -89,7 +89,15 @@ spec:
           - name: MAILGUN_DOMAIN
             value: {{ .Values.app.mail.mailgundomain | quote }}
           - name: MAILGUN_SECRET
+            {{- if .Values.app.mail.mailgunsecret }}
             value: {{ .Values.app.mail.mailgunsecret | quote }}
+            {{- end }}
+            {{- else if .Values.app.mail.mailgunSecretName }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.app.mail.mailgunSecretName | quote }}
+                key: {{ .Values.app.mail.mailgunSecretKey | quote }}
+            {{- end }}
           - name: MAIL_FROM_ADDRESS
             value: {{ .Values.app.mail.fromaddress | quote }}
           - name: MAIL_FROM_NAME
