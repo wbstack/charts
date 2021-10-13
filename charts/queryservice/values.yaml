@@ -3,6 +3,7 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
+useProbes: true
 
 image:
   repository: ghcr.io/wbstack/queryservice
