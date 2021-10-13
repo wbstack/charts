@@ -25,6 +25,9 @@ queue:
       passwordSecretName: someSecretName
       passwordSecretKey: password
 
+platform:
+  backendMwHost: someHost
+
 app:
   name: WbStack
   env: production
@@ -46,8 +49,8 @@ app:
   redis:
     host: someHost
     password: somePass
-    #passwordSecretName: someSecretName
-    #passwordSecretKey: password
+    # passwordSecretName: someSecretName
+    # passwordSecretKey: password
     port: 6379
     db: 2
     cachedb: 3
@@ -58,13 +61,15 @@ app:
     port: 3306
     name: apidb
     user: apiuser
-    #password: foo
+    # password: foo
     passwordSecretName: someSecretName
     passwordSecretKey: password
   mail:
     mailer: mailgun
     mailgundomain: sandbox111.mailgun.org
     mailgunsecret: abc123
+    # mailgunSecretName: someSecretName
+    # mailgunSecretKey: key
     fromaddress: noreply@sandbox111.mailgun.org
     fromname: WB Stack
   recaptcha:
@@ -72,6 +77,7 @@ app:
     secret: abc123
     badgehide: true
   gce:
+    existingSecret:
     # existingSecret: foo
     # serviceAccountSecret: someSecret
   gcsPublicStatic:
