@@ -4,7 +4,7 @@
 
 This repository contains charts that can be used to deploy a wbstack like environment.
 
-Some of these charts are pretty specific to the wbstack usecase right now and could do with genralization.
+Some of these charts are pretty specific to the wbstack use case right now and could do with generalization.
 
 Other charts are probably reusable as they are.
 
