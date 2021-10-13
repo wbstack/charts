@@ -96,7 +96,6 @@ spec:
           - name: MAILGUN_SECRET
             {{- if .Values.app.mail.mailgunsecret }}
             value: {{ .Values.app.mail.mailgunsecret | quote }}
-            {{- end }}
             {{- else if .Values.app.mail.mailgunSecretName }}
             valueFrom:
               secretKeyRef:
