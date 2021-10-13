@@ -32,7 +32,7 @@ Releasing is powered by a github action.
 
 Versions are built and tagged and created as github releases.
 
-Github pages hosts the manifest file for all releases which is build on every release.
+Github pages hosts the manifest file for all releases which is built on every release.
 
 https://github.com/wbstack/charts/blob/gh-pages/index.yaml
 
