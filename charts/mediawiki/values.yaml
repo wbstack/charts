@@ -28,8 +28,8 @@ mw:
     apikey: 1234567
     domain: somedomain.name
   recaptcha:
-    sitekey: foo
-    secretkey: foo
+    sitekey: ""
+    secretkey: ""
   platform:
     apiBackendHost: someHost
 
