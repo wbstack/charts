@@ -26,7 +26,7 @@ jobs:
 
       - name: Run chart-testing (list-changed)
         id: list-changed
-        run: >
+        run: |
           changed=$(ct list-changed --target-branch main)
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
