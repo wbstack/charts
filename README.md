@@ -26,19 +26,26 @@ repositories:
 
 ## Contributing
 
-Anything merged into the `main` branch will result in releasing of new charts.
 
-Releasing is powered by a github action.
 
-Versions are built and tagged and created as github releases.
+### Linting
+
+This repository is linted using [chart-testing](https://github.com/helm/chart-testing).
+
+This is both setup for Github Actions, and also runable locally using a docker image.
+
+```sh
+make lint
+```
+
+### Releases
+
+Anything merged into the `main` branch will result in releasing of new charts powered by Github Actions, and thus the touched chart versions must be bumped.]
+
+Versions are built, tagged and created as github releases.
 
 Github pages hosts the manifest file for all releases which is built on every release.
-
-https://github.com/wbstack/charts/blob/gh-pages/index.yaml
-
-OR
-
-https://wbstack.github.io/charts/index.yaml
+You can see the manifest in [the branch](https://github.com/wbstack/charts/blob/gh-pages/index.yaml) or on [github pages](https://wbstack.github.io/charts/index.yaml).
 
 You can read more about releasing using these links:
 
