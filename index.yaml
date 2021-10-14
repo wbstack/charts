@@ -25,6 +25,19 @@ entries:
   mediawiki:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-10-14T15:02:07.974482051Z"
+    description: A Helm chart for Kubernetes
+    digest: 29bc3173851f2aab9912e121d6e715d86b2f3008865303db7834838d0f6cd13a
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: mediawiki
+    urls:
+    - https://github.com/wbstack/charts/releases/download/mediawiki-0.1.1/mediawiki-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-10-12T22:01:06.59239495Z"
     description: A Helm chart for Kubernetes
     digest: c978a20625a1a200ed4b67438ad4acffb315ab44b90d3aefd61c9b470d432edb
