@@ -32,7 +32,7 @@ repositories:
 
 This repository is linted using [chart-testing](https://github.com/helm/chart-testing).
 
-This is both setup for Github Actions, and also runable locally using a docker image.
+This is both setup for Github Actions, and also runnable locally using a docker image.
 
 ```sh
 make lint
