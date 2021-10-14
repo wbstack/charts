@@ -21,6 +21,8 @@ mw:
     readServer: someRedisOtherServer
     writeServer: someRedisServer
     password: abc123
+    # passwordSecretName:
+    # passwordSecretKey:
   elasticsearch:
     host: someOtherElasticsearchServer
     port: 9200
@@ -28,8 +30,10 @@ mw:
     apikey: 1234567
     domain: somedomain.name
   recaptcha:
-    sitekey: foo
-    secretkey: foo
+    sitekey: ""
+    secretkey: ""
+    # secretkeySecretName:
+    # secretkeySecretKey:
   platform:
     apiBackendHost: someHost
 
