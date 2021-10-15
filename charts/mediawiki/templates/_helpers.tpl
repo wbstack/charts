@@ -85,7 +85,15 @@ Common deployment environment variables
 - name: MW_EMAIL_DOMAIN
   value: {{ .Values.mw.mailgun.domain }}
 - name: MW_RECAPTCHA_SITEKEY
-  value: {{ .Values.mw.recaptcha.sitekey }}
+{{- if .Values.mw.recaptcha.sitekey }}
+  value: {{ .Values.mw.recaptcha.sitekey | quote }}
+{{- end }}
+{{- if .Values.mw.recaptcha.sitekeySecretName }}
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.mw.recaptcha.sitekeySecretName | quote }}
+      key: {{ .Values.mw.recaptcha.sitekeySecretKey | quote }}
+{{- end }}
 - name: MW_RECAPTCHA_SECRETKEY
 {{- if .Values.mw.recaptcha.secretkey }}
   value: {{ .Values.mw.recaptcha.secretkey | quote }}
