@@ -29,6 +29,7 @@ mw:
   mailgun:
     apikey: 1234567
     domain: somedomain.name
+    endpoint: "https://some.api.endpoint.example"
   recaptcha:
     sitekey: ""
     # sitekeySecretName:
