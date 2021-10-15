@@ -82,6 +82,8 @@ Common deployment environment variables
 {{- end }}
 - name: MW_MAILGUN_DOMAIN
   value: {{ .Values.mw.mailgun.domain }}
+- name: MW_MAILGUN_ENDPOINT
+  value: {{ .Values.mw.mailgun.endpoint }}
 - name: MW_EMAIL_DOMAIN
   value: {{ .Values.mw.mailgun.domain }}
 - name: MW_RECAPTCHA_SITEKEY
