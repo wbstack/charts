@@ -103,9 +103,25 @@ spec:
             value: {{ .Values.app.mail.fromname | quote }}
 
           - name: INVISIBLE_RECAPTCHA_SITEKEY
+            {{- if .Values.app.recaptcha.sitekey }}
             value: {{ .Values.app.recaptcha.sitekey | quote }}
+            {{- end }}
+            {{- if .Values.app.recaptcha.sitekeySecretName }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.app.recaptcha.sitekeySecretName | quote }}
+                key: {{ .Values.app.recaptcha.sitekeySecretKey | quote }}
+            {{- end }}
           - name: INVISIBLE_RECAPTCHA_SECRETKEY
+            {{- if .Values.app.recaptcha.secret }}
             value: {{ .Values.app.recaptcha.secret | quote }}
+            {{- end }}
+            {{- if .Values.app.recaptcha.secretSecretName }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.app.recaptcha.secretSecretName | quote }}
+                key: {{ .Values.app.recaptcha.secretSecretKey | quote }}
+            {{- end }}
           - name: INVISIBLE_RECAPTCHA_BADGEHIDE
             value: {{ .Values.app.recaptcha.badgehide | quote }}
 

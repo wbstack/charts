@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.4.0
+
+- Optionally use secret for recaptcha details
+
 ## 0.3.0
 
 - Optionally use a k8s secret instead of a plaintext value for the mailgun secret
