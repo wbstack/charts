@@ -73,8 +73,12 @@ app:
     fromaddress: noreply@sandbox111.mailgun.org
     fromname: WB Stack
   recaptcha:
-    sitekey: abc123
-    secret: abc123
+    sitekey: ""
+    # sitekeySecretName: ""
+    # sitekeySecretKey: ""
+    secret: ""
+    # secretSecretName: ""
+    # secretSecretKey: ""
     badgehide: true
   gce:
     existingSecret:
