@@ -31,6 +31,8 @@ mw:
     domain: somedomain.name
   recaptcha:
     sitekey: ""
+    # sitekeySecretName:
+    # sitekeySecretKey:
     secretkey: ""
     # secretkeySecretName:
     # secretkeySecretKey:
