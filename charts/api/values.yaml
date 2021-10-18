@@ -1,11 +1,11 @@
 image:
   repository: ghcr.io/wbstack/api
   tag:
-    preinstall: 8x.1.3
-    backend: 8x.1.3
-    web: 8x.1.3
-    queue: 8x.1.3
-    scheduler: 8x.1.3
+    preinstall: 8x.1.8
+    backend: 8x.1.8
+    web: 8x.1.8
+    queue: 8x.1.8
+    scheduler: 8x.1.8
   pullPolicy: Always
 
 useProbes: true
@@ -27,6 +27,9 @@ queue:
 
 platform:
   backendMwHost: someHost
+
+wbstack:
+  subdomainSuffix: "undefined.nohost"
 
 app:
   name: WbStack
