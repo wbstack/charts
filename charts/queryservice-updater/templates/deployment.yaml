@@ -39,6 +39,8 @@ spec:
               value: {{ .Values.app.sleepTime| quote }}
             - name: WBSTACK_API_ENDPOINT
               value: {{ .Values.app.getBatchesEndpoint | quote }}
+            - name: WBSTACK_WIKIBASE_SCHEME
+              value: {{ .Values.app.wikibaseScheme | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
