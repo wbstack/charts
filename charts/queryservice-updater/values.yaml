@@ -4,6 +4,7 @@ app:
   sleepTime: 10
   getBatchesEndpoint: some.service/backend/qs/getBatches
   wikibaseScheme: https
+  proxyMap: platform-nginx.default.svc.cluster.local:8080
 
 image:
   repository: ghcr.io/wbstack/queryservice-updater
