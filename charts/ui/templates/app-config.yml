@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  config.js: |
+    const config = {
+      RECAPTCHA_KEY: '{{ .Values.ui.recaptchaKey }}',
+      API_URL: '{{ .Values.ui.apiUrl }}',
+      SUBDOMAIN_SUFFIX: '{{ .Values.ui.subdomainSuffix }}',
+    };
