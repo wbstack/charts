@@ -58,6 +58,9 @@ spec:
           - name: APP_TIMEZONE
             value: {{ .Values.app.timezone | quote }}
 
+          - name: WBSTACK_SUBDOMAIN_SUFFIX
+            value: {{ .Values.wbstack.subdomainSuffix | quote }}
+
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
           - name: PLATFORM_MW_BACKEND_HOST

@@ -2,6 +2,11 @@
 
 This chart does not yet follow SemVer.
 
+## 0.5.0
+
+- Update application image to `8x.1.8` https://github.com/wbstack/api/blob/8x.1.8/CHANGELOG.md#8x18---18-october-2021
+- Add `wbstack.subdomainSuffix` value
+
 ## 0.4.0
 
 - Optionally use secret for recaptcha details
