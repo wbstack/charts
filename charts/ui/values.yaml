@@ -13,6 +13,12 @@ service:
   type: NodePort
   port: 80
 
+ui:
+  recaptchaSitekeySecretName: ""
+  recaptchaSitekeySecretKey: ""
+  apiUrl: ""
+  subdomainSuffix: ""
+
 ingress:
   enabled: false
 
