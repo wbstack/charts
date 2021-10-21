@@ -139,6 +139,19 @@ entries:
   queryservice-updater:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-10-21T11:49:45.879775972Z"
+    description: A Helm chart for Kubernetes
+    digest: e5252df6aa16097732e00b96fa418b8842ccaf90f828f2700dcd75c2b45832a9
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: queryservice-updater
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-updater-0.1.1/queryservice-updater-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-10-12T22:01:07.301694882Z"
     description: A Helm chart for Kubernetes
     digest: 5edf4743df9259fc93081a96b06339af174f0286419a2ea2fe115ee20c167399
