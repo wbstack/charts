@@ -4,7 +4,7 @@ This chart does not yet follow SemVer.
 
 ## 0.6.0
 
-- Add optional app.mail.mailgunendpoint
+- Add optional `app.mail.mailgunendpoint`
 
 ## 0.5.0
 
