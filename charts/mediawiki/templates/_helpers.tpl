@@ -108,6 +108,8 @@ Common deployment environment variables
 {{- end }}
 - name: PLATFORM_API_BACKEND_HOST
   value: {{ .Values.mw.platform.apiBackendHost }}
+- name: MW_LOG_TO_STDERR
+  value: {{ .Values.mw.settings.logToStdErr | quote }}
 {{- end -}}
 
 {{/*
