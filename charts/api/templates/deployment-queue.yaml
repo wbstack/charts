@@ -92,6 +92,10 @@ spec:
             value: {{ .Values.app.mail.mailer | quote }}
           - name: MAILGUN_DOMAIN
             value: {{ .Values.app.mail.mailgundomain | quote }}
+          {{- if .Values.app.mail.mailgunendpoint }}
+          - name: MAILGUN_ENDPOINT
+            value: {{ .Values.app.mail.mailgunendpoint | quote }}
+          {{- end  }}
           - name: MAILGUN_SECRET
             {{- if .Values.app.mail.mailgunsecret }}
             value: {{ .Values.app.mail.mailgunsecret | quote }}
