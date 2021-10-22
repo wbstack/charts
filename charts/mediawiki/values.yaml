@@ -15,7 +15,7 @@ image:
 
 mw:
   settings:
-    logToStdErr: no
+    logToStdErr: false
   db:
     master: someHostName
     replica: someHostName
