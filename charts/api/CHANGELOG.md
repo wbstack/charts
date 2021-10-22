@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.6.0
+
+- Add optional app.mail.mailgunendpoint
+
 ## 0.5.0
 
 - Update application image to `8x.1.8` https://github.com/wbstack/api/blob/8x.1.8/CHANGELOG.md#8x18---18-october-2021

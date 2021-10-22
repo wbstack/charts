@@ -71,6 +71,7 @@ app:
     mailer: mailgun
     mailgundomain: sandbox111.mailgun.org
     mailgunsecret: abc123
+    # mailgunendpoint:
     # mailgunSecretName: someSecretName
     # mailgunSecretKey: key
     fromaddress: noreply@sandbox111.mailgun.org
