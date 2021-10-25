@@ -40,7 +40,7 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
-            - name: RECAPTCHA_KEY
+            - name: RECAPTCHA_SITE_KEY
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.ui.recaptchaSitekeySecretName | quote }}
