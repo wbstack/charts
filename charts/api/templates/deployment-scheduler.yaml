@@ -60,6 +60,8 @@ spec:
 
           - name: WBSTACK_SUBDOMAIN_SUFFIX
             value: {{ .Values.wbstack.subdomainSuffix | quote }}
+          - name: WBSTACK_UI_URL
+            value: {{ .Values.wbstack.uiurl | quote }}
 
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}

@@ -29,10 +29,11 @@ platform:
   backendMwHost: someHost
 
 wbstack:
-  subdomainSuffix: "undefined.nohost"
+  subdomainSuffix: ".undefined.nohost"
+  uiurl:
 
 app:
-  name: WbStack
+  name:
   env: production
   key: someKey
   debug: false
