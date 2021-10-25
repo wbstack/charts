@@ -2,6 +2,12 @@
 
 This chart does not yet follow SemVer.
 
+## 0.7.0
+
+- Updated image used
+- Removed default `app.name`.
+- Added `wbstack.uiurl` value.
+
 ## 0.6.0
 
 - Add optional `app.mail.mailgunendpoint`
