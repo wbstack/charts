@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.2
+
+- Fix recaptcha site key config name
+
 ## 0.2.1
 
 - Fix image version number
