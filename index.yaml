@@ -211,6 +211,19 @@ entries:
   tool-quickstatements:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-10-27T17:33:37.374906433Z"
+    description: A Helm chart for Kubernetes
+    digest: 64f43f141214b7fb63ee73654ab2d092fe1f14d16ba811a1201a09652a8ad3ac
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: tool-quickstatements
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-quickstatements-0.2.0/tool-quickstatements-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-10-12T22:01:07.62247275Z"
     description: A Helm chart for Kubernetes
     digest: cefd6f8af70684681df8b05d144b6085bb0f530136a6a3013b61d9cca518ab17
