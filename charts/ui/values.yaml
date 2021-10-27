@@ -14,6 +14,12 @@ service:
   port: 80
 
 ui:
+  name: Wbstack
+  url: https://www.wbstack.com
+  domain: wbstack.com
+  cnameRecord: sites-1.dyna.wbstack.com
+  sourceLink: https://www.github.com/wbstack
+  docsLink: https://wbstack.github.io/docs/
   recaptchaSitekeySecretName: ""
   recaptchaSitekeySecretKey: ""
   apiUrl: ""

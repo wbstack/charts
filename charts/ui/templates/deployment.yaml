@@ -49,6 +49,18 @@ spec:
               value: {{ .Values.ui.apiUrl | quote }}
             - name: SUBDOMAIN_SUFFIX
               value: {{ .Values.ui.subdomainSuffix | quote }}
+            - name: NAME
+              value: {{ .Values.ui.name | quote }}
+            - name: URL
+              value: {{ .Values.ui.url | quote }}
+            - name: DOMAIN
+              value: {{ .Values.ui.domain | quote }}
+            - name: CNAME_RECORD
+              value: {{ .Values.ui.cnameRecord | quote }}
+            - name: SOURCE
+              value: {{ .Values.ui.sourceLink | quote }}
+            - name: DOCUMENTATION
+              value: {{ .Values.ui.docsLink | quote }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
