@@ -65,6 +65,8 @@ spec:
             value: {{ .Values.wbstack.uiurl | quote }}
           - name: WBSTACK_WIKI_DB_PROVISION_VERSION
             value: {{ .Values.wbstack.wikiDbProvisionVersion | quote }}
+          - name: WBSTACK_WIKI_DB_USE_VERSION
+            value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
 
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
