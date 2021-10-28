@@ -24,7 +24,7 @@ spec:
     {{- end }}
       containers:
         - name: mediawiki
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag.web }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
