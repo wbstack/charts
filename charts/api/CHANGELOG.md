@@ -2,6 +2,11 @@
 
 This chart does not yet follow SemVer.
 
+## 0.8.0
+
+- Start creating MW 1.36 wiki dbs by default
+- Switch to using standard `image.tag` value format
+
 ## 0.7.0
 
 - Updated image used

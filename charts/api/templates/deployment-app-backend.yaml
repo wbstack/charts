@@ -24,7 +24,7 @@ spec:
     {{- end }}
       containers:
         - name: api-backend
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag.backend }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -67,6 +67,8 @@ spec:
             value: {{ .Values.wbstack.subdomainSuffix | quote }}
           - name: WBSTACK_UI_URL
             value: {{ .Values.wbstack.uiurl | quote }}
+          - name: WBSTACK_WIKI_DB_PROVISION_VERSION
+            value: {{ .Values.wbstack.wikiDbProvisionVersion | quote }}
 
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
