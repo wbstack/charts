@@ -1,11 +1,6 @@
 image:
   repository: ghcr.io/wbstack/api
-  tag:
-    preinstall: 8x.1.9
-    backend: 8x.1.9
-    web: 8x.1.9
-    queue: 8x.1.9
-    scheduler: 8x.1.9
+  tag: 8x.2.0
   pullPolicy: Always
 
 useProbes: true
@@ -31,6 +26,8 @@ platform:
 wbstack:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
+  wikiDbProvisionVersion:
+  wikiDbUseVersion:
 
 app:
   name:

@@ -30,7 +30,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: pre-install-job
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag.preinstall }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           # All we're going to do is sleep for a while, then exit.
           # TODO this could actually make the db user we need and also have the correct permissions?
