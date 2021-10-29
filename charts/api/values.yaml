@@ -27,6 +27,7 @@ wbstack:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
   wikiDbProvisionVersion:
+  wikiDbUseVersion:
 
 app:
   name:
