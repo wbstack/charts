@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.4.1: Bumped the MediaWiki image version to contain a backported fix for a SFS extension issue
 - 0.4.0: Update to MW 1.36 & use `image.tag` standard value
 - 0.3.0: Added `mw.settings.logToStdErr`
 - 0.2.0: Bumped MediaWiki application version to updated 1.35, including new Mailgun code, and required `mw.mailgun.endpoint`.
