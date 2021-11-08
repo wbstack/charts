@@ -6,7 +6,7 @@ replicaCount:
 
 image:
   repository: ghcr.io/wbstack/mediawiki
-  tag: "1.36-7.4-20211103-0"
+  tag: "1.36-7.4-20211108-0"
   pullPolicy: IfNotPresent
 
 mw:
@@ -25,9 +25,17 @@ mw:
     host: someOtherElasticsearchServer
     port: 9200
   mailgun:
+    enabled: true
     apikey: 1234567
     domain: somedomain.name
     endpoint: "https://some.api.endpoint.example"
+  smtp:
+    enabled: false
+    host: somedomain.name
+    port: 587
+    auth: true
+    username: someUsername
+    password: somePassword
   recaptcha:
     sitekey: ""
     # sitekeySecretName:

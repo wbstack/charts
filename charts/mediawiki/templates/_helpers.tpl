@@ -70,6 +70,12 @@ Common deployment environment variables
   value: {{ .Values.mw.elasticsearch.host }}
 - name: MW_ELASTICSEARCH_PORT
   value: {{ .Values.mw.elasticsearch.port | quote }}
+- name: MW_MAILGUN_DISABLED
+{{- if .Values.mw.mailgun.enabled }}
+  value: "no"
+{{- else }}
+  value: "yes"
+{{- end }}
 - name: MW_MAILGUN_API_KEY
 {{- if .Values.mw.mailgun.apikey }}
   value: {{ .Values.mw.mailgun.apikey | quote }}
@@ -112,6 +118,22 @@ Common deployment environment variables
 - name: MW_LOG_TO_STDERR
   value: "yes"
 {{- end }}
+- name: MW_SMTP_ENABLED
+{{- if .Values.mw.smtp.enabled }}
+  value: "yes"
+{{- else }}
+  value: "no"
+{{- end }}
+- name: MW_SMTP_HOST
+  value: {{ .Values.mw.smtp.host | quote }}
+- name: MW_SMTP_PORT
+  value: {{ .Values.mw.smtp.port | quote }}
+- name: MW_SMTP_AUTH
+  value: {{ .Values.mw.smtp.auth | quote }}
+- name: MW_SMTP_USERNAME
+  value: {{ .Values.mw.smtp.username | quote }}
+- name: MW_SMTP_PASSWORD
+  value: {{ .Values.mw.smtp.password | quote }}
 {{- end -}}
 
 {{/*
