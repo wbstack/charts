@@ -122,7 +122,7 @@ spec:
             value: {{ .Values.app.mail.fromaddress | quote }}
           - name: MAIL_FROM_NAME
             value: {{ .Values.app.mail.fromname | quote }}
-
+{{ include "api.smtpEnvVars" . | indent 10 }}
           - name: INVISIBLE_RECAPTCHA_SITEKEY
             {{- if .Values.app.recaptcha.sitekey }}
             value: {{ .Values.app.recaptcha.sitekey | quote }}

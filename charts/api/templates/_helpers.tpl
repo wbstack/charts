@@ -43,3 +43,19 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
+
+{{/*
+Common lists of environment variables
+*/}}
+{{- define "api.smtpEnvVars" -}}
+- name: MAIL_HOST
+  value: {{ .Values.app.mail.smtphost | quote }}
+- name: MAIL_PORT
+  value: {{ .Values.app.mail.smtpport | quote }}
+- name: MAIL_ENCRYPTION
+  value: {{ .Values.app.mail.smtpencryption | quote }}
+- name: MAIL_USERNAME
+  value: {{ .Values.app.mail.smtpuser | quote }}
+- name: MAIL_PASSWORD
+  value: {{ .Values.app.mail.smtppassword | quote }}
+{{- end -}}

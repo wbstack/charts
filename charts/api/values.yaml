@@ -74,6 +74,11 @@ app:
     # mailgunSecretKey: key
     fromaddress: noreply@sandbox111.mailgun.org
     fromname: WB Stack
+    smtphost: smtp.example.com
+    smtpport: 587
+    smtpencryption: tls
+    smtpuser: mailuser
+    # smtppassword: somesecret
   recaptcha:
     sitekey: ""
     # sitekeySecretName: ""
