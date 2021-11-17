@@ -2,8 +2,12 @@
 
 This chart does not yet follow SemVer.
 
+## 0.10.0
+- Use k8s secrets for api app key and jwt secret
+
 ## 0.9.0
-- Using k8s secrets for api app key and jwt secret
+- Add SMTP env vars to api chart
+- DRY SMTP Env Vars
 
 ## 0.8.0
 
