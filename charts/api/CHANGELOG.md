@@ -2,6 +2,13 @@
 
 This chart does not yet follow SemVer.
 
+## 0.10.0
+- Use k8s secrets for api app key and jwt secret
+
+## 0.9.0
+- Add SMTP env vars to api chart
+- DRY SMTP Env Vars
+
 ## 0.8.0
 
 - Start creating and using MW 1.36 wiki dbs by default

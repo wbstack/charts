@@ -32,13 +32,17 @@ wbstack:
 app:
   name:
   env: production
-  key: someKey
+  # referring to a k8s secret key/name which holds the app key
+  keySecretName: someSecretName
+  keySecretKey: someSecretKey
   debug: false
   url: https://api.wbstack.com
   timezone: UTC
   cacheDriver: redis
   queueConnection: redis
-  jwtSecret: SomeSecret
+  # referring to a k8s secret key/name which holds the jwt secret
+  jwtSecretSecretName: SomeSecretName
+  jwtSecretSecretKey: SomeSecretKey
   queryServiceHost: someHost:9999
   routes:
     load:

@@ -49,9 +49,11 @@ spec:
             value: {{ .Values.app.name | quote }}
           - name: APP_ENV
             value: {{ .Values.app.env | quote }}
-            # TODO from secret? optionaly random generation?
           - name: APP_KEY
-            value: {{ .Values.app.key | quote }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.app.keySecretName | quote }}
+                key: {{ .Values.app.keySecretKey | quote }}
           - name: APP_DEBUG
             value: {{ .Values.app.debug | quote }}
           - name: APP_URL
@@ -169,9 +171,11 @@ spec:
             value: {{ .Values.app.cacheDriver | quote }}
           - name: QUEUE_CONNECTION
             value: {{ .Values.app.queueConnection | quote }}
-            # TODO from secret? optionaly random generation?
           - name: JWT_SECRET
-            value: {{ .Values.app.jwtSecret | quote }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.app.jwtSecretSecretName | quote }}
+                key: {{ .Values.app.jwtSecretSecretKey | quote }}
           - name: DB_CONNECTION
             value: {{ .Values.app.db.connection | quote }}
             # TODO from service discovery or something?
