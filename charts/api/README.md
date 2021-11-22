@@ -2,4 +2,4 @@
 
 ## Changelog
 
-- 0.8.1: Change image pullPolicy values to `IfNotPresent`
+- 0.10.1: Change image pullPolicy values to `IfNotPresent`
