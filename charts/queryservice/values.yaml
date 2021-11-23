@@ -8,7 +8,7 @@ useProbes: true
 image:
   repository: ghcr.io/wbstack/queryservice
   tag: "0.3.6_0.6"
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 app:
   heapSize: 2g
