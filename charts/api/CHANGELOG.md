@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.11.0
+
+- Use image 8x.3.0
+
 ## 0.10.0
 - Use k8s secrets for api app key and jwt secret
 
