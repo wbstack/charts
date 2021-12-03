@@ -2,7 +2,7 @@
 
 ## Changelog
 
-- 0.7.0: First 1.37 beta image with federated properties v2 (1.37-7.4-20211203-fp-beta-0)
+- 0.7.0: First 1.37 workin beta image with federated properties v2 (1.37-7.4-20211203-fp-beta-1)
 - 0.6.0: Replaced NodePort with ClusterIP
 - 0.5.2: Fix for `mw.smtp.auth` setting usage in mediawiki
 - 0.5.0: Added `mw.smtp` settings and a toggle for the mw mailgun extension
