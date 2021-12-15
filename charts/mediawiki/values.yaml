@@ -24,10 +24,11 @@ mw:
   elasticsearch:
     host: someOtherElasticsearchServer
     port: 9200
+  mail:
+    domain: somedomain.name
   mailgun:
     enabled: true
     apikey: 1234567
-    domain: somedomain.name
     endpoint: "https://some.api.endpoint.example"
   smtp:
     enabled: false
