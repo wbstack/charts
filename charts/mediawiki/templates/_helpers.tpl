@@ -87,7 +87,7 @@ Common deployment environment variables
       key: {{ .Values.mw.mailgun.apikeySecretKey | quote }}
 {{- end }}
 - name: MW_MAILGUN_DOMAIN
-  value: {{ .Values.mw.mailgun.domain }}
+  value: {{ .Values.mw.mail.domain }}
 - name: MW_MAILGUN_ENDPOINT
   value: {{ .Values.mw.mailgun.endpoint }}
 - name: MW_EMAIL_DOMAIN
