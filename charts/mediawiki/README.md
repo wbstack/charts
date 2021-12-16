@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.7.2: Fix for still using `mw.mailgun.domain` in template
 - 0.7.1: Decoupled email domain setting from mailgun values
 - 0.7.0: First 1.37 workin beta image with federated properties v2 (1.37-7.4-20211203-fp-beta-1)
 - 0.6.0: Replaced NodePort with ClusterIP
