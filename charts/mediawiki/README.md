@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.7.3: Bump MW image to 1.37-7.4-20211217-fp-beta-0 including 1.37.1 security release of MW core
 - 0.7.2: Fix for still using `mw.mailgun.domain` in template
 - 0.7.1: Decoupled email domain setting from mailgun values
 - 0.7.0: First 1.37 workin beta image with federated properties v2 (1.37-7.4-20211203-fp-beta-1)
