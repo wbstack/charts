@@ -144,7 +144,11 @@ spec:
           - name: GOOGLE_CLOUD_PROJECT_ID
             value: {{ .Values.app.gce.projectId | quote }}
           - name: GOOGLE_CLOUD_STORAGE_BUCKET
-            value: {{ .Values.app.gcsPublicStatic.gcsBucket | quote }}
+            valueFrom:
+              configMapKeyRef:
+                name: storage-bucket
+                key: gcs_api_static_bucket_name
+                optional: true
           - name: GOOGLE_CLOUD_STORAGE_KEY_FILE
             value: /var/run/secret/cloud.google.com/key.json
 
