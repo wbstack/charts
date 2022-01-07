@@ -70,6 +70,8 @@ spec:
           - name: WBSTACK_WIKI_DB_USE_VERSION
             value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
 
+          - name: ELASTICSEARCH_HOST
+            value: {{ .Values.app.elasticSearchHost | quote }}
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
           - name: PLATFORM_MW_BACKEND_HOST
