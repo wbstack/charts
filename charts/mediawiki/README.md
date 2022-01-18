@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.7.5: Bump MW image to 1.37-7.4-20220118-fp-beta-0 including readonly mode
 - 0.7.4: Bump MW image to 1.37-7.4-20220105-fp-beta-0 including updated skins and extensions
 - 0.7.3: Bump MW image to 1.37-7.4-20211217-fp-beta-0 including 1.37.1 security release of MW core
 - 0.7.2: Fix for still using `mw.mailgun.domain` in template
