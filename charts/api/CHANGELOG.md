@@ -2,6 +2,11 @@
 
 This chart does not yet follow SemVer.
 
+## 0.14.0
+
+- Bump image to `8x.4.1`
+- Added `app.elasticSearchHost` for use in queue pod
+
 ## 0.13.0
 
 - Use image 8x.4.0

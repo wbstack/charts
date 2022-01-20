@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/wbstack/api
-  tag: 8x.4.0
+  tag: 8x.4.1
   pullPolicy: IfNotPresent
 
 useProbes: true
