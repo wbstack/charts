@@ -2,6 +2,14 @@
 
 This chart does not yet follow SemVer.
 
+## 0.13.0
+
+- Use image 8x.4.0
+
+## 0.12.0
+
+- Get GCS bucket name from configmap
+
 ## 0.11.0
 
 - Use image 8x.3.0
