@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.15.0
+
+- Bump api image to `8x.5.0`
+
 ## 0.14.0
 
 - Bump image to `8x.4.1`
