@@ -2,6 +2,17 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.5
+
+- Bump image to 3.2 with wikibase.cloud UI
+
+## 0.2.4:
+
+- Change service from `NodePort` to `ClusterIP`
+## 0.2.3
+
+ - Change image pullPolicy values to `IfNotPresent`
+
 ## 0.2.2
 
 - Fix recaptcha site key config name
