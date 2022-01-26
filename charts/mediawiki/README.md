@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.8.0: Bump MW image to 1.37-7.4-20220126-fp-beta-0 including ES migration api
 - 0.7.5: Bump MW image to 1.37-7.4-20220118-fp-beta-0 including readonly mode
 - 0.7.4: Bump MW image to 1.37-7.4-20220105-fp-beta-0 including updated skins and extensions
 - 0.7.3: Bump MW image to 1.37-7.4-20211217-fp-beta-0 including 1.37.1 security release of MW core
