@@ -40,11 +40,13 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
+            {{- if .Values.ui.recaptchaSitekeySecretName }}
             - name: RECAPTCHA_SITE_KEY
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.ui.recaptchaSitekeySecretName | quote }}
                   key: {{ .Values.ui.recaptchaSitekeySecretKey | quote }}
+            {{- end}}
             - name: API_URL
               value: {{ .Values.ui.apiUrl | quote }}
             - name: SUBDOMAIN_SUFFIX
