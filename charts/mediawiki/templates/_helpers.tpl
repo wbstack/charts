@@ -145,14 +145,14 @@ Common deployment environment variables
   {{- end }}
 
 - name: MW_SMTP_PASSWORD
-  {{- if .Values.app.mw.smtp.password }}
-  value: {{ .Values.app.mw.smtp.password | quote }}
+  {{- if .Values.mw.smtp.password }}
+  value: {{ .Values.mw.smtp.password | quote }}
   {{- end }}
-  {{- if .Values.app.mw.smtp.smtpPasswordSecretName }}
+  {{- if .Values.mw.smtp.smtpPasswordSecretName }}
   valueFrom:
     secretKeyRef:
-      name: {{ .Values.app.mw.smtp.smtpPasswordSecretName | quote }}
-      key: {{ .Values.app.mw.smtp.smtpPasswordSecretKey | quote }}
+      name: {{ .Values.mw.smtp.smtpPasswordSecretName | quote }}
+      key: {{ .Values.mw.smtp.smtpPasswordSecretKey | quote }}
   {{- end }}
 
 {{- end -}}
