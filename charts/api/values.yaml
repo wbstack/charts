@@ -70,7 +70,7 @@ app:
     passwordSecretName: someSecretName
     passwordSecretKey: password
   mail:
-    mailer: mailgun
+    mailer: smtp
     mailgundomain: sandbox111.mailgun.org
     mailgunsecret: abc123
     # mailgunendpoint:
@@ -81,8 +81,12 @@ app:
     smtphost: smtp.example.com
     smtpport: 587
     smtpencryption: tls
-    smtpuser: mailuser
+    # smtpuser: mailuser
+    # smtpUserSecretName: ""
+    # smtpUserSecretKey: ""
     # smtppassword: somesecret
+    # smtpPasswordSecretName: ""
+    # smtpPasswordSecretKey: ""
   recaptcha:
     sitekey: ""
     # sitekeySecretName: ""

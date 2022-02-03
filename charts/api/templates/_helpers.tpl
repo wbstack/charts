@@ -54,8 +54,26 @@ Common lists of environment variables
   value: {{ .Values.app.mail.smtpport | quote }}
 - name: MAIL_ENCRYPTION
   value: {{ .Values.app.mail.smtpencryption | quote }}
+
 - name: MAIL_USERNAME
+  {{- if .Values.app.mail.smtpuser }}
   value: {{ .Values.app.mail.smtpuser | quote }}
+  {{- end }}
+  {{- if .Values.app.mail.smtpUserSecretName }}
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.app.mail.smtpUserSecretName | quote }}
+      key: {{ .Values.app.mail.smtpUserSecretKey | quote }}
+  {{- end }}
+
 - name: MAIL_PASSWORD
+  {{- if .Values.app.mail.smtppassword }}
   value: {{ .Values.app.mail.smtppassword | quote }}
+  {{- end }}
+  {{- if .Values.app.mail.smtpPasswordSecretName }}
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.app.mail.smtpPasswordSecretName | quote }}
+      key: {{ .Values.app.mail.smtpPasswordSecretKey | quote }}
+  {{- end }}
 {{- end -}}
