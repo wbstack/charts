@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.18.0
+
+- Added support for SMTP credentials through secrets
 ## 0.17.0
 
 - Bump api image to `8x.7.0`
