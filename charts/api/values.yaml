@@ -70,7 +70,7 @@ app:
     passwordSecretName: someSecretName
     passwordSecretKey: password
   mail:
-    mailer: smtp
+    mailer: mailgun
     mailgundomain: sandbox111.mailgun.org
     mailgunsecret: abc123
     # mailgunendpoint:
