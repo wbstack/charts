@@ -35,8 +35,13 @@ mw:
     host: somedomain.name
     port: 587
     auth: true
-    username: someUsername
-    password: somePassword
+    # username: someUsername
+    # password: somePassword
+    # smtpUserSecretName:
+    # smtpUserSecretKey:
+    # smtpPasswordSecretName:
+    # smtpPasswordSecretKey:
+
   recaptcha:
     sitekey: ""
     # sitekeySecretName:

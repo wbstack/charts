@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.10.0: Added support for SMTP credentials through secrets
 - 0.9.0: Bump MW image to 1.37-7.4-20220131-fp-beta-0 including no readonly for cli
 - 0.8.0: Bump MW image to 1.37-7.4-20220126-fp-beta-0 including ES migration api
 - 0.7.5: Bump MW image to 1.37-7.4-20220118-fp-beta-0 including readonly mode

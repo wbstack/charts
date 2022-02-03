@@ -130,10 +130,33 @@ Common deployment environment variables
   value: {{ .Values.mw.smtp.port | quote }}
 - name: MW_SMTP_AUTH
   value: {{ .Values.mw.smtp.auth | quote }}
+
+{{- if .Values.mw.smtp.enabled }}
+
 - name: MW_SMTP_USERNAME
+  {{- if .Values.mw.smtp.username }}
   value: {{ .Values.mw.smtp.username | quote }}
+  {{- end }}
+  {{- if .Values.mw.smtp.smtpUserSecretName }}
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.mw.smtp.smtpUserSecretName | quote }}
+      key: {{ .Values.mw.smtp.smtpUserSecretKey | quote }}
+  {{- end }}
+
 - name: MW_SMTP_PASSWORD
+  {{- if .Values.mw.smtp.password }}
   value: {{ .Values.mw.smtp.password | quote }}
+  {{- end }}
+  {{- if .Values.mw.smtp.smtpPasswordSecretName }}
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.mw.smtp.smtpPasswordSecretName | quote }}
+      key: {{ .Values.mw.smtp.smtpPasswordSecretKey | quote }}
+  {{- end }}
+
+{{- end -}}
+
 {{- end -}}
 
 {{/*
