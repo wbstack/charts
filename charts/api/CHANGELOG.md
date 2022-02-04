@@ -2,6 +2,12 @@
 
 This chart does not yet follow SemVer.
 
+## 0.19.0
+
+- Bump api image to `8x.8.0`
+- Add custom domain migration
+- Fixes bug in custom domain wikis
+
 ## 0.18.0
 
 - Added support for SMTP credentials through secrets
