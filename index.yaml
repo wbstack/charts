@@ -3,6 +3,19 @@ entries:
   api:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-02-08T10:36:38.968160162Z"
+    description: A Helm chart for the WBStack API
+    digest: 9bf8513afb45cab7173fa9d1ecf136ae4f2b0dba5a1f3b857ed37d1343a6574e
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: api
+    urls:
+    - https://github.com/wbstack/charts/releases/download/api-0.19.1/api-0.19.1.tgz
+    version: 0.19.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-02-04T10:57:17.60006522Z"
     description: A Helm chart for the WBStack API
     digest: 36e01ae7b4c781c4d4bdb8fb1fb95c8a27affd732acdd069402efd871ae41c0f
