@@ -51,6 +51,8 @@ spec:
               value: {{ .Values.ui.apiUrl | quote }}
             - name: SUBDOMAIN_SUFFIX
               value: {{ .Values.ui.subdomainSuffix | quote }}
+            - name: CNAME_RECORD
+              value: {{ .Values.ui.cnameRecord | quote }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
