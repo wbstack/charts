@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/wbstack/queryservice-ui
-  tag: "1.2"
+  tag: "1.4"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
