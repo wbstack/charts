@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.8
+
+- Bump image to 3.4
+
 ## 0.2.7
 
 - Add support for specifying CNAME_RECORD, bump image to 3.3
