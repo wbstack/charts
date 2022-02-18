@@ -51,13 +51,14 @@ spec:
               value: {{ .Values.ui.apiUrl | quote }}
             - name: SUBDOMAIN_SUFFIX
               value: {{ .Values.ui.subdomainSuffix | quote }}
+            {{- if .Values.ui.configMapName }}
             - name: CNAME_RECORD
               valueFrom:
                 configMapKeyRef:
-                  name: wbaas-config
-                  key: cname_record
+                  name: {{ .Values.ui.configMapName | quote }}
+                  key: {{ .Values.ui.cnameConfigMapKey | quote }}
                   optional: false
-
+            {{- end}}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
