@@ -2,6 +2,14 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.7
+
+- Add support for specifying CNAME_RECORD, bump image to 3.3
+
+## 0.2.6
+
+- Only load recaptcha secret if set
+
 ## 0.2.5
 
 - Bump image to 3.2 with wikibase.cloud UI

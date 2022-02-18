@@ -51,6 +51,12 @@ spec:
               value: {{ .Values.ui.apiUrl | quote }}
             - name: SUBDOMAIN_SUFFIX
               value: {{ .Values.ui.subdomainSuffix | quote }}
+            - name: CNAME_RECORD
+              valueFrom:
+                configMapKeyRef:
+                  name: wbaas-config
+                  key: cname_record
+                  optional: false
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
