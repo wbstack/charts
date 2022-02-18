@@ -18,6 +18,8 @@ ui:
   recaptchaSitekeySecretKey: ""
   apiUrl: ""
   subdomainSuffix: ""
+  cnameConfigMapKey: ""
+  configMapName: ""
 
 ingress:
   enabled: false
