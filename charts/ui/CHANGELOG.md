@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.9
+
+- Bumping image to 3.4 with recaptcha.net usage
+
 ## 0.2.8
 
 - Make CNAME_RECORD configurable
