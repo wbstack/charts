@@ -157,7 +157,17 @@ Common deployment environment variables
 
 {{- end -}}
 
+{{- if .Values.mw.configMapName }}
+- name: MW_WIKIBASE_CONCEPTURI_SCHEME
+  valueFrom:
+    configMapKeyRef:
+      name: {{ .Values.mw.configMapName | quote }}
+      key: {{ .Values.mw.wikibaseConceptUriSchemeConfigMapKey | quote }}
+      optional: true
+{{- end}}
+
 {{- end -}}
+
 
 {{/*
 Common deployment probes

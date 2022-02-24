@@ -51,6 +51,8 @@ mw:
     # secretkeySecretKey:
   platform:
     apiBackendHost: someHost
+  configMapName: "wbaas-mediawiki-config"
+  wikibaseConceptUriSchemeConfigMapKey: "wikibase_concept_uri_scheme"
 
 imagePullSecrets: []
 nameOverride: ""
