@@ -43,6 +43,14 @@ spec:
               value: {{ .Values.app.wikibaseScheme | quote }}
             - name: WBSTACK_PROXYMAP_INGRESS
               value: {{ .Values.app.proxyMap | quote }}
+            {{- if .Values.mediawiki.configMapName }}
+            - name: WBSTACK_WIKIBASE_CONCEPT_URI_SCHEME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.mediawiki.configMapName | quote }}
+                  key: {{ .Values.mediawiki.wikibaseConceptUriSchemeConfigMapKey | quote }}
+                  optional: true
+            {{- end}}
 
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
