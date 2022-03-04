@@ -6,7 +6,7 @@ replicaCount:
 
 image:
   repository: ghcr.io/wbstack/mediawiki
-  tag: "1.37-7.4-20220131-fp-beta-0"
+  tag: "1.37-7.4-20220304-fp-beta-0"
   pullPolicy: IfNotPresent
 
 mw:
