@@ -298,6 +298,19 @@ entries:
   mediawiki:
   - apiVersion: v1
     appVersion: "1.37"
+    created: "2022-03-07T13:30:08.130255304Z"
+    description: A Helm wbstack flavoured MediaWiki
+    digest: bc83648855e5126c1714443d9adc163b35b82b2eaf88e6e66405d296b9340f88
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: mediawiki
+    urls:
+    - https://github.com/wbstack/charts/releases/download/mediawiki-0.10.1/mediawiki-0.10.1.tgz
+    version: 0.10.1
+  - apiVersion: v1
+    appVersion: "1.37"
     created: "2022-02-03T16:20:48.580413758Z"
     description: A Helm wbstack flavoured MediaWiki
     digest: 99bfc669ea1c5a5a3ac47cdf3f93e44d9bf12ae62e6a1ff2262386cb192c2996
@@ -683,6 +696,19 @@ entries:
     - https://github.com/wbstack/charts/releases/download/queryservice-ui-0.1.0/queryservice-ui-0.1.0.tgz
     version: 0.1.0
   queryservice-updater:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-03-07T13:30:08.267720087Z"
+    description: A Helm chart for Kubernetes
+    digest: 10f0f1178829d3e0fe915bdf27b8b16981799129bc39861999ca3c9ea37e3d1d
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: queryservice-updater
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-updater-0.1.2/queryservice-updater-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-21T11:49:45.879775972Z"
