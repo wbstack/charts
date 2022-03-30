@@ -3,3 +3,6 @@ appVersion: "1.0"
 description: A Helm chart for WbaaS K8s Cronjob Backups
 name: wbaas-backup
 version: 0.0.1
+maintainers:
+  - name: WMDE
+    url: https://github.com/wmde
