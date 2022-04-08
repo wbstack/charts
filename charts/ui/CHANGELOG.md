@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.12
+
+- Bumping image to 3.7 (update ToS & Privacy Policy)
+
 ## 0.2.11
 
 - https://phabricator.wikimedia.org/T303589
