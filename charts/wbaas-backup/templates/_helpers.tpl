@@ -18,11 +18,18 @@ either will be set to use the `db.load` dict or the `db.dump` dict from the valu
 volumeMounts:
   - name: "service-account-volume"
     mountPath: "/var/run/secret/cloud.google.com"
+lifecycle:
+  postStart:
+    exec:
+      command: ["gcsfuse", "--key-file", "/var/run/secret/cloud.google.com/key.json", "{{ .context.Values.gcs.bucketName }}", "/mnt/backup-bucket"]
+  preStop:
+    exec:
+      command: ["fusermount", "-u", /mnt/backup-bucket"]
 {{- end }}
 resources:
   limits:
     cpu: 750m
-    memory: 900Mi
+    memory: 500Mi
 securityContext:
   privileged: true
   capabilities:
