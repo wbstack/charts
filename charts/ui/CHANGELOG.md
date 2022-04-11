@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.13
+- - Bumping image to 3.8 (ToS fix)
+
 ## 0.2.12
 
 - Bumping image to 3.7 (update ToS & Privacy Policy)
