@@ -2,6 +2,11 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.14
+- Bumping image to 3.91
+    - update wmde phone numbe
+    - footer imprint link
+
 ## 0.2.13
 - - Bumping image to 3.8 (ToS fix)
 
