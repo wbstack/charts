@@ -28,8 +28,8 @@ lifecycle:
 {{- end }}
 resources:
   limits:
-    cpu: 750m
-    memory: 500Mi
+    cpu: 100m
+    memory: 100Mi
 securityContext:
   privileged: true
   capabilities:
