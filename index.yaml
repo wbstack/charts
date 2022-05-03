@@ -3,6 +3,19 @@ entries:
   api:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-05-03T08:14:03.569907605Z"
+    description: A Helm chart for the WBStack API
+    digest: 540aab87a1f2e521865fb4dd2317b4762db6df36dfbe1a2315d1eb508cc0577f
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: api
+    urls:
+    - https://github.com/wbstack/charts/releases/download/api-0.19.5/api-0.19.5.tgz
+    version: 0.19.5
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-04-08T15:48:12.624395723Z"
     description: A Helm chart for the WBStack API
     digest: d8587f07f4e27950f20124d822900706954f9703d138c57e0f373c9b271ebeba
@@ -322,19 +335,6 @@ entries:
     - https://github.com/wbstack/charts/releases/download/api-0.2.0/api-0.2.0.tgz
     version: 0.2.0
   mediawiki:
-  - apiVersion: v1
-    appVersion: "1.37"
-    created: "2022-05-03T08:13:45.40896954Z"
-    description: A Helm wbstack flavoured MediaWiki
-    digest: af481cc882e8e0da7cd54d05cb110f2abacc27902e2c9b31937e7476ed7b109a
-    home: https://github.com/wbstack
-    maintainers:
-    - name: WBstack
-      url: https://github.com/wbstack
-    name: mediawiki
-    urls:
-    - https://github.com/wbstack/charts/releases/download/mediawiki-0.10.2/mediawiki-0.10.2.tgz
-    version: 0.10.2
   - apiVersion: v1
     appVersion: "1.37"
     created: "2022-03-07T13:30:08.130255304Z"
