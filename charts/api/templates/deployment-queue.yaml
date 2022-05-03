@@ -70,6 +70,12 @@ spec:
           - name: WBSTACK_WIKI_DB_USE_VERSION
             value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
 
+
+            {{- if .Values.app.elasticsearch.curlTimeout.indexInit }}
+          - name: CURLOPT_TIMEOUT_ELASTICSEARCH_INIT
+            value: {{ .Values.app.elasticsearch.curlTimeout.indexInit | quote }}
+            {{- end }}
+
           - name: ELASTICSEARCH_HOST
             value: {{ .Values.app.elasticSearchHost | quote }}
           - name: QUERY_SERVICE_HOST
