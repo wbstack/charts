@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.10.3: Bump version number to trigger new chart release
 - 0.10.2: Bump MW image to 1.37-7.4-20220429-fp-beta-0 including search index no pages fix
 - 0.10.1: T301141: Hardcode wikibase concept-uri to HTTPS
 - 0.10.0: Added support for SMTP credentials through secrets
