@@ -14,6 +14,18 @@ gcs:
   serviceAccountSecretName: some-gcs-sa
   uploadToBucket: true
 
+resources:
+  job:
+    requests:
+      ephemeral-storage: 60Gi
+    limits:
+      cpu: 750m
+      memory: 500Mi
+  restorePod:
+    limits:
+      cpu: 500m
+      memory: 500Mi
+
 db:
   load:
     passwordSecretName: sql-secrets-passwords

@@ -26,10 +26,6 @@ lifecycle:
     exec:
       command: ["fusermount", "-u", /mnt/backup-bucket"]
 {{- end }}
-resources:
-  limits:
-    cpu: 750m
-    memory: 500Mi
 securityContext:
   privileged: true
   capabilities:
