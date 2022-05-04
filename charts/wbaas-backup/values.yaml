@@ -18,12 +18,17 @@ resources:
   job:
     requests:
       ephemeral-storage: 60Gi
+      cpu: 100m
+      memory: 50Mi
     limits:
       cpu: 750m
       memory: 500Mi
   restorePod:
+    requests:
+      cpu: 100m
+      memory: 50Mi
     limits:
-      cpu: 500m
+      cpu: 750m
       memory: 500Mi
 
 db:
