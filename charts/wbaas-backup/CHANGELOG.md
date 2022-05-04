@@ -6,6 +6,7 @@ This chart does not yet follow Semantic versioning.
 
 Adds `ephemeral-storage` request of 60GB by default, limits failed/successful history to 7 runs
 Sets request/limit pairs
+
 ## 0.0.3
 
 Bump image tag to v0.1.6
