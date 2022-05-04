@@ -10,6 +10,8 @@ spec:
     imagePullPolicy: {{ .Values.image.pullPolicy }}
     command: [ "/bin/bash", "-c", "--" ]
     args: [ "while true; do sleep 30; done;" ]
+    resources:
+      {{- toYaml .Values.resources.restorePod | nindent 6 }}
 {{ include "backup.sharedPodConfiguration" ( dict "db" .Values.db.load "context" $ ) | nindent 4 }}
 {{ include "backup.sharedVolumes" ( dict "gcs" .Values.gcs ) | nindent 2 }}
   restartPolicy: Never

@@ -3,7 +3,9 @@ kind: CronJob
 metadata:
   name: sql-logic-backup
 spec:
-  schedule: {{ .Values.cronSchedule | quote }} 
+  schedule: {{ .Values.cronSchedule | quote }}
+  successfulJobsHistoryLimit: 7
+  failedJobsHistoryLimit: 7
   jobTemplate:
     spec:
       template:
@@ -12,6 +14,8 @@ spec:
           - name: sql-logic-backup
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
+            resources:
+              {{- toYaml .Values.resources.job | nindent 14 }}
 {{ include "backup.sharedPodConfiguration" ( dict "db" .Values.db.dump "context" $ ) | nindent 12 }}
 {{ include "backup.sharedVolumes" ( dict "gcs" .Values.gcs ) | nindent 10 }}
           restartPolicy: Never
