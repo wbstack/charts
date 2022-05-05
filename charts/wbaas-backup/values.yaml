@@ -9,15 +9,16 @@ cronSchedule: "0 0 * * *"
 backupSecretKey: key
 backupSecretName: backup-openssl-key
 
-gcs:
-  bucketName: nacho-cheese
-  serviceAccountSecretName: some-gcs-sa
-  uploadToBucket: true
+storage:
+  scratchDiskSpace: 16Gi
+  gcs:
+    bucketName: nacho-cheese
+    serviceAccountSecretName: some-gcs-sa
+    uploadToBucket: true
 
 resources:
   job:
     requests:
-      ephemeral-storage: 60Gi
       cpu: 100m
       memory: 50Mi
     limits:
