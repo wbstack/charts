@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.19.7
+
+- Allow CURLOPT_TIMEOUT_ELASTICSEARCH_INIT to be configurable
+
 ## 0.19.6
 
 - Bump api image to `8x.8.6`

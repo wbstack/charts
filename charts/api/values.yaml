@@ -44,6 +44,10 @@ app:
   jwtSecretSecretName: SomeSecretName
   jwtSecretSecretKey: SomeSecretKey
   queryServiceHost: someHost:9999
+  elasticSearchHost: someHost:1234
+  elasticsearch:
+    curlTimeout:
+      indexInit: 500
   routes:
     load:
       web: 1
