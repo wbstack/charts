@@ -70,19 +70,12 @@ The uid '1234' is defined in the wbaas-backup Dockerfile
 */}}
 {{ define "backup.sharedVolumes" }}
 securityContext:
-  fsGroup: 1234
+    fsGroup: 1234
 volumes:
   - name: scratch-volume
-    ephemeral:
-      volumeClaimTemplate:
-        metadata:
-          labels:
-            type: scratch-volume-type
-        spec:
-          accessModes: [ "ReadWriteOnce" ]
-          resources:
-            requests:
-              storage: {{ .storage.scratchDiskSpace | quote }}
+    gcePersistentDisk:
+      pdName: {{ .storage.gcs.scratchDiskName | quote }}
+      fsType: ext4
 {{- if .storage.gcs.uploadToBucket }}
   - name: "service-account-volume"
     secret:
