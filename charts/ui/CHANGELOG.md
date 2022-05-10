@@ -2,12 +2,17 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.16
+- Bumping image to 3.92 (Removes feddy props feedback CTA)
+
 ## 0.2.15
-- - Bumping image to 3.91 (Adds Imprint link to footer)
+- Bumping image to 3.91 (Adds Imprint link to footer)
+
 ## 0.2.14
-- - Bumping image to 3.9 (Privacy policy phone number fix)
+- Bumping image to 3.9 (Privacy policy phone number fix)
+
 ## 0.2.13
-- - Bumping image to 3.8 (ToS fix)
+- Bumping image to 3.8 (ToS fix)
 
 ## 0.2.12
 
