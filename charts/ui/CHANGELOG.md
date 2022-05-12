@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.17
+- Bumping image to 3.93 (Adds subdomain naming hint)
+
 ## 0.2.16
 - Bumping image to 3.92 (Removes feddy props feedback CTA)
 
