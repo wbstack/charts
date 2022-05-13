@@ -75,9 +75,6 @@ volumes:
   - name: scratch-volume
     ephemeral:
       volumeClaimTemplate:
-        metadata:
-          labels:
-            type: scratch-volume-type
         spec:
           accessModes: [ "ReadWriteOnce" ]
           resources:
