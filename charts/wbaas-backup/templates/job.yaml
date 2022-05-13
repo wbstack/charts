@@ -3,9 +3,9 @@ kind: CronJob
 metadata:
   name: sql-logic-backup
 spec:
-  schedule: {{ .Values.cronSchedule | quote }}
-  successfulJobsHistoryLimit: 7
-  failedJobsHistoryLimit: 7
+  schedule: {{ .Values.job.cronSchedule | quote }}
+  successfulJobsHistoryLimit: {{ .Values.job.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.job.failedJobsHistoryLimit }}
   jobTemplate:
     spec:
       template:

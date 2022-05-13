@@ -4,7 +4,11 @@ image:
   pullPolicy: IfNotPresent
 
 restorePodRunning: false
-cronSchedule: "0 0 * * *"
+
+job:
+  failedJobsHistoryLimit: 2
+  successfulJobsHistoryLimit: 2
+  cronSchedule: "0 0 * * *"
 
 backupSecretKey: key
 backupSecretName: backup-openssl-key
