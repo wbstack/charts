@@ -23,14 +23,14 @@ storage:
 resources:
   job:
     requests:
-      cpu: 100m
+      cpu: 10m
       memory: 50Mi
     limits:
       cpu: 750m
       memory: 500Mi
   restorePod:
     requests:
-      cpu: 100m
+      cpu: 10m
       memory: 50Mi
     limits:
       cpu: 750m
