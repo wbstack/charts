@@ -5,6 +5,7 @@ This chart does not yet follow Semantic versioning.
 ## 0.0.5
 
 Removes `ephemeral-storage` request, adds a temporary volume instead. Re-organizes some value nodes.
+Make history limits configurable.
 
 ## 0.0.4
 
