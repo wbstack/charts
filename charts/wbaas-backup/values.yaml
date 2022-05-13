@@ -10,8 +10,8 @@ backupSecretKey: key
 backupSecretName: backup-openssl-key
 
 storage:
+  scratchDiskSpace: 16Gi
   gcs:
-    scratchDiskName: logic-backup-scratch-disk
     bucketName: nacho-cheese
     serviceAccountSecretName: some-gcs-sa
     uploadToBucket: true
