@@ -14,14 +14,16 @@ either will be set to use the `db.load` dict or the `db.dump` dict from the valu
 */}}
 
 {{- define "backup.sharedPodConfiguration" -}}
-{{- if .context.Values.gcs.uploadToBucket }}
 volumeMounts:
+  - name: "scratch-volume"
+    mountPath: "/backups/"
+{{- if .context.Values.storage.gcs.uploadToBucket }}
   - name: "service-account-volume"
     mountPath: "/var/run/secret/cloud.google.com"
 lifecycle:
   postStart:
     exec:
-      command: ["gcsfuse", "--key-file", "/var/run/secret/cloud.google.com/key.json", "{{ .context.Values.gcs.bucketName }}", "/mnt/backup-bucket"]
+      command: ["gcsfuse", "--key-file", "/var/run/secret/cloud.google.com/key.json", "{{ .context.Values.storage.gcs.bucketName }}", "/mnt/backup-bucket"]
   preStop:
     exec:
       command: ["fusermount", "-u", /mnt/backup-bucket"]
@@ -46,9 +48,9 @@ env:
 - name: DB_PORT
   value: {{ .db.port | quote }}
 - name: DO_UPLOAD
-  value: {{ if .context.Values.gcs.uploadToBucket }}"1"{{else}}"0"{{end}}
+  value: {{ if .context.Values.storage.gcs.uploadToBucket }}"1"{{else}}"0"{{end}}
 - name: GCS_BUCKET_NAME
-  value: {{ .context.Values.gcs.bucketName | quote }}
+  value: {{ .context.Values.storage.gcs.bucketName | quote }}
 - name: BACKUP_KEY
   valueFrom:
     secretKeyRef:
@@ -62,12 +64,25 @@ env:
 
 Both the restore-pod and the CronJob requires the backup-bucket to be mounted in order for the backups to be persisted.
 This template mounts the `.Values.gcs` of the values file into the template and configures the pod and the job in the same way.
+
+The uid '1234' is defined in the wbaas-backup Dockerfile
+
 */}}
 {{ define "backup.sharedVolumes" }}
-{{- if .gcs.uploadToBucket }}
+securityContext:
+  fsGroup: 1234
 volumes:
+  - name: scratch-volume
+    ephemeral:
+      volumeClaimTemplate:
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          resources:
+            requests:
+              storage: {{ .storage.scratchDiskSpace | quote }}
+{{- if .storage.gcs.uploadToBucket }}
   - name: "service-account-volume"
     secret:
-      secretName: {{ .gcs.serviceAccountSecretName | quote }}
+      secretName: {{ .storage.gcs.serviceAccountSecretName | quote }}
 {{- end }}
 {{ end }}

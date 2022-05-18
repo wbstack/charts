@@ -1,31 +1,36 @@
 image:
   repository: ghcr.io/wmde/wbaas-backup
-  tag: v0.1.6
+  tag: v0.1.7
   pullPolicy: IfNotPresent
 
 restorePodRunning: false
-cronSchedule: "0 0 * * *"
+
+job:
+  failedJobsHistoryLimit: 2
+  successfulJobsHistoryLimit: 2
+  cronSchedule: "0 0 * * *"
 
 backupSecretKey: key
 backupSecretName: backup-openssl-key
 
-gcs:
-  bucketName: nacho-cheese
-  serviceAccountSecretName: some-gcs-sa
-  uploadToBucket: true
+storage:
+  scratchDiskSpace: 16Gi
+  gcs:
+    bucketName: nacho-cheese
+    serviceAccountSecretName: some-gcs-sa
+    uploadToBucket: true
 
 resources:
   job:
     requests:
-      ephemeral-storage: 60Gi
-      cpu: 100m
+      cpu: 10m
       memory: 50Mi
     limits:
       cpu: 750m
       memory: 500Mi
   restorePod:
     requests:
-      cpu: 100m
+      cpu: 10m
       memory: 50Mi
     limits:
       cpu: 750m
