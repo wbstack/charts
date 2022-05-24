@@ -985,6 +985,19 @@ entries:
   ui:
   - apiVersion: v1
     appVersion: "3.0"
+    created: "2022-05-24T12:30:43.311882473Z"
+    description: A Helm chart for Kubernetes
+    digest: 7d1d52bacc51887417842a1e9dfee46c9cda1302c073425224252e32c72bc9f3
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: ui
+    urls:
+    - https://github.com/wbstack/charts/releases/download/ui-0.2.18/ui-0.2.18.tgz
+    version: 0.2.18
+  - apiVersion: v1
+    appVersion: "3.0"
     created: "2022-05-12T12:26:25.302525371Z"
     description: A Helm chart for Kubernetes
     digest: a7c4d9f822e79417ec1fcada5b828ec178bd182a607039e5149c171d29456c08
