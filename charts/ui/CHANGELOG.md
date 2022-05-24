@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.18
+- Bumping image to 3.94 (Implements landing page v1.0)
+
 ## 0.2.17
 - Bumping image to 3.93 (Adds subdomain naming hint)
 
