@@ -69,6 +69,8 @@ spec:
             value: {{ .Values.wbstack.wikiDbProvisionVersion | quote }}
           - name: WBSTACK_WIKI_DB_USE_VERSION
             value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
+          - name: WBSTACK_MAX_PER_USER
+            value: {{ .Values.wbstack.maxWikisPerUser | quote }}
 
 
             {{- if .Values.app.elasticsearch.curlTimeout.indexInit }}
