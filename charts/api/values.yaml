@@ -24,7 +24,7 @@ platform:
   backendMwHost: someHost
 
 wbstack:
-  monitoringEmail: "wb-cloud-monitoring@wikimedia.de"
+  monitoringEmail: "wb-cloud-monitoring@example.com"
   summaryInactiveThreshold:
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
