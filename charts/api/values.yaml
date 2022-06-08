@@ -24,7 +24,9 @@ platform:
   backendMwHost: someHost
 
 wbstack:
-  maxWikisPerUser: 9999
+  monitoringEmail: "wb-cloud-monitoring@example.com"
+  summaryInactiveThreshold:
+  maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
   wikiDbProvisionVersion:

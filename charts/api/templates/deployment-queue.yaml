@@ -71,7 +71,10 @@ spec:
             value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
           - name: WBSTACK_MAX_PER_USER
             value: {{ .Values.wbstack.maxWikisPerUser | quote }}
-
+          - name: WBSTACK_SUMMARY_INACTIVE_THRESHOLD
+            value: {{ .Values.wbstack.summaryInactiveThreshold | quote }}
+          - name: WBSTACK_MONITORING_EMAIL
+            value: {{ .Values.wbstack.monitoringEmail | quote }}
 
             {{- if .Values.app.elasticsearch.curlTimeout.indexInit }}
           - name: CURLOPT_TIMEOUT_ELASTICSEARCH_INIT

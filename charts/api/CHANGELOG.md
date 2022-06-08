@@ -2,9 +2,16 @@
 
 This chart does not yet follow SemVer.
 
+## 0.19.9
+
+- Removing maxWikisPerUser default value 
+- Bump image version to 8x.8.8
+- Adding support for env vars WBSTACK_MONITORING_EMAIL, WBSTACK_SUMMARY_INACTIVE_THRESHOLD
+
 ## 0.19.8
 
 - Allow WBSTACK_MAX_PER_USER to be configurable to limit number of wikis created per user
+
 ## 0.19.7
 
 - Allow CURLOPT_TIMEOUT_ELASTICSEARCH_INIT to be configurable
