@@ -24,7 +24,7 @@ platform:
   backendMwHost: someHost
 
 wbstack:
-  maxWikisPerUser: 9999
+  maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
   wikiDbProvisionVersion:
