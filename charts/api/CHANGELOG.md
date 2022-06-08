@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.19.10
+
+- Use image version to 8x.8.8
 ## 0.19.9
 
 - Removing maxWikisPerUser default value 
