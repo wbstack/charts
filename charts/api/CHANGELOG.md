@@ -11,6 +11,7 @@ This chart does not yet follow SemVer.
 ## 0.19.8
 
 - Allow WBSTACK_MAX_PER_USER to be configurable to limit number of wikis created per user
+
 ## 0.19.7
 
 - Allow CURLOPT_TIMEOUT_ELASTICSEARCH_INIT to be configurable

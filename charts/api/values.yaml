@@ -24,6 +24,7 @@ platform:
   backendMwHost: someHost
 
 wbstack:
+  summaryInactiveThreshold:
   maxWikisPerUser: 9999
   subdomainSuffix: ".undefined.nohost"
   uiurl:
