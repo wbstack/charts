@@ -60,20 +60,7 @@ spec:
           - name: APP_TIMEZONE
             value: {{ .Values.app.timezone | quote }}
 
-          - name: WBSTACK_SUBDOMAIN_SUFFIX
-            value: {{ .Values.wbstack.subdomainSuffix | quote }}
-          - name: WBSTACK_UI_URL
-            value: {{ .Values.wbstack.uiurl | quote }}
-          - name: WBSTACK_WIKI_DB_PROVISION_VERSION
-            value: {{ .Values.wbstack.wikiDbProvisionVersion | quote }}
-          - name: WBSTACK_WIKI_DB_USE_VERSION
-            value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
-          - name: WBSTACK_MAX_PER_USER
-            value: {{ .Values.wbstack.maxWikisPerUser | quote }}
-          - name: WBSTACK_SUMMARY_INACTIVE_THRESHOLD
-            value: {{ .Values.wbstack.summaryInactiveThreshold | quote }}
-          - name: WBSTACK_MONITORING_EMAIL
-            value: {{ .Values.wbstack.monitoringEmail | quote }}
+{{ include "api.commonAppEnvVars" . | indent 10 }}
 
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}

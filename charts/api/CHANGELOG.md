@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.19.11
+
+- Fallback to defaults defined in app
+- deduplicate common app env vars
 ## 0.19.10
 
 - Use image version to 8x.8.8

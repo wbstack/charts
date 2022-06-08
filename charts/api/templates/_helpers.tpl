@@ -47,6 +47,27 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Common lists of environment variables
 */}}
+{{- define "api.commonAppEnvVars" -}}
+- name: WBSTACK_SUBDOMAIN_SUFFIX
+  value: {{ .Values.wbstack.subdomainSuffix | quote }}
+- name: WBSTACK_UI_URL
+  value: {{ .Values.wbstack.uiurl | quote }}
+- name: WBSTACK_WIKI_DB_PROVISION_VERSION
+  value: {{ .Values.wbstack.wikiDbProvisionVersion | quote }}
+- name: WBSTACK_WIKI_DB_USE_VERSION
+  value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
+{{- if .Values.wbstack.maxWikisPerUser }}
+- name: WBSTACK_MAX_PER_USER
+  value: {{ .Values.wbstack.maxWikisPerUser | quote }}
+{{- end }}
+{{- if .Values.wbstack.summaryInactiveThreshold }}
+- name: WBSTACK_SUMMARY_INACTIVE_THRESHOLD
+  value: {{ .Values.wbstack.summaryInactiveThreshold | quote }}
+{{- end }}
+- name: WBSTACK_MONITORING_EMAIL
+  value: {{ .Values.wbstack.monitoringEmail | quote }}
+{{- end -}}
+
 {{- define "api.smtpEnvVars" -}}
 - name: MAIL_HOST
   value: {{ .Values.app.mail.smtphost | quote }}
