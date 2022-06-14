@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.19.12
+- Bump fakerphp/faker from 0.18.0 to 0.19.0
+
 ## 0.19.11
 
 - Fallback to defaults defined in app
