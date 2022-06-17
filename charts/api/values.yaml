@@ -4,6 +4,18 @@ image:
   pullPolicy: IfNotPresent
 
 useProbes: true
+probes:
+  web:
+    livenessProbe:
+      enabled: true
+      timeoutSeconds: 2
+      periodSeconds: 10
+      initialDelaySeconds: 10
+    readinessProbe:
+      enabled: true
+      timeoutSeconds: 2
+      periodSeconds: 10
+      initialDelaySeconds: 10
 
 replicaCount:
   web: 1
