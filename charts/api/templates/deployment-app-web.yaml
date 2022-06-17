@@ -31,14 +31,28 @@ spec:
               containerPort: 80
               protocol: TCP
           {{ if .Values.useProbes }}
+          {{- if .Values.probes.web.livenessProbe.enabled  }}
           livenessProbe:
             httpGet:
               path: /healthz
               port: http
-          readinessProbe:
+            initialDelaySeconds: {{ .Values.probes.web.livenessProbe.initialDelaySeconds }}
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: {{ .Values.probes.web.livenessProbe.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.web.livenessProbe.periodSeconds }}
+          {{ end }}
+          {{- if .Values.probes.web.readinessProbe.enabled  }}
+          readinessProbe: # TODO Write some new endpoint that checks db etc.
             httpGet:
               path: /healthz
               port: http
+            initialDelaySeconds: {{ .Values.probes.web.readinessProbe.initialDelaySeconds }}
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: {{ .Values.probes.web.readinessProbe.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.web.readinessProbe.periodSeconds }}
+          {{ end }}
           {{ end }}
           resources:
             {{- toYaml .Values.resources.web | nindent 12 }}
