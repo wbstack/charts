@@ -12,6 +12,7 @@ image:
 mw:
   settings:
     logToStdErr: false
+    allowedProxyCidr: ""
   db:
     master: someHostName
     replica: someHostName

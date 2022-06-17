@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 0.10.6: Added `mw.settings.allowedProxyCidr` to set $wgCdnServersNoPurge
 - 0.10.5: New MW release with updated CirrusSearch sharding config, we missed one index.
 - 0.10.4: New MW release with CirrusSearch sharding config
 - 0.10.3: Bump version number to trigger new chart release

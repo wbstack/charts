@@ -157,6 +157,9 @@ Common deployment environment variables
 
 {{- end -}}
 
+- name: MW_ALLOWED_PROXY_CIDR
+  value: {{ .Values.mw.settings.allowedProxyCidr }}
+
 {{- end -}}
 
 {{/*
