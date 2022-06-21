@@ -2,8 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.19.14
+- Increase api-backend healthchecks timeout. Make enable/delay/time/period configurable.
 ## 0.19.13
-- Increase api healthchecks timeout. Make enable/delay/time/period configurable.
+- Increase api-web healthchecks timeout. Make enable/delay/time/period configurable.
 
 ## 0.19.12
 - Bump fakerphp/faker from 0.18.0 to 0.19.0
