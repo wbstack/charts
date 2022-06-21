@@ -30,14 +30,30 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          {{ if .Values.useProbes }}
+          {{- if .Values.probes.backend.livenessProbe.enabled  }}
           livenessProbe:
             httpGet:
               path: /backend/healthz
               port: http
-          readinessProbe:
+            initialDelaySeconds: {{ .Values.probes.backend.livenessProbe.initialDelaySeconds }}
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: {{ .Values.probes.backend.livenessProbe.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.backend.livenessProbe.periodSeconds }}
+          {{ end }}
+          {{- if .Values.probes.backend.readinessProbe.enabled  }}
+          readinessProbe: # TODO Write some new endpoint that checks db etc.
             httpGet:
               path: /backend/healthz
               port: http
+            initialDelaySeconds: {{ .Values.probes.backend.readinessProbe.initialDelaySeconds }}
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: {{ .Values.probes.backend.readinessProbe.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.backend.readinessProbe.periodSeconds }}
+          {{ end }}
+          {{ end }}
           resources:
             {{- toYaml .Values.resources.backend | nindent 12 }}
           env:
