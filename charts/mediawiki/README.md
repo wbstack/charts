@@ -1,5 +1,14 @@
 # wbstack mediawiki
 
+## Settings
+### mw.settings.allowedProxyCidr 
+Sets `$wgCdnServersNoPurge` in mediawiki.
+
+In order to see which IP ranges is used for a GKE cluster you can run the following command:
+```
+kubectl get ds kube-proxy -n kube-system -o=jsonpath="{.spec.template.spec.containers[0].command}" | grep -Po '\-\-cluster\-cidr=[^ ]*' | cut -d'=' -f2 | tr -d '"]'
+```
+
 ## Changelog
 
 - 0.10.6: Added `mw.settings.allowedProxyCidr` to set $wgCdnServersNoPurge
