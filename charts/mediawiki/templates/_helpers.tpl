@@ -157,8 +157,10 @@ Common deployment environment variables
 
 {{- end -}}
 
+{{- if .Values.mw.smtp.smtpPasswordSecretName }}
 - name: MW_ALLOWED_PROXY_CIDR
-  value: {{ .Values.mw.settings.allowedProxyCidr }}
+  value: {{ .Values.mw.settings.allowedProxyCidr | quote }}
+{{- end -}}
 
 {{- end -}}
 
