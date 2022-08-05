@@ -64,8 +64,6 @@ Common lists of environment variables
 - name: WBSTACK_SUMMARY_INACTIVE_THRESHOLD
   value: {{ .Values.wbstack.summaryInactiveThreshold | quote }}
 {{- end }}
-- name: WBSTACK_MONITORING_EMAIL
-  value: {{ .Values.wbstack.monitoringEmail | quote }}
 {{- end -}}
 
 {{- define "api.smtpEnvVars" -}}
