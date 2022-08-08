@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/wbstack/api
-  tag: 8x.8.9
+  tag: 8x.9.3
   pullPolicy: IfNotPresent
 
 useProbes: true
@@ -47,7 +47,6 @@ platform:
   backendMwHost: someHost
 
 wbstack:
-  monitoringEmail: "wb-cloud-monitoring@example.com"
   summaryInactiveThreshold:
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
