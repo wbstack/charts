@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.20.0
+- Switch to ingress API version to GA v1 from v1beta1
+
 ## 0.19.15
 - Refactor platform stats
 
