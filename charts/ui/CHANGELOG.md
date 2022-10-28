@@ -2,7 +2,7 @@
 
 This chart does not yet follow SemVer.
 
-## 0.2.19
+## 0.3.0
 - Switch to ingress API version to GA v1 from v1beta1
 
 ## 0.2.18
