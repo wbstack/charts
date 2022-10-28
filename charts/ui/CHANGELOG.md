@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.2.19
+- Switch to ingress API version to GA v1 from v1beta1
+
 ## 0.2.18
 - Bumping image to 3.94 (Implements landing page v1.0)
 
