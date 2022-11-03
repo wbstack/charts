@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/wbstack/ui
-  tag: "3.94"
+  tag: "4.1"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
