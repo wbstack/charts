@@ -883,6 +883,19 @@ entries:
   queryservice-ui:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-11-04T11:11:28.51740046Z"
+    description: A Helm chart for Kubernetes
+    digest: 785b5f11c0b7f32cc4accfc3d7d7848fca399b315b5e54173ea2eb2eb5b4e23b
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: queryservice-ui
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-ui-0.2.0/queryservice-ui-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-02-10T17:14:41.797051356Z"
     description: A Helm chart for Kubernetes
     digest: 3e70aca28bdca22510cba35cf7d8cecac7a42e467be1d8bc992b713933b71fbe
