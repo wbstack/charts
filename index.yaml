@@ -1499,4 +1499,18 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/wbstack-opencura-ingress-0.1.0/wbstack-opencura-ingress-0.1.0.tgz
     version: 0.1.0
+  wikibase-ingress:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-11-15T16:49:28.297106511Z"
+    description: A Helm chart for Kubernetes
+    digest: 533569e89327ef6e053db04451266782c8806e3e9b137eee0972acbdfef3a64d
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: wikibase-ingress
+    urls:
+    - https://github.com/wbstack/charts/releases/download/wikibase-ingress-0.1.1/wikibase-ingress-0.1.1.tgz
+    version: 0.1.1
 generated: "2021-10-12T22:01:06.264880402Z"
