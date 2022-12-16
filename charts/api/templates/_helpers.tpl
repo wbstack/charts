@@ -64,13 +64,13 @@ Common lists of environment variables
 - name: WBSTACK_SUMMARY_INACTIVE_THRESHOLD
   value: {{ .Values.wbstack.summaryInactiveThreshold | quote }}
 {{- end }}
-{{- if .Values.app.contact.mail.recipient }}
+{{- if .Values.wbstack.contact.mail.recipient }}
 - name: WBSTACK_CONTACT_MAIL_RECIPIENT
-  value: {{ .Values.app.contact.mail.recipient | quote }}
+  value: {{ .Values.wbstack.contact.mail.recipient | quote }}
 {{- end }}
-{{- if .Values.app.contact.mail.sender }}
+{{- if .Values.wbstack.contact.mail.sender }}
 - name: WBSTACK_CONTACT_MAIL_SENDER
-  value: {{ .Values.app.contact.mail.sender | quote }}
+  value: {{ .Values.wbstack.contact.mail.sender | quote }}
 {{- end }}
 {{- end -}}
 
