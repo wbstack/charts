@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/wbstack/api
-  tag: 8x.9.3
+  tag: 8x.9.10
   pullPolicy: IfNotPresent
 
 useProbes: true
@@ -61,6 +61,10 @@ app:
   keySecretName: someSecretName
   keySecretKey: someSecretKey
   debug: false
+  contact:
+    mail:
+      recipient: someone@wikimedia.de
+      sender: contact-<subject>@wikibase.cloud
   url: https://api.wbstack.com
   timezone: UTC
   cacheDriver: redis
