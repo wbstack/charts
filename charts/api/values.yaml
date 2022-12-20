@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/wbstack/api
-  tag: 8x.9.3
+  tag: 8x.9.11
   pullPolicy: IfNotPresent
 
 useProbes: true
@@ -53,6 +53,10 @@ wbstack:
   uiurl:
   wikiDbProvisionVersion:
   wikiDbUseVersion:
+  contact:
+    mail:
+      recipient: someone@wikimedia.de
+      sender: contact-<subject>@wikibase.cloud
 
 app:
   name:

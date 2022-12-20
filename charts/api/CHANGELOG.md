@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.20.1
+- Add support for env vars `WBSTACK_CONTACT_MAIL_RECIPIENT` and `WBSTACK_CONTACT_MAIL_SENDER`
+- Bump api image to `8x.9.11`
+
 ## 0.20.0
 - Switch to ingress API version to GA v1 from v1beta1
 
