@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.20.2
+- Add support for env var `WBSTACK_ELASTICSEARCH_ENABLED_BY_DEFAULT`
+
 ## 0.20.1
 - Add support for env vars `WBSTACK_CONTACT_MAIL_RECIPIENT` and `WBSTACK_CONTACT_MAIL_SENDER`
 - Bump api image to `8x.9.11`

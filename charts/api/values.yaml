@@ -53,6 +53,8 @@ wbstack:
   uiurl:
   wikiDbProvisionVersion:
   wikiDbUseVersion:
+  elasticSearch:
+    enabledForNewWikis: false
   contact:
     mail:
       recipient: someone@wikimedia.de
