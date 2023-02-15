@@ -54,7 +54,7 @@ wbstack:
   wikiDbProvisionVersion:
   wikiDbUseVersion:
   elasticSearch:
-    enabledForNewWikis: false
+    enabledByDefault: false
   contact:
     mail:
       recipient: someone@wikimedia.de

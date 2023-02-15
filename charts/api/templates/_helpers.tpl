@@ -72,9 +72,9 @@ Common lists of environment variables
 - name: WBSTACK_CONTACT_MAIL_SENDER
   value: {{ .Values.wbstack.contact.mail.sender | quote }}
 {{- end }}
-{{- if .Values.wbstack.elasticSearch.enabledForNewWikis }}
+{{- if .Values.wbstack.elasticSearch.enabledByDefault }}
 - name: WBSTACK_ELASTICSEARCH_ENABLED_BY_DEFAULT
-  value: {{ .Values.wbstack.elasticSearch.enabledForNewWikis | quote }}
+  value: {{ .Values.wbstack.elasticSearch.enabledByDefault | quote }}
 {{- end }}
 {{- end -}}
 
