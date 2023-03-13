@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.3.1
+- Allow setting additional labels on Deployment Pods
+
 ## 0.3.0
 - Switch to ingress API version to GA v1 from v1beta1
 

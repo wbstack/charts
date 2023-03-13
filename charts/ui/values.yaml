@@ -29,3 +29,5 @@ resources: {}
 nodeSelector: {}
 
 tolerations: []
+
+podLabels: {}
