@@ -11,6 +11,7 @@ kubectl get ds kube-proxy -n kube-system -o=jsonpath="{.spec.template.spec.conta
 
 ## Changelog
 
+- 0.10.7: Set `app.kubernetes.io/version` label based on image tag instead of Chart metadata
 - 0.10.6: Added `mw.settings.allowedProxyCidr` to set $wgCdnServersNoPurge
 - 0.10.5: New MW release with updated CirrusSearch sharding config, we missed one index.
 - 0.10.4: New MW release with CirrusSearch sharding config
