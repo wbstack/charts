@@ -18,7 +18,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: queue
     spec:
-      serviceAccountName: {{ include "api.fullname" . }}-ingresscreator
+      serviceAccountName: {{ include "api.fullname" . }}-defaultrole
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
