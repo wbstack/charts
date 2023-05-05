@@ -78,7 +78,7 @@ Common deployment environment variables
   value: {{ .Values.mw.elasticsearch.secondary.host }}
 - name: MW_SECONDARY_ELASTICSEARCH_PORT
   value: {{ .Values.mw.elasticsearch.secondary.port }}
-- name: MW_SECONDARY_ELASTICSEARCH_es6
+- name: MW_SECONDARY_ELASTICSEARCH_ES6
   value: {{ .Values.mw.elasticsearch.secondary.es6 }}
 - name: MW_MAILGUN_DISABLED
 {{- if .Values.mw.mailgun.enabled }}
