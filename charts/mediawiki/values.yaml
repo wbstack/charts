@@ -23,8 +23,15 @@ mw:
     # passwordSecretName:
     # passwordSecretKey:
   elasticsearch:
-    host: someOtherElasticsearchServer
-    port: 9200
+    primary:
+      host: someElasticsearchServer
+      port: 9200
+      es6: false
+    secondary:
+      enabled: false
+      host: someOtherElasticsearchServer
+      port: 9200
+      es6: false
   mail:
     domain: somedomain.name
   mailgun:

@@ -66,10 +66,20 @@ Common deployment environment variables
       name: {{ .Values.mw.redis.passwordSecretName | quote }}
       key: {{ .Values.mw.redis.passwordSecretKey | quote }}
 {{- end }}
-- name: MW_ELASTICSEARCH_HOST
-  value: {{ .Values.mw.elasticsearch.host }}
-- name: MW_ELASTICSEARCH_PORT
-  value: {{ .Values.mw.elasticsearch.port | quote }}
+- name: MW_PRIMARY_ELASTICSEARCH_HOST
+  value: {{ .Values.mw.elasticsearch.primary.host }}
+- name: MW_PRIMARY_ELASTICSEARCH_PORT
+  value: {{ .Values.mw.elasticsearch.primary.port }}
+- name: MW_PRIMARY_ELASTICSEARCH_ES6
+  value: {{ .Values.mw.elasticsearch.primary.es6 }}
+- name: MW_SECONDARY_ELASTICSEARCH_ENABLED
+  value: {{ .Values.mw.elasticsearch.secondary.enabled }}
+- name: MW_SECONDARY_ELASTICSEARCH_HOST
+  value: {{ .Values.mw.elasticsearch.secondary.host }}
+- name: MW_SECONDARY_ELASTICSEARCH_PORT
+  value: {{ .Values.mw.elasticsearch.secondary.port }}
+- name: MW_SECONDARY_ELASTICSEARCH_es6
+  value: {{ .Values.mw.elasticsearch.secondary.es6 }}
 - name: MW_MAILGUN_DISABLED
 {{- if .Values.mw.mailgun.enabled }}
   value: "no"
