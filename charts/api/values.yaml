@@ -75,7 +75,8 @@ app:
   jwtSecretSecretName: SomeSecretName
   jwtSecretSecretKey: SomeSecretKey
   queryServiceHost: someHost:9999
-  elasticSearchHost: someHost:1234
+  primaryElasticSearchHost: someHost:1234
+  secondaryElasticSearchHost: someOtherHost:1234
   elasticsearch:
     curlTimeout:
       indexInit: 500
