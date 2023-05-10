@@ -244,6 +244,8 @@ spec:
           volumeMounts:
             - name: "service-account-wbstack-api"
               mountPath: "/var/run/secret/cloud.google.com"
+          - name: API_JOB_CONCURRENCY_LIMIT
+            value: {{ .Values.queue.apiJobConcurrencyLimit | quote }}
       volumes:
         - name: "service-account-wbstack-api"
           secret:
