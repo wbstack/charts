@@ -67,19 +67,19 @@ Common deployment environment variables
       key: {{ .Values.mw.redis.passwordSecretKey | quote }}
 {{- end }}
 - name: MW_PRIMARY_ELASTICSEARCH_HOST
-  value: {{ .Values.mw.elasticsearch.primary.host }}
+  value: {{ .Values.mw.elasticsearch.primary.host | quote }}
 - name: MW_PRIMARY_ELASTICSEARCH_PORT
-  value: {{ .Values.mw.elasticsearch.primary.port }}
+  value: {{ .Values.mw.elasticsearch.primary.port | quote }}
 - name: MW_PRIMARY_ELASTICSEARCH_ES6
-  value: {{ .Values.mw.elasticsearch.primary.es6 }}
+  value: {{ .Values.mw.elasticsearch.primary.es6 | quote }}
 - name: MW_SECONDARY_ELASTICSEARCH_ENABLED
-  value: {{ .Values.mw.elasticsearch.secondary.enabled }}
+  value: {{ .Values.mw.elasticsearch.secondary.enabled | quote }}
 - name: MW_SECONDARY_ELASTICSEARCH_HOST
-  value: {{ .Values.mw.elasticsearch.secondary.host }}
+  value: {{ .Values.mw.elasticsearch.secondary.host | quote }}
 - name: MW_SECONDARY_ELASTICSEARCH_PORT
-  value: {{ .Values.mw.elasticsearch.secondary.port }}
+  value: {{ .Values.mw.elasticsearch.secondary.port | quote }}
 - name: MW_SECONDARY_ELASTICSEARCH_ES6
-  value: {{ .Values.mw.elasticsearch.secondary.es6 }}
+  value: {{ .Values.mw.elasticsearch.secondary.es6 | quote }}
 - name: MW_MAILGUN_DISABLED
 {{- if .Values.mw.mailgun.enabled }}
   value: "no"
