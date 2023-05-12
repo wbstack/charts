@@ -76,6 +76,14 @@ Common lists of environment variables
 - name: WBSTACK_ELASTICSEARCH_ENABLED_BY_DEFAULT
   value: {{ .Values.wbstack.elasticSearch.enabledByDefault | quote }}
 {{- end }}
+{{- if .Values.wbstack.elasticSearch.host.primary }}
+- name: WBSTACK_PRIMARY_ELASTICSEARCH_HOST
+  value: {{ .Values.wbstack.elasticSearch.host.primary | quote }}
+{{- end }}
+{{- if .Values.wbstack.elasticSearch.host.secondary }}
+- name: WBSTACK_SECONDARY_ELASTICSEARCH_HOST
+  value: {{ .Values.wbstack.elasticSearch.host.secondary | quote }}
+{{- end }}
 {{- end -}}
 
 {{- define "api.smtpEnvVars" -}}

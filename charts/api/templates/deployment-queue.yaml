@@ -68,10 +68,6 @@ spec:
             value: {{ .Values.app.elasticsearch.curlTimeout.indexInit | quote }}
             {{- end }}
 
-          - name: PRIMARY_ELASTICSEARCH_HOST
-            value: {{ .Values.app.primaryElasticSearchHost | quote }}
-          - name: SECONDARY_ELASTICSEARCH_HOST
-            value: {{ .Values.app.secondaryElasticSearchHost | quote }}
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
           - name: PLATFORM_MW_BACKEND_HOST
