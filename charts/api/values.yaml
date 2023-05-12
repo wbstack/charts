@@ -56,7 +56,7 @@ wbstack:
   elasticSearch:
     host:
       primary: someHost:1234
-      secondary: someOtherHost:1234
+      # secondary: someOtherHost:1234
     enabledByDefault: false
   contact:
     mail:
