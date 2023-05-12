@@ -48,6 +48,7 @@ platform:
 
 wbstack:
   summaryInactiveThreshold:
+  hardDeleteThreshold:
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:

@@ -56,9 +56,9 @@ Common lists of environment variables
   value: {{ .Values.wbstack.wikiDbProvisionVersion | quote }}
 - name: WBSTACK_WIKI_DB_USE_VERSION
   value: {{ .Values.wbstack.wikiDbUseVersion | quote }}
-{{- if .Values.wbstack.maxWikisPerUser }}
-- name: WBSTACK_MAX_PER_USER
-  value: {{ .Values.wbstack.maxWikisPerUser | quote }}
+{{- if .Values.wbstack.hardDeleteThreshold }}
+- name: WBSTACK_HARD_DELETE_THRESHOLD
+  value: {{ .Values.wbstack.hardDeleteThreshold | quote }}
 {{- end }}
 {{- if .Values.wbstack.summaryInactiveThreshold }}
 - name: WBSTACK_SUMMARY_INACTIVE_THRESHOLD
