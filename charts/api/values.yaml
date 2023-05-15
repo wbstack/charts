@@ -36,6 +36,7 @@ replicaCount:
 
 queue:
   apiJobConcurrencyLimit: 8
+  apiJobNamespace: api-jobs
   mw:
     db:
       readHost: someHost

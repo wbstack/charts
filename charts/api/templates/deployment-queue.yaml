@@ -240,12 +240,14 @@ spec:
                 name: {{ template "api.fullname" . }}-app-passport-keys
                 {{- end }}
                 key: oauth-private.key
+          - name: API_JOB_CONCURRENCY_LIMIT
+            value: {{ .Values.queue.apiJobConcurrencyLimit | quote }}
+          - name: API_JOB_NAMESPACE
+            value: {{ .Values.queue.apiJobNamespace }}
       {{- if .Values.app.gce.serviceAccountSecret }}
           volumeMounts:
             - name: "service-account-wbstack-api"
               mountPath: "/var/run/secret/cloud.google.com"
-          - name: API_JOB_CONCURRENCY_LIMIT
-            value: {{ .Values.queue.apiJobConcurrencyLimit | quote }}
       volumes:
         - name: "service-account-wbstack-api"
           secret:
