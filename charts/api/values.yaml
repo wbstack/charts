@@ -35,7 +35,6 @@ replicaCount:
   queue: 1
 
 queue:
-  apiJobConcurrencyLimit: 8
   apiJobNamespace: api-jobs
   mw:
     db:
