@@ -71,15 +71,27 @@ Common deployment environment variables
 - name: MW_PRIMARY_ELASTICSEARCH_PORT
   value: {{ .Values.mw.elasticsearch.primary.port | quote }}
 - name: MW_PRIMARY_ELASTICSEARCH_ES6
-  value: {{ .Values.mw.elasticsearch.primary.es6 | quote }}
+{{- if .Values.mw.elasticsearch.primary.es6 }}
+  value: "yes"
+{{- else }}
+  value: "no"
+{{- end }}
 - name: MW_SECONDARY_ELASTICSEARCH_ENABLED
-  value: {{ .Values.mw.elasticsearch.secondary.enabled | quote }}
+{{- if .Values.mw.elasticsearch.secondary.enabled }}
+  value: "yes"
+{{- else }}
+  value: "no"
+{{- end }}
 - name: MW_SECONDARY_ELASTICSEARCH_HOST
   value: {{ .Values.mw.elasticsearch.secondary.host | quote }}
 - name: MW_SECONDARY_ELASTICSEARCH_PORT
   value: {{ .Values.mw.elasticsearch.secondary.port | quote }}
 - name: MW_SECONDARY_ELASTICSEARCH_ES6
-  value: {{ .Values.mw.elasticsearch.secondary.es6 | quote }}
+{{- if .Values.mw.elasticsearch.secondary.es6 }}
+  value: "yes"
+{{- else }}
+  value: "no"
+{{- end }}
 - name: MW_MAILGUN_DISABLED
 {{- if .Values.mw.mailgun.enabled }}
   value: "no"
