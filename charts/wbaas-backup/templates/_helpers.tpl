@@ -47,6 +47,8 @@ env:
   value: {{ .db.hostname | quote }}
 - name: DB_PORT
   value: {{ .db.port | quote }}
+- name: MYDUMPER_VERBOSE_LEVEL
+  value: {{ .db.verbosity | quote }}
 - name: DO_UPLOAD
   value: {{ if .context.Values.storage.gcs.uploadToBucket }}"1"{{else}}"0"{{end}}
 - name: GCS_BUCKET_NAME
