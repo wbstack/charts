@@ -1447,6 +1447,18 @@ entries:
   wbaas-backup:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2023-05-23T10:32:30.493930413Z"
+    description: A Helm chart for WbaaS K8s Cronjob Backups
+    digest: f700d077991afbe1ee9aabf45d1bd46efd6da5d230f43ffc45e081fe4a4ce570
+    maintainers:
+    - name: WMDE
+      url: https://github.com/wmde
+    name: wbaas-backup
+    urls:
+    - https://github.com/wbstack/charts/releases/download/wbaas-backup-0.0.6/wbaas-backup-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-05-18T11:17:13.727499088Z"
     description: A Helm chart for WbaaS K8s Cronjob Backups
     digest: d558e1a9f88c3a001f8fddd1614d87d2de730cd5342a6167c725b846bb0f181e
