@@ -2,6 +2,10 @@
 
 This chart does not yet follow Semantic versioning.
 
+## 0.0.6
+
+Add value for setting `MYDUMPER_VERBOSE_LEVEL` (db.load.verbosity & db.dump.verbosity)
+
 ## 0.0.5
 
 Removes `ephemeral-storage` request, adds a temporary volume instead. Re-organizes some value nodes.

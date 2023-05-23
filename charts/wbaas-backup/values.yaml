@@ -43,9 +43,11 @@ db:
     hostname: sql-mariadb-primary.default.svc.cluster.local
     username: root
     port: 3306
+    verbosity: 3
   dump:
     passwordSecretName: sql-secrets-init-passwords
     passwordSecretKey: SQL_INIT_PASSWORD_BACKUPS
     hostname: sql-mariadb-secondary.default.svc.cluster.local
     username: backup-manager
     port: 3306
+    verbosity: 3
