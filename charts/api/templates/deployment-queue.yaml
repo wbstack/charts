@@ -18,7 +18,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: queue
     spec:
-      serviceAccountName: {{ include "api.fullname" . }}-ingresscreator
+      serviceAccountName: {{ include "api.fullname" . }}-defaultrole
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -240,6 +240,8 @@ spec:
                 name: {{ template "api.fullname" . }}-app-passport-keys
                 {{- end }}
                 key: oauth-private.key
+          - name: API_JOB_NAMESPACE
+            value: {{ .Values.queue.apiJobNamespace }}
       {{- if .Values.app.gce.serviceAccountSecret }}
           volumeMounts:
             - name: "service-account-wbstack-api"

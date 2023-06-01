@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.21.0
+- Extend permissions for Kubernetes ServiceAccount role
+- Add dedicated Kubernetes namespace to run jobs in
+
 ## 0.20.2
 - Add support for env var `WBSTACK_ELASTICSEARCH_ENABLED_BY_DEFAULT`
 

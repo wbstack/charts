@@ -35,6 +35,7 @@ replicaCount:
   queue: 1
 
 queue:
+  apiJobNamespace: api-jobs
   mw:
     db:
       readHost: someHost
