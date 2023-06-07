@@ -1,0 +1,12 @@
+---
+
+clusterName: "multi"
+nodeGroup: "client"
+
+roles:
+  master: "false"
+  ingest: "false"
+  data: "false"
+
+persistence:
+  enabled: false
