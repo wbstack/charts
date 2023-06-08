@@ -516,6 +516,23 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/api-0.2.0/api-0.2.0.tgz
     version: 0.2.0
+  elasticsearch:
+  - apiVersion: v1
+    appVersion: 6.8.22-wmde1
+    created: "2023-06-08T15:14:57.049293512Z"
+    description: Official Elastic helm chart for Elasticsearch
+    digest: 6c0cbdbef193c6c738454ea39b03e5f033336d88c9e9d73ecb252b993b7d3bec
+    home: https://github.com/elastic/helm-charts
+    icon: https://helm.elastic.co/icons/elasticsearch.png
+    maintainers:
+    - email: helm-charts@elastic.co
+      name: Elastic
+    name: elasticsearch
+    sources:
+    - https://github.com/elastic/elasticsearch
+    urls:
+    - https://github.com/wbstack/charts/releases/download/elasticsearch-6.8.22-wmde1/elasticsearch-6.8.22-wmde1.tgz
+    version: 6.8.22-wmde1
   mediawiki:
   - apiVersion: v1
     appVersion: "1.37"
