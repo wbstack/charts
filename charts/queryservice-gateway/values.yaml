@@ -1,11 +1,12 @@
 replicaCount: 1
 
 platform:
+  responseCacheTTL: 3600
   apiBackendHost: api-backend
 
 image:
   repository: ghcr.io/wbstack/queryservice-gateway
-  tag: "2.1"
+  tag: "2.2"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
