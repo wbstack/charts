@@ -27,6 +27,8 @@ spec:
           env:
             - name: PLATFORM_API_BACKEND_HOST
               value: {{ .Values.platform.apiBackendHost }}
+            - name: RESPONSE_CACHE_TTL
+              value: {{ .Values.platform.responseCacheTTL | quote }}
           ports:
             - name: http
               containerPort: 80
