@@ -64,6 +64,10 @@ Common lists of environment variables
 - name: WBSTACK_SUMMARY_INACTIVE_THRESHOLD
   value: {{ .Values.wbstack.summaryInactiveThreshold | quote }}
 {{- end }}
+{{- if .Values.wbstack.summarySignupRanges }}
+- name: WBSTACK_SUMMARY_SIGNUP_RANGES
+  value: {{ join ',' .Values.wbstack.summarySignupRanges | quote }}
+{{- end }}
 {{- if .Values.wbstack.contact.mail.recipient }}
 - name: WBSTACK_CONTACT_MAIL_RECIPIENT
   value: {{ .Values.wbstack.contact.mail.recipient | quote }}
