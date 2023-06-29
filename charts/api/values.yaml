@@ -49,7 +49,7 @@ platform:
 
 wbstack:
   summaryInactiveThreshold:
-  summarySignupRanges: []
+  summaryCreationRateRanges: []
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
