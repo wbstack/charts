@@ -66,7 +66,7 @@ Common lists of environment variables
 {{- end }}
 {{- if .Values.wbstack.summaryCreationRateRanges }}
 - name: WBSTACK_SUMMARY_CREATION_RATE_RANGES
-  value: {{ join ',' .Values.wbstack.summaryCreationRateRanges | quote }}
+  value: {{ join "," .Values.wbstack.summaryCreationRateRanges | quote }}
 {{- end }}
 {{- if .Values.wbstack.contact.mail.recipient }}
 - name: WBSTACK_CONTACT_MAIL_RECIPIENT
