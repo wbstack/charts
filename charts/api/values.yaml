@@ -49,6 +49,10 @@ platform:
 
 wbstack:
   summaryInactiveThreshold:
+  # Ranges are passed in duration strings as expected by a PHP DateInterval
+  # constructor: https://www.php.net/manual/en/dateinterval.construct.php
+  # E.g. PT6H (6 hours) or P30D (30 days)
+  summaryCreationRateRanges: []
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
