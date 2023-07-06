@@ -5,7 +5,7 @@ maintainers:
 - email: helm-charts@elastic.co
   name: Elastic
 name: elasticsearch-legacy
-version: 6.8.22-wmde1
+version: 6.8.22-wmde2
 appVersion: 6.8.22-wmde1
 sources:
   - https://github.com/elastic/elasticsearch
