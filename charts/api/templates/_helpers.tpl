@@ -68,6 +68,14 @@ Common lists of environment variables
 - name: WBSTACK_SUMMARY_CREATION_RATE_RANGES
   value: {{ join "," .Values.wbstack.summaryCreationRateRanges | quote }}
 {{- end }}
+{{- if .Values.wbstack.signupThrottlingLimit }}
+- name: WBSTACK_SIGNUP_THROTTLING_LIMIT
+  value: {{ .Values.wbstack.signupThrottlingLimit | quote }}
+{{- end }}
+{{- if .Values.wbstack.signupThrottlingRange }}
+- name: WBSTACK_SIGNUP_THROTTLING_RANGE
+  value: {{ .Values.wbstack.signupThrottlingRange | quote }}
+{{- end }}
 {{- if .Values.wbstack.contact.mail.recipient }}
 - name: WBSTACK_CONTACT_MAIL_RECIPIENT
   value: {{ .Values.wbstack.contact.mail.recipient | quote }}
