@@ -53,6 +53,8 @@ wbstack:
   # constructor: https://www.php.net/manual/en/dateinterval.construct.php
   # E.g. PT6H (6 hours) or P30D (30 days)
   summaryCreationRateRanges: []
+  signupThrottlingLimit:
+  signupThrottlingRange:
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
