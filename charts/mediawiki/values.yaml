@@ -25,6 +25,7 @@ mw:
   elasticsearch:
     host: someOtherElasticsearchServer
     port: 9200
+    es6: false
   mail:
     domain: somedomain.name
   mailgun:
