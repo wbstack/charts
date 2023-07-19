@@ -562,6 +562,19 @@ entries:
   mediawiki:
   - apiVersion: v1
     appVersion: "1.37"
+    created: "2023-07-19T12:13:40.327228386Z"
+    description: A Helm wbstack flavoured MediaWiki
+    digest: 4a4ffd6a859acd179b1ab5e85ed4e0c037962f4a40d4395d2739eb865d1e33f0
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: mediawiki
+    urls:
+    - https://github.com/wbstack/charts/releases/download/mediawiki-0.11.0/mediawiki-0.11.0.tgz
+    version: 0.11.0
+  - apiVersion: v1
+    appVersion: "1.37"
     created: "2022-06-21T15:28:15.264506081Z"
     description: A Helm wbstack flavoured MediaWiki
     digest: e380fd3b86c6866438dc07e28a3e6470972c56bc03f96ee7317de63f5b59309f
