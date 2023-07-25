@@ -175,6 +175,8 @@ spec:
             value: {{ .Values.app.cacheDriver | quote }}
           - name: QUEUE_CONNECTION
             value: {{ .Values.app.queueConnection | quote }}
+          - name: QUEUE_BACKOFF
+            value: {{ join "," .Values.queue.backoff | quote }}
           - name: JWT_SECRET
             valueFrom:
               secretKeyRef:
