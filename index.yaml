@@ -572,6 +572,23 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/elasticsearch-6.8.22-wmde1/elasticsearch-6.8.22-wmde1.tgz
     version: 6.8.22-wmde1
+  elasticsearch-legacy:
+  - apiVersion: v1
+    appVersion: 6.8.22-wmde1
+    created: "2023-07-26T14:15:08.649359976Z"
+    description: Official Elastic helm chart for Elasticsearch
+    digest: bde824fd2b2037c73eec5ac97448e2570f6d6096ed74ed195cf10b9798523450
+    home: https://github.com/elastic/helm-charts
+    icon: https://helm.elastic.co/icons/elasticsearch.png
+    maintainers:
+    - email: helm-charts@elastic.co
+      name: Elastic
+    name: elasticsearch-legacy
+    sources:
+    - https://github.com/elastic/elasticsearch
+    urls:
+    - https://github.com/wbstack/charts/releases/download/elasticsearch-legacy-6.8.22-wmde2/elasticsearch-legacy-6.8.22-wmde2.tgz
+    version: 6.8.22-wmde2
   mediawiki:
   - apiVersion: v1
     appVersion: "1.37"
