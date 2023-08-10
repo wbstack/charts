@@ -13,12 +13,17 @@ job:
 backupSecretKey: key
 backupSecretName: backup-openssl-key
 
+scratchDiskSpace: 16Gi
+
 storage:
-  scratchDiskSpace: 16Gi
-  gcs:
-    bucketName: nacho-cheese
-    serviceAccountSecretName: some-gcs-sa
-    uploadToBucket: true
+  bucketName: nacho-cheese
+  uploadToBucket: true
+  accessKeySecretName: gcs-hmac-key
+  accessKeySecretKey: access-key
+  secretKeySecretName: gcs-hmac-key
+  secretKeySecretKey: secret-key
+  endpoint: https://storage.googleapis.com
+  signatureVersion: S3v2
 
 resources:
   job:
