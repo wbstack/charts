@@ -47,13 +47,13 @@ env:
 - name: STORAGE_ACCESS_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .storage.accessKeySecretName | quote }}
-      key: {{ .storage.accessKeySecretKey | quote }}
+      name: {{ .context.Values.storage.accessKeySecretName | quote }}
+      key: {{ .context.Values.storage.accessKeySecretKey | quote }}
 - name: STORAGE_SECRET_KEY
   valueFrom:
     secretKeyRef:
-      name: {{ .storage.secretKeySecretName | quote }}
-      key: {{ .storage.secretKeySecretKey | quote }}
+      name: {{ .context.Values.storage.secretKeySecretName | quote }}
+      key: {{ .context.Values.storage.secretKeySecretKey | quote }}
 - name: STORAGE_ENDPOINT
   value: {{ .context.Values.storage.endpoint | quote }}
 - name: BACKUP_KEY
@@ -84,5 +84,5 @@ volumes:
           accessModes: [ "ReadWriteOnce" ]
           resources:
             requests:
-              storage: {{ .scratchDiskSpace | quote }}
+              storage: {{ . | quote }}
 {{ end }}
