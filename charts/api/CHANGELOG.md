@@ -2,6 +2,13 @@
 
 This chart does not yet follow SemVer.
 
+## 0.25.0
+- Refactor Recaptcha values
+    - renamed env vars to `RECAPTCHA_V3_*`
+    - added env var `RECAPTCHA_V3_MAX_SCORE`
+    - removed from all deployments except api-app-web
+    - removed 'hide badge' value
+
 ## 0.21.0
 - Extend permissions for Kubernetes ServiceAccount role
 - Add dedicated Kubernetes namespace to run jobs in

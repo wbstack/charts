@@ -94,13 +94,6 @@ spec:
           - name: MAIL_FROM_NAME
             value: {{ .Values.app.mail.fromname | quote }}
 
-          - name: INVISIBLE_RECAPTCHA_SITEKEY
-            value: {{ .Values.app.recaptcha.sitekey | quote }}
-          - name: INVISIBLE_RECAPTCHA_SECRETKEY
-            value: {{ .Values.app.recaptcha.secret | quote }}
-          - name: INVISIBLE_RECAPTCHA_BADGEHIDE
-            value: {{ .Values.app.recaptcha.badgehide | quote }}
-
           - name: ROUTES_LOAD_WEB
             value: "1"
           - name: ROUTES_LOAD_BACKEND

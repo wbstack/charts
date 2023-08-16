@@ -133,13 +133,10 @@ app:
     # smtpPasswordSecretName: ""
     # smtpPasswordSecretKey: ""
   recaptcha:
-    sitekey: ""
-    # sitekeySecretName: ""
-    # sitekeySecretKey: ""
     secret: ""
     # secretSecretName: ""
     # secretSecretKey: ""
-    badgehide: true
+    maxScore: 0.5
   gce:
     existingSecret:
     # existingSecret: foo
