@@ -133,9 +133,8 @@ app:
     # smtpPasswordSecretName: ""
     # smtpPasswordSecretKey: ""
   recaptcha:
-    secret: ""
-    # secretSecretName: ""
-    # secretSecretKey: ""
+    secretSecretName: ""
+    secretSecretKey: ""
     maxScore: 0.5
   gce:
     existingSecret:
