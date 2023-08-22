@@ -5,7 +5,7 @@ This chart does not yet follow SemVer.
 ## 0.25.0
 - Refactor Recaptcha values
     - renamed env vars to `RECAPTCHA_V3_*`
-    - added env var `RECAPTCHA_V3_MAX_SCORE`
+    - added env var `RECAPTCHA_V3_MIN_SCORE`
     - removed from all deployments except api-app-web
     - removed 'hide badge' value
 

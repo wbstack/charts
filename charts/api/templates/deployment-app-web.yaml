@@ -140,9 +140,9 @@ spec:
                 name: {{ .Values.app.recaptcha.secretSecretName | quote }}
                 key: {{ .Values.app.recaptcha.secretSecretKey | quote }}
           {{- end }}
-          {{- if .Values.app.recaptcha.maxScore }}
-          - name: RECAPTCHA_V3_MAX_SCORE
-            value: {{ .Values.app.recaptcha.maxScore | quote }}
+          {{- if .Values.app.recaptcha.minScore }}
+          - name: RECAPTCHA_V3_MIN_SCORE
+            value: {{ .Values.app.recaptcha.minScore | quote }}
           {{- end }}
 
           - name: GOOGLE_CLOUD_PROJECT_ID
