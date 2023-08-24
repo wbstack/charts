@@ -165,13 +165,13 @@ Common deployment environment variables
       key: {{ .Values.mw.smtp.smtpPasswordSecretKey | quote }}
   {{- end }}
 
-{{- end -}}
-
-{{- if .Values.mw.settings.allowedProxyCidr }}
+{{- end }}
 - name: MW_ALLOWED_PROXY_CIDR
-  value: {{ .Values.mw.settings.allowedProxyCidr | quote }}
-{{- end -}}
-
+  valueFrom:
+    configMapKeyRef:
+      name: cluster
+      key: ipv4_cidr
+      optional: true
 {{- end -}}
 
 {{/*
