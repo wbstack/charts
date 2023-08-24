@@ -235,6 +235,12 @@ spec:
                 name: {{ template "api.fullname" . }}-app-passport-keys
                 {{- end }}
                 key: oauth-private.key
+          - name: TRUSTED_PROXY_PROXIES
+            valueFrom:
+              configMapKeyRef:
+                name: cluster
+                key: ipv4_cidr
+                optional: true
       {{- if .Values.app.gce.serviceAccountSecret }}
           volumeMounts:
             - name: "service-account-wbstack-api"

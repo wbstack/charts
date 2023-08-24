@@ -87,13 +87,7 @@ Common lists of environment variables
 {{- if .Values.wbstack.elasticSearch.enabledByDefault }}
 - name: WBSTACK_ELASTICSEARCH_ENABLED_BY_DEFAULT
   value: {{ .Values.wbstack.elasticSearch.enabledByDefault | quote }}
-{{- end }}
-- name: TRUSTED_PROXY_PROXIES
-  valueFrom:
-    configMapKeyRef:
-      name: cluster
-      key: ipv4_cidr
-      optional: true
+{{- end -}}
 {{- end -}}
 
 {{- define "api.smtpEnvVars" -}}
