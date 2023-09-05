@@ -2,7 +2,7 @@
 
 This chart does not yet follow SemVer.
 
-## 0.25.0
+## 0.26.0
 - Refactor Recaptcha values
     - renamed env vars to `RECAPTCHA_V3_*`
     - added env var `RECAPTCHA_V3_MIN_SCORE`
