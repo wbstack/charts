@@ -77,7 +77,7 @@ Common deployment environment variables
   value: {{ .Values.mw.writeOnlyElasticsearch.host | quote }}
 - name: MW_WRITE_ONLY_ELASTICSEARCH_PORT
   value: {{ .Values.mw.writeOnlyElasticsearch.port | quote }}
-- name: MW_WRITE_ONLY_ELASTICSEARCH_ES5
+- name: MW_WRITE_ONLY_ELASTICSEARCH_ES6
   value: {{ .Values.mw.writeOnlyElasticsearch.es6 | quote }}
 {{- end }}
 - name: MW_MAILGUN_DISABLED

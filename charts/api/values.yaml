@@ -148,6 +148,11 @@ app:
     tracingEnabled: false
     errorReportingEnabled: false
 
+trustedProxy:
+  # if planning to use this, pass a list of proxy IPs or CIDRs:
+  # ['10.0.1.100', '10.0.1.101']
+  proxies: null
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

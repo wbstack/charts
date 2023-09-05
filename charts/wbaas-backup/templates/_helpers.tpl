@@ -17,17 +17,6 @@ either will be set to use the `db.load` dict or the `db.dump` dict from the valu
 volumeMounts:
   - name: "scratch-volume"
     mountPath: "/backups/"
-{{- if .context.Values.storage.gcs.uploadToBucket }}
-  - name: "service-account-volume"
-    mountPath: "/var/run/secret/cloud.google.com"
-lifecycle:
-  postStart:
-    exec:
-      command: ["gcsfuse", "--key-file", "/var/run/secret/cloud.google.com/key.json", "{{ .context.Values.storage.gcs.bucketName }}", "/mnt/backup-bucket"]
-  preStop:
-    exec:
-      command: ["fusermount", "-u", /mnt/backup-bucket"]
-{{- end }}
 securityContext:
   privileged: true
   capabilities:
@@ -50,9 +39,23 @@ env:
 - name: MYDUMPER_VERBOSE_LEVEL
   value: {{ .db.verbosity | quote }}
 - name: DO_UPLOAD
-  value: {{ if .context.Values.storage.gcs.uploadToBucket }}"1"{{else}}"0"{{end}}
-- name: GCS_BUCKET_NAME
-  value: {{ .context.Values.storage.gcs.bucketName | quote }}
+  value: {{ if .context.Values.storage.uploadToBucket }}"1"{{else}}"0"{{end}}
+- name: STORAGE_BUCKET_NAME
+  value: {{ .context.Values.storage.bucketName | quote }}
+- name: STORAGE_SIGNATURE_VERSION
+  value: {{ .context.Values.storage.signatureVersion | quote }}
+- name: STORAGE_ACCESS_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .context.Values.storage.accessKeySecretName | quote }}
+      key: {{ .context.Values.storage.accessKeySecretKey | quote }}
+- name: STORAGE_SECRET_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .context.Values.storage.secretKeySecretName | quote }}
+      key: {{ .context.Values.storage.secretKeySecretKey | quote }}
+- name: STORAGE_ENDPOINT
+  value: {{ .context.Values.storage.endpoint | quote }}
 - name: BACKUP_KEY
   valueFrom:
     secretKeyRef:
@@ -81,10 +84,5 @@ volumes:
           accessModes: [ "ReadWriteOnce" ]
           resources:
             requests:
-              storage: {{ .storage.scratchDiskSpace | quote }}
-{{- if .storage.gcs.uploadToBucket }}
-  - name: "service-account-volume"
-    secret:
-      secretName: {{ .storage.gcs.serviceAccountSecretName | quote }}
-{{- end }}
+              storage: {{ . | quote }}
 {{ end }}

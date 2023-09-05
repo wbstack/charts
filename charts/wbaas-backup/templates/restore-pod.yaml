@@ -13,7 +13,7 @@ spec:
     resources:
       {{- toYaml .Values.resources.restorePod | nindent 6 }}
 {{ include "backup.sharedPodConfiguration" ( dict "db" .Values.db.load "context" $ ) | nindent 4 }}
-{{ include "backup.sharedVolumes" ( dict "storage" .Values.storage ) | nindent 2 }}
+{{ include "backup.sharedVolumes" .Values.scratchDiskSpace | nindent 2 }}
   restartPolicy: Never
 
 {{- end }}
