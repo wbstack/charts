@@ -124,6 +124,10 @@ spec:
 
           - name: LOG_CHANNEL
             value: stderr
+          {{- if .Values.app.logLevel }}
+          - name: LOG_LEVEL
+            value: {{ .Values.app.logLevel | quote }}
+          {{- end }}
           - name: STACKDRIVER_ENABLED
             value: {{ .Values.app.stackdriver.enabled | quote }}
           - name: STACKDRIVER_PROJECT_ID

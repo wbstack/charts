@@ -73,6 +73,7 @@ wbstack:
 app:
   name:
   env: production
+  logLevel: info
   # referring to a k8s secret key/name which holds the app key
   keySecretName: someSecretName
   keySecretKey: someSecretKey
