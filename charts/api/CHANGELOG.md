@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.26.1
+- Add env var `LOG_LEVEL` (default `info`)
+
 ## 0.26.0
 - Refactor Recaptcha values
     - renamed env vars to `RECAPTCHA_V3_*`
