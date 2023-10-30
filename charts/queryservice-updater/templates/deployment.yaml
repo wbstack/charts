@@ -39,6 +39,10 @@ spec:
               value: {{ .Values.app.sleepTime| quote }}
             - name: WBSTACK_API_ENDPOINT
               value: {{ .Values.app.getBatchesEndpoint | quote }}
+            - name: WBSTACK_API_ENDPOINT_MARK_DONE
+              value: {{ .Values.app.markDoneEndpoint | quote }}
+            - name: WBSTACK_API_ENDPOINT_MARK_FAILED
+              value: {{ .Values.app.markFailedEndpoint | quote }}
             - name: WBSTACK_WIKIBASE_SCHEME
               value: {{ .Values.app.wikibaseScheme | quote }}
             - name: WBSTACK_PROXYMAP_INGRESS
