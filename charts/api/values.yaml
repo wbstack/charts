@@ -58,6 +58,8 @@ wbstack:
   summaryCreationRateRanges: []
   signupThrottlingLimit:
   signupThrottlingRange:
+  qsBatchPendingTimeout:
+  qsBatchMarkFailerAfter:
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:

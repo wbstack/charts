@@ -76,6 +76,14 @@ Common lists of environment variables
 - name: WBSTACK_SIGNUP_THROTTLING_RANGE
   value: {{ .Values.wbstack.signupThrottlingRange | quote }}
 {{- end }}
+{{- if .Values.wbstack.qsBatchPendingTimeout }}
+- name: WBSTACK_QS_BATCH_PENDING_TIMEOUT
+  value: {{ .Values.wbstack.qsBatchPendingTimeout | quote }}
+{{- end }}
+{{- if .Values.wbstack.qsBatchMarkFailedAfter }}
+- name: WBSTACK_QS_BATCH_MARK_FAILED_AFTER
+  value: {{ .Values.wbstack.qsBatchMarkFailedAfter | quote }}
+{{- end }}
 {{- if .Values.wbstack.contact.mail.recipient }}
 - name: WBSTACK_CONTACT_MAIL_RECIPIENT
   value: {{ .Values.wbstack.contact.mail.recipient | quote }}
