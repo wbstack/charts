@@ -5,6 +5,7 @@ app:
   getBatchesEndpoint: some.service/backend/qs/getBatches
   wikibaseScheme: https
   proxyMap: platform-nginx.default.svc.cluster.local:8080
+  extraJvmOpts: "-XshowSettings:vm -XX:+UseContainerSupport -XX:+ExitOnOutOfMemoryError -Xms15m -Xmx30m -XX:MetaspaceSize=20m -XX:MaxMetaspaceSize=30m"
 
 image:
   repository: ghcr.io/wbstack/queryservice-updater
