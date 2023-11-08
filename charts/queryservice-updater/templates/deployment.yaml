@@ -31,7 +31,7 @@ spec:
               # https://medium.com/adorsys/usecontainersupport-to-the-rescue-e77d6cfea712
               # https://merikan.com/2019/04/jvm-in-a-container/
               # http://www.mastertheboss.com/java/solving-java-lang-outofmemoryerror-metaspace-error/
-              value: "-XshowSettings:vm -XX:+UseContainerSupport -Xms15m -Xmx30m -XX:MetaspaceSize=20m -XX:MaxMetaspaceSize=30m -XX:+ExitOnOutOfMemoryError"
+              value: {{ .Values.app.extraJvmOpts | quote }}
               #value: "-XshowSettings:vm -XX:+UseContainerSupport -XX:MinRAMPercentage=50.0 -XX:MaxRAMPercentage=80.0 -XX:MaxMetaspaceSize=30m -XX:+UseSerialGC -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Dcom.sun.management.jmxremote -Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1099 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
             - name: GC_LOGS
               value: " "
