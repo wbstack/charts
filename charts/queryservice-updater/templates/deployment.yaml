@@ -37,7 +37,7 @@ spec:
               value: " "
             - name: WBSTACK_BATCH_SLEEP
               value: {{ .Values.app.sleepTime| quote }}
-            - name: WBSTACK_API_ENDPOINT
+            - name: WBSTACK_API_ENDPOINT_GET_BATCHES
               value: {{ .Values.app.getBatchesEndpoint | quote }}
             - name: WBSTACK_API_ENDPOINT_MARK_DONE
               value: {{ .Values.app.markDoneEndpoint | quote }}
