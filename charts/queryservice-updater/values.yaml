@@ -3,6 +3,8 @@ replicaCount: 1
 app:
   sleepTime: 10
   getBatchesEndpoint: some.service/backend/qs/getBatches
+  markDoneEndpoint: some.service/backend/qs/markDone
+  markNotDoneEndpoint: some.service/backend/qs/markFailed
   wikibaseScheme: https
   proxyMap: platform-nginx.default.svc.cluster.local:8080
   extraJvmOpts: "-XshowSettings:vm -XX:+UseContainerSupport -XX:+ExitOnOutOfMemoryError -Xms15m -Xmx30m -XX:MetaspaceSize=20m -XX:MaxMetaspaceSize=30m"
