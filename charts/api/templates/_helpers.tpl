@@ -84,6 +84,10 @@ Common lists of environment variables
 - name: WBSTACK_QS_BATCH_MARK_FAILED_AFTER
   value: {{ .Values.wbstack.qsBatchMarkFailedAfter | quote }}
 {{- end }}
+{{- if .Values.wbstack.qsBatchEntityLimit }}
+- name: WBSTACK_QS_BATCH_ENTITY_LIMIT
+  value: {{ .Values.wbstack.qsBatchEntityLimit | quote }}
+{{- end }}
 {{- if .Values.wbstack.contact.mail.recipient }}
 - name: WBSTACK_CONTACT_MAIL_RECIPIENT
   value: {{ .Values.wbstack.contact.mail.recipient | quote }}

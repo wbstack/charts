@@ -60,6 +60,7 @@ wbstack:
   signupThrottlingRange:
   qsBatchPendingTimeout:
   qsBatchMarkFailerAfter:
+  qsBatchEntityLimit:
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
