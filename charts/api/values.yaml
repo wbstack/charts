@@ -39,6 +39,7 @@ queue:
   # a list of integers defining the delays for backing off when retrying
   # failed jobs from the queue. E.g. `[10,100,1000]`
   backoff: []
+  queueNames: ['default']
   mw:
     db:
       readHost: someHost
