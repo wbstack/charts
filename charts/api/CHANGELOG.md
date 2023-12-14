@@ -2,6 +2,10 @@
 
 This chart does not yet follow SemVer.
 
+## 0.29.0
+
+- Add option to deploy multiple named queue workers
+
 ## 0.26.1
 - Add env var `LOG_LEVEL` (default `info`)
 
