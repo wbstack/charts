@@ -2,8 +2,10 @@
 
 This chart does not yet follow SemVer.
 
-## 0.29.0
+## 0.29.1
+- Fix labels on api-queue pods to match
 
+## 0.29.0
 - Add option to deploy multiple named queue workers
 
 ## 0.26.1
