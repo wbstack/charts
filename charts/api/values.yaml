@@ -28,6 +28,15 @@ probes:
       periodSeconds: 10
       initialDelaySeconds: 10
 
+storage:
+  bucketName: ''
+  accessKeySecretName: gcs-hmac-key
+  accessKeySecretKey: access-key
+  secretKeySecretName: gcs-hmac-key
+  secretKeySecretKey: secret-key
+  endpoint: https://storage.googleapis.com
+  url: https://storage.googleapis.com
+
 replicaCount:
   web: 1
   backend: 1

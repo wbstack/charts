@@ -104,6 +104,26 @@ Common lists of environment variables
 - name: TRUSTED_PROXY_PROXIES
   value: {{ join "," .Values.trustedProxy.proxies | quote }}
 {{- end }}
+{{- if .Values.storage }}
+- name: STORAGE_BUCKET_NAME
+  value: {{ .Values.storage.bucketName | quote }}
+- name: STORAGE_SIGNATURE_VERSION
+  value: {{ .Values.storage.signatureVersion | quote }}
+- name: STORAGE_ACCESS_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.storage.accessKeySecretName | quote }}
+      key: {{ .Values.storage.accessKeySecretKey | quote }}
+- name: STORAGE_SECRET_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.storage.secretKeySecretName | quote }}
+      key: {{ .Values.storage.secretKeySecretKey | quote }}
+- name: STORAGE_ENDPOINT
+  value: {{ .Values.storage.endpoint | quote }}
+- name: STORAGE_URL
+  value: {{ .Values.storage.url | quote }}
+{{- end }}
 {{- end -}}
 
 {{- define "api.smtpEnvVars" -}}
