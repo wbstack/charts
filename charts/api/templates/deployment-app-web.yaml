@@ -132,7 +132,7 @@ spec:
           - name: MAIL_FROM_NAME
             value: {{ .Values.app.mail.fromname | quote }}
 {{ include "api.smtpEnvVars" . | indent 10 }}
-
+{{ include "api.staticStorageEnvVars" . | indent 10 }}
           {{- if .Values.app.recaptcha.secretSecretName }}
           - name: RECAPTCHA_V3_SECRET_KEY
             valueFrom:
@@ -144,18 +144,6 @@ spec:
           - name: RECAPTCHA_V3_MIN_SCORE
             value: {{ .Values.app.recaptcha.minScore | quote }}
           {{- end }}
-
-          - name: GOOGLE_CLOUD_PROJECT_ID
-            value: {{ .Values.app.gce.projectId | quote }}
-          - name: GOOGLE_CLOUD_STORAGE_BUCKET
-            valueFrom:
-              configMapKeyRef:
-                name: storage-bucket
-                key: gcs_api_static_bucket_name
-                optional: true
-          - name: GOOGLE_CLOUD_STORAGE_KEY_FILE
-            value: /var/run/secret/cloud.google.com/key.json
-
           - name: LOG_CHANNEL
             value: stderr
           {{- if .Values.app.logLevel }}

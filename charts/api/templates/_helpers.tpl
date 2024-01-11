@@ -104,26 +104,33 @@ Common lists of environment variables
 - name: TRUSTED_PROXY_PROXIES
   value: {{ join "," .Values.trustedProxy.proxies | quote }}
 {{- end }}
-{{- if .Values.storage }}
-- name: STORAGE_BUCKET_NAME
-  value: {{ .Values.storage.bucketName | quote }}
-- name: STORAGE_SIGNATURE_VERSION
-  value: {{ .Values.storage.signatureVersion | quote }}
-- name: STORAGE_ACCESS_KEY
+{{- end -}}
+
+{{- define "api.staticStorageEnvVars" -}}
+- name: STATIC_STORAGE_BUCKET_NAME
+  valueFrom:
+    configMapKeyRef:
+      name: storage-bucket
+      key: gcs_api_static_bucket_name
+      optional: true
+- name: STATIC_STORAGE_ACCESS_KEY
   valueFrom:
     secretKeyRef:
       name: {{ .Values.storage.accessKeySecretName | quote }}
       key: {{ .Values.storage.accessKeySecretKey | quote }}
-- name: STORAGE_SECRET_KEY
+- name: STATIC_STORAGE_SECRET_KEY
   valueFrom:
     secretKeyRef:
       name: {{ .Values.storage.secretKeySecretName | quote }}
       key: {{ .Values.storage.secretKeySecretKey | quote }}
-- name: STORAGE_ENDPOINT
+- name: STATIC_STORAGE_ENDPOINT
   value: {{ .Values.storage.endpoint | quote }}
-- name: STORAGE_URL
+- name: STATIC_STORAGE_URL
   value: {{ .Values.storage.url | quote }}
-{{- end }}
+- name: STATIC_STORAGE_USE_BUCKET_ENDPOINT
+  value: {{ .Values.storage.useBucketEndpoint | quote }}
+- name: STATIC_STORAGE_USE_PATH_STYLE_ENDPOINT
+  value: {{ .Values.storage.usePathStyleEndpoint | quote }}
 {{- end -}}
 
 {{- define "api.smtpEnvVars" -}}
