@@ -106,6 +106,35 @@ Common lists of environment variables
 {{- end }}
 {{- end -}}
 
+{{- define "api.staticStorageEnvVars" -}}
+- name: STATIC_STORAGE_BUCKET_NAME
+  valueFrom:
+    configMapKeyRef:
+      name: storage-bucket
+      key: gcs_api_static_bucket_name
+      optional: true
+- name: STATIC_STORAGE_ACCESS_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.storage.accessKeySecretName | quote }}
+      key: {{ .Values.storage.accessKeySecretKey | quote }}
+- name: STATIC_STORAGE_SECRET_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.storage.secretKeySecretName | quote }}
+      key: {{ .Values.storage.secretKeySecretKey | quote }}
+- name: STATIC_STORAGE_ENDPOINT
+  value: {{ .Values.storage.endpoint | quote }}
+- name: STATIC_STORAGE_URL
+  value: {{ .Values.storage.url | quote }}
+- name: STATIC_STORAGE_USE_BUCKET_ENDPOINT
+  value: {{ .Values.storage.useBucketEndpoint | quote }}
+- name: STATIC_STORAGE_USE_PATH_STYLE_ENDPOINT
+  value: {{ .Values.storage.usePathStyleEndpoint | quote }}
+- name: STATIC_STORAGE_REGION
+  value: {{ .Values.storage.region | quote }}
+{{- end -}}
+
 {{- define "api.smtpEnvVars" -}}
 - name: MAIL_HOST
   value: {{ .Values.app.mail.smtphost | quote }}
