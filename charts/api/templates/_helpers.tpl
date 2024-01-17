@@ -131,6 +131,8 @@ Common lists of environment variables
   value: {{ .Values.storage.useBucketEndpoint | quote }}
 - name: STATIC_STORAGE_USE_PATH_STYLE_ENDPOINT
   value: {{ .Values.storage.usePathStyleEndpoint | quote }}
+- name: STATIC_STORAGE_REGION
+  value: {{ .Values.storage.region | quote }}
 {{- end -}}
 
 {{- define "api.smtpEnvVars" -}}

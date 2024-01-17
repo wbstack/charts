@@ -34,6 +34,7 @@ storage:
   secretKeySecretName: gcs-hmac-key
   secretKeySecretKey: secret-key
   endpoint: https://storage.googleapis.com
+  region: us-east-1
   url: https://storage.googleapis.com
   usePathStyleEndpoint: '1'
   useBucketEndpoint: '0'
