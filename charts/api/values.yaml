@@ -51,6 +51,15 @@ queue:
   # failed jobs from the queue. E.g. `[10,100,1000]`
   backoff: []
   queueNames: ['default']
+  horizon:
+    maxProcesses: 10
+    minProcesses: 1
+    balancingStrategy: 'auto'
+    autoScalingStrategy: 'time'
+    maxShift: 1
+    coolDown: 3
+    tries: 3
+    memory: 128
   mw:
     db:
       readHost: someHost

@@ -1,34 +1,33 @@
-{{- range .Values.queue.queueNames }}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "api.fullname" $ }}-queue-{{ . }}
+  name: {{ include "api.fullname" . }}-queue
   labels:
-{{ include "api.labels" $ | indent 4 }}
+{{ include "api.labels" . | indent 4 }}
 spec:
-  replicas: {{ $.Values.replicaCount.queue }}
+  replicas: {{ .Values.replicaCount.queue }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "api.name" $ }}
-      app.kubernetes.io/instance: {{ $.Release.Name }}
-      app.kubernetes.io/component: queue-{{ . }}
+      app.kubernetes.io/name: {{ include "api.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: queue
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "api.name" $ }}
-        app.kubernetes.io/instance: {{ $.Release.Name }}
-        app.kubernetes.io/component: queue-{{ . }}
+        app.kubernetes.io/name: {{ include "api.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/component: queue
     spec:
-      serviceAccountName: {{ include "api.fullname" $ }}-defaultrole
-    {{- with $.Values.imagePullSecrets }}
+      serviceAccountName: {{ include "api.fullname" . }}-defaultrole
+    {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       containers:
-        - name: api-queue-{{ . }}
-          image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
-          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+        - name: api-queue
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               containerPort: 80
@@ -43,167 +42,184 @@ spec:
 #              path: /
 #              port: http
           resources:
-            {{- toYaml $.Values.resources.queue | nindent 12 }}
+            {{- toYaml .Values.resources.queue | nindent 12 }}
           env:
           - name: CONTAINER_ROLE
             value: queue
           - name: APP_NAME
-            value: {{ $.Values.app.name | quote }}
+            value: {{ .Values.app.name | quote }}
           - name: APP_ENV
-            value: {{ $.Values.app.env | quote }}
+            value: {{ .Values.app.env | quote }}
           - name: APP_KEY
             valueFrom:
               secretKeyRef:
-                name: {{ $.Values.app.keySecretName | quote }}
-                key: {{ $.Values.app.keySecretKey | quote }}
+                name: {{ .Values.app.keySecretName | quote }}
+                key: {{ .Values.app.keySecretKey | quote }}
           - name: APP_DEBUG
-            value: {{ $.Values.app.debug | quote }}
+            value: {{ .Values.app.debug | quote }}
           - name: APP_URL
-            value: {{ $.Values.app.url | quote }}
+            value: {{ .Values.app.url | quote }}
           - name: APP_TIMEZONE
-            value: {{ $.Values.app.timezone | quote }}
+            value: {{ .Values.app.timezone | quote }}
 
-{{ include "api.commonAppEnvVars" $ | indent 10 }}
+{{ include "api.commonAppEnvVars" . | indent 10 }}
 
-            {{- if $.Values.app.elasticsearch.curlTimeout.indexInit }}
+            {{- if .Values.app.elasticsearch.curlTimeout.indexInit }}
           - name: CURLOPT_TIMEOUT_ELASTICSEARCH_INIT
-            value: {{ $.Values.app.elasticsearch.curlTimeout.indexInit | quote }}
+            value: {{ .Values.app.elasticsearch.curlTimeout.indexInit | quote }}
             {{- end }}
 
           - name: ELASTICSEARCH_HOST
-            value: {{ $.Values.app.elasticSearchHost | quote }}
+            value: {{ .Values.app.elasticSearchHost | quote }}
           - name: QUERY_SERVICE_HOST
-            value: {{ $.Values.app.queryServiceHost | quote }}
+            value: {{ .Values.app.queryServiceHost | quote }}
           - name: PLATFORM_MW_BACKEND_HOST
-            value: {{ $.Values.platform.backendMwHost | quote }}
+            value: {{ .Values.platform.backendMwHost | quote }}
 
           - name: REDIS_HOST
-            value: {{ $.Values.app.redis.host | quote }}
+            value: {{ .Values.app.redis.host | quote }}
           - name: REDIS_PASSWORD
-            {{- if $.Values.app.redis.password }}
-            value: {{ $.Values.app.redis.password | quote }}
+            {{- if .Values.app.redis.password }}
+            value: {{ .Values.app.redis.password | quote }}
             {{- end }}
-            {{- if $.Values.app.redis.passwordSecretName }}
+            {{- if .Values.app.redis.passwordSecretName }}
             valueFrom:
               secretKeyRef:
-                name: {{ $.Values.app.redis.passwordSecretName | quote }}
-                key: {{ $.Values.app.redis.passwordSecretKey | quote }}
+                name: {{ .Values.app.redis.passwordSecretName | quote }}
+                key: {{ .Values.app.redis.passwordSecretKey | quote }}
             {{- end }}
           - name: REDIS_PORT
-            value: {{ $.Values.app.redis.port | quote }}
+            value: {{ .Values.app.redis.port | quote }}
           - name: REDIS_DB
-            value: {{ $.Values.app.redis.db | quote }}
+            value: {{ .Values.app.redis.db | quote }}
           - name: REDIS_CACHE_DB
-            value: {{ $.Values.app.redis.cachedb | quote }}
+            value: {{ .Values.app.redis.cachedb | quote }}
           - name: REDIS_PREFIX
-            value: {{ $.Values.app.redis.prefix | quote }}
+            value: {{ .Values.app.redis.prefix | quote }}
 
           - name: MAIL_MAILER
-            value: {{ $.Values.app.mail.mailer | quote }}
+            value: {{ .Values.app.mail.mailer | quote }}
           - name: MAILGUN_DOMAIN
-            value: {{ $.Values.app.mail.mailgundomain | quote }}
-          {{- if $.Values.app.mail.mailgunendpoint }}
+            value: {{ .Values.app.mail.mailgundomain | quote }}
+          {{- if .Values.app.mail.mailgunendpoint }}
           - name: MAILGUN_ENDPOINT
-            value: {{ $.Values.app.mail.mailgunendpoint | quote }}
+            value: {{ .Values.app.mail.mailgunendpoint | quote }}
           {{- end  }}
           - name: MAILGUN_SECRET
-            {{- if $.Values.app.mail.mailgunsecret }}
-            value: {{ $.Values.app.mail.mailgunsecret | quote }}
-            {{- else if $.Values.app.mail.mailgunSecretName }}
+            {{- if .Values.app.mail.mailgunsecret }}
+            value: {{ .Values.app.mail.mailgunsecret | quote }}
+            {{- else if .Values.app.mail.mailgunSecretName }}
             valueFrom:
               secretKeyRef:
-                name: {{ $.Values.app.mail.mailgunSecretName | quote }}
-                key: {{ $.Values.app.mail.mailgunSecretKey | quote }}
+                name: {{ .Values.app.mail.mailgunSecretName | quote }}
+                key: {{ .Values.app.mail.mailgunSecretKey | quote }}
             {{- end }}
           - name: MAIL_FROM_ADDRESS
-            value: {{ $.Values.app.mail.fromaddress | quote }}
+            value: {{ .Values.app.mail.fromaddress | quote }}
           - name: MAIL_FROM_NAME
-            value: {{ $.Values.app.mail.fromname | quote }}
-{{ include "api.smtpEnvVars" $ | indent 10 }}
-{{ include "api.staticStorageEnvVars" $ | indent 10 }}
+            value: {{ .Values.app.mail.fromname | quote }}
+{{ include "api.smtpEnvVars" . | indent 10 }}
+{{ include "api.staticStorageEnvVars" . | indent 10 }}
           - name: LOG_CHANNEL
             value: stderr
-          {{- if $.Values.app.logLevel }}
+          {{- if .Values.app.logLevel }}
           - name: LOG_LEVEL
-            value: {{ $.Values.app.logLevel | quote }}
+            value: {{ .Values.app.logLevel | quote }}
           {{- end }}
           - name: STACKDRIVER_ENABLED
-            value: {{ $.Values.app.stackdriver.enabled | quote }}
+            value: {{ .Values.app.stackdriver.enabled | quote }}
           - name: STACKDRIVER_PROJECT_ID
-            value: {{ $.Values.app.gce.projectId | quote }}
+            value: {{ .Values.app.gce.projectId | quote }}
           - name: STACKDRIVER_LOGGING_ENABLED
-            value: {{ $.Values.app.stackdriver.loggingEnabled | quote }}
+            value: {{ .Values.app.stackdriver.loggingEnabled | quote }}
           - name: STACKDRIVER_TRACING_ENABLED
-            value: {{ $.Values.app.stackdriver.tracingEnabled | quote }}
+            value: {{ .Values.app.stackdriver.tracingEnabled | quote }}
           - name: STACKDRIVER_ERROR_REPORTING_ENABLED
-            value: {{ $.Values.app.stackdriver.errorReportingEnabled | quote }}
+            value: {{ .Values.app.stackdriver.errorReportingEnabled | quote }}
           - name: STACKDRIVER_KEY_FILE_PATH
             value: /var/run/secret/cloud.google.com/key.json
           - name: STACKDRIVER_ERROR_REPORTING_BATCH_ENABLED
             value: "false"
           - name: STACKDRIVER_LOGGING_BATCH_ENABLED
             value: "false"
-
           - name: CACHE_DRIVER
-            value: {{ $.Values.app.cacheDriver | quote }}
+            value: {{ .Values.app.cacheDriver | quote }}
           - name: QUEUE_NAME
-            value: {{ . | quote }}
+            value: default
           - name: QUEUE_CONNECTION
-            value: {{ $.Values.app.queueConnection | quote }}
+            value: {{ .Values.app.queueConnection | quote }}
           - name: QUEUE_BACKOFF
-            value: {{ join "," $.Values.queue.backoff | quote }}
+            value: {{ join "," .Values.queue.backoff | quote }}
+          - name: QUEUE_NAMES
+            value: {{ join "," .Values.queue.queueNames | quote }}
+          - name: HORIZON_MAX_PROCESSES
+            value: {{ .Values.queue.horizon.maxProcesses | quote }}
+          - name: HORIZON_MIN_PROCESSES
+            value: {{ .Values.queue.horizon.minProcesses | quote }}
+          - name: HORIZON_BALANCING_STRATEGY
+            value: {{ .Values.queue.horizon.balancingStrategy | quote }}
+          - name: HORIZON_AUTO_SCALING_STRATEGY
+            value: {{ .Values.queue.horizon.autoScalingStrategy | quote }}
+          - name: HORIZON_MAX_SHIFT
+            value: {{ .Values.queue.horizon.maxShift | quote }}
+          - name: HORIZON_COOL_DOWN
+            value: {{ .Values.queue.horizon.coolDown | quote }}
+          - name: HORIZON_MEMORY
+            value: {{ .Values.queue.horizon.memory | quote }}
+          - name: HORIZON_TRIES
+            value: {{ .Values.queue.horizon.tries | quote }}
           - name: JWT_SECRET
             valueFrom:
               secretKeyRef:
-                name: {{ $.Values.app.jwtSecretSecretName | quote }}
-                key: {{ $.Values.app.jwtSecretSecretKey | quote }}
+                name: {{ .Values.app.jwtSecretSecretName | quote }}
+                key: {{ .Values.app.jwtSecretSecretKey | quote }}
           - name: DB_CONNECTION
-            value: {{ $.Values.app.db.connection | quote }}
+            value: {{ .Values.app.db.connection | quote }}
             # TODO from service discovery or something?
           - name: DB_HOST_READ
-            value: {{ $.Values.app.db.readHost | quote }}
+            value: {{ .Values.app.db.readHost | quote }}
           - name: DB_HOST_WRITE
-            value: {{ $.Values.app.db.writeHost | quote }}
+            value: {{ .Values.app.db.writeHost | quote }}
           - name: DB_PORT
-            value: {{ $.Values.app.db.port | quote }}
+            value: {{ .Values.app.db.port | quote }}
           - name: DB_DATABASE
-            value: {{ $.Values.app.db.name | quote }}
+            value: {{ .Values.app.db.name | quote }}
           - name: DB_USERNAME
-            value: {{ $.Values.app.db.user | quote }}
+            value: {{ .Values.app.db.user | quote }}
           - name: DB_PASSWORD
-            {{- if $.Values.app.db.password }}
-            value: {{ $.Values.app.db.password | quote }}
+            {{- if .Values.app.db.password }}
+            value: {{ .Values.app.db.password | quote }}
             {{- end }}
-            {{- if $.Values.app.db.passwordSecretName }}
+            {{- if .Values.app.db.passwordSecretName }}
             valueFrom:
               secretKeyRef:
-                name: {{ $.Values.app.db.passwordSecretName | quote }}
-                key: {{ $.Values.app.db.passwordSecretKey | quote }}
+                name: {{ .Values.app.db.passwordSecretName | quote }}
+                key: {{ .Values.app.db.passwordSecretKey | quote }}
             {{- end }}
 
           - name: MW_DB_HOST_READ
-            value: {{ $.Values.queue.mw.db.readHost | quote }}
+            value: {{ .Values.queue.mw.db.readHost | quote }}
           - name: MW_DB_HOST_WRITE
-            value: {{ $.Values.queue.mw.db.writeHost | quote }}
+            value: {{ .Values.queue.mw.db.writeHost | quote }}
           # - name: MW_DB_DATABASE
-          #   value: {{ $.Values.queue.mw.db.database | quote }}
+          #   value: {{ .Values.queue.mw.db.database | quote }}
           - name: MW_DB_USERNAME
-            value: {{ $.Values.queue.mw.db.username | quote }}
+            value: {{ .Values.queue.mw.db.username | quote }}
           - name: MW_DB_PASSWORD
-            {{- if $.Values.queue.mw.db.password }}
-            value: {{ $.Values.queue.mw.db.password | quote }}
+            {{- if .Values.queue.mw.db.password }}
+            value: {{ .Values.queue.mw.db.password | quote }}
             {{- end }}
-            {{- if $.Values.queue.mw.db.passwordSecretName }}
+            {{- if .Values.queue.mw.db.passwordSecretName }}
             valueFrom:
               secretKeyRef:
-                name: {{ $.Values.queue.mw.db.passwordSecretName | quote }}
-                key: {{ $.Values.queue.mw.db.passwordSecretKey | quote }}
+                name: {{ .Values.queue.mw.db.passwordSecretName | quote }}
+                key: {{ .Values.queue.mw.db.passwordSecretKey | quote }}
             {{- end }}
           - name: PASSPORT_PUBLIC_KEY
             valueFrom:
               secretKeyRef:
-                {{- if $.Values.app.gce.existingSecret }}
-                name: {{ $.Values.app.gce.existingSecret }}
+                {{- if .Values.app.gce.existingSecret }}
+                name: {{ .Values.app.gce.existingSecret }}
                 {{- else }}
                 name: {{ template "api.fullname" $ }}-app-passport-keys
                 {{- end }}
@@ -211,34 +227,33 @@ spec:
           - name: PASSPORT_PRIVATE_KEY
             valueFrom:
               secretKeyRef:
-                {{- if $.Values.app.gce.existingSecret }}
-                name: {{ $.Values.app.gce.existingSecret }}
+                {{- if .Values.app.gce.existingSecret }}
+                name: {{ .Values.app.gce.existingSecret }}
                 {{- else }}
-                name: {{ template "api.fullname" $ }}-app-passport-keys
+                name: {{ template "api.fullname" . }}-app-passport-keys
                 {{- end }}
                 key: oauth-private.key
           - name: API_JOB_NAMESPACE
-            value: {{ $.Values.queue.apiJobNamespace }}
-      {{- if $.Values.app.gce.serviceAccountSecret }}
+            value: {{ .Values.queue.apiJobNamespace }}
+      {{- if .Values.app.gce.serviceAccountSecret }}
           volumeMounts:
             - name: "service-account-wbstack-api"
               mountPath: "/var/run/secret/cloud.google.com"
       volumes:
         - name: "service-account-wbstack-api"
           secret:
-            secretName: {{ $.Values.app.gce.serviceAccountSecret | quote }}
+            secretName: {{ .Values.app.gce.serviceAccountSecret | quote }}
       {{- end }}
 
-      {{- with $.Values.nodeSelector }}
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-    {{- with $.Values.affinity }}
+    {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-    {{- with $.Values.tolerations }}
+    {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-{{- end }}
