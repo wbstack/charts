@@ -13,6 +13,12 @@ spec:
       app.kubernetes.io/component: app-backend
   template:
     metadata:
+      {{- if .Values.queue.horizon.enabled }}
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/path: '/metrics'
+        prometheus.io/port: '80'
+      {{- end }}
       labels:
         app.kubernetes.io/name: {{ include "api.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
