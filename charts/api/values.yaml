@@ -52,6 +52,8 @@ queue:
   backoff: []
   queueNames: ['default']
   horizon:
+    enabled: false
+    queueNames: ['default']
     maxProcesses: 10
     minProcesses: 1
     balancingStrategy: 'auto'
