@@ -152,6 +152,28 @@ spec:
             value: {{ $.Values.app.queueConnection | quote }}
           - name: QUEUE_BACKOFF
             value: {{ join "," $.Values.queue.backoff | quote }}
+          {{- if $.Values.queue.horizon.enabled }}
+          - name: HORIZON_ENABLED
+            value: '1'
+          - name: HORIZON_QUEUE_NAMES
+            value: {{ join "," $.Values.queue.horizon.queueNames | quote }}
+          - name: HORIZON_MAX_PROCESSES
+            value: {{ $.Values.queue.horizon.maxProcesses | quote }}
+          - name: HORIZON_MIN_PROCESSES
+            value: {{ $.Values.queue.horizon.minProcesses | quote }}
+          - name: HORIZON_BALANCING_STRATEGY
+            value: {{ $.Values.queue.horizon.balancingStrategy | quote }}
+          - name: HORIZON_AUTO_SCALING_STRATEGY
+            value: {{ $.Values.queue.horizon.autoScalingStrategy | quote }}
+          - name: HORIZON_MAX_SHIFT
+            value: {{ $.Values.queue.horizon.maxShift | quote }}
+          - name: HORIZON_COOL_DOWN
+            value: {{ $.Values.queue.horizon.coolDown | quote }}
+          - name: HORIZON_MEMORY
+            value: {{ $.Values.queue.horizon.memory | quote }}
+          - name: HORIZON_TRIES
+            value: {{ $.Values.queue.horizon.tries | quote }}
+          {{- end }}
           - name: JWT_SECRET
             valueFrom:
               secretKeyRef:
