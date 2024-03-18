@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: {{ include "api.fullname" . }}-app-backend
   labels:
+    app.kubernetes.io/component: app-backend
 {{ include "api.labels" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}

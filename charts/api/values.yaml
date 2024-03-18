@@ -70,6 +70,10 @@ queue:
       passwordSecretName: someSecretName
       passwordSecretKey: password
 
+serviceMonitor:
+  enabled: false
+  additionalLabels: {}
+
 platform:
   backendMwHost: someHost
 
