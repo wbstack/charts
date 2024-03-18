@@ -1,0 +1,21 @@
+{{ if .Values.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: platform-api-servicemonitor
+  namespace: monitoring
+  labels:
+    monitoring: platform-api
+    {{- .Values.serviceMonitor.additionalLabels | toYaml | nindent 4 }}
+spec:
+  selector:
+    matchLabels:      
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: app-backend
+  namespaceSelector:
+    any: true
+  endpoints:
+    - interval: 10s
+      path: /metrics
+      port: http
+{{ end }}
