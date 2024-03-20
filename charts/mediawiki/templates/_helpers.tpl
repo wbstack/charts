@@ -80,6 +80,10 @@ Common deployment environment variables
 - name: MW_WRITE_ONLY_ELASTICSEARCH_ES6
   value: {{ .Values.mw.writeOnlyElasticsearch.es6 | quote }}
 {{- end }}
+{{- if .Values.mw.cirrussearch.prefixIds }}
+- name: MW_CIRRUSSEARCH_PREFIX_IDS
+  value: "yes"
+{{- end }}
 - name: MW_MAILGUN_DISABLED
 {{- if .Values.mw.mailgun.enabled }}
   value: "no"

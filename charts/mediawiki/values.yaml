@@ -26,6 +26,8 @@ mw:
     host: someOtherElasticsearchServer
     port: 9200
     es6: true
+  cirrussearch:
+    prefixIds: false
   mail:
     domain: somedomain.name
   mailgun:
