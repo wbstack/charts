@@ -62,6 +62,11 @@ spec:
 
 {{ include "api.commonAppEnvVars" . | indent 10 }}
 
+          - name: ELASTICSEARCH_HOST
+            value: {{ $.Values.app.elasticSearchHost | quote }}
+          - name: ELASTICSEARCH_SHARED_INDEX
+            value: {{ $.Values.app.elasticSearchSharedIndex | quote }}
+
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
           - name: PLATFORM_MW_BACKEND_HOST
