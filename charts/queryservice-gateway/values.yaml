@@ -4,6 +4,8 @@ platform:
   responseCacheTTL: 3600
   apiBackendHost: api-backend
 
+proxyTimeout: 300
+
 image:
   repository: ghcr.io/wbstack/queryservice-gateway
   tag: "2.2"
