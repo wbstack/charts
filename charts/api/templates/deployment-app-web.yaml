@@ -86,8 +86,14 @@ spec:
 
           - name: ELASTICSEARCH_HOST
             value: {{ $.Values.app.elasticSearchHost | quote }}
+          {{- if $.Values.app.elasticSearchSharedIndex }}
           - name: ELASTICSEARCH_SHARED_INDEX
             value: {{ $.Values.app.elasticSearchSharedIndex | quote }}
+          {{- end }}
+          {{- if $.Values.app.elasticSearchClusterToIndex }}
+          - name: ELASTICSEARCH_CLUSTER_TO_INDEX
+            value: {{ $.Values.app.elasticSearchClusterToIndex | quote }}
+          {{- end }}
 
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
