@@ -1141,6 +1141,19 @@ entries:
   queryservice-gateway:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2024-04-02T14:09:57.846583516Z"
+    description: A Helm chart for Kubernetes
+    digest: eeccbf3f3e16b3c4c61109a1db0e691d503312349dd982638bb76e4d6703f901
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: queryservice-gateway
+    urls:
+    - https://github.com/wbstack/charts/releases/download/queryservice-gateway-0.2.0/queryservice-gateway-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-06-21T10:44:30.172570713Z"
     description: A Helm chart for Kubernetes
     digest: fc58691bcacfed75b215b26de069263031ee61501ff5da523a5cf4985f348094
