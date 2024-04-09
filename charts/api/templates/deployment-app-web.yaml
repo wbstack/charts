@@ -84,15 +84,17 @@ spec:
 
 {{ include "api.commonAppEnvVars" . | indent 10 }}
 
-          - name: ELASTICSEARCH_HOST
-            value: {{ $.Values.app.elasticSearchHost | quote }}
-          {{- if $.Values.app.elasticSearchSharedIndex }}
-          - name: ELASTICSEARCH_SHARED_INDEX
-            value: {{ $.Values.app.elasticSearchSharedIndex | quote }}
+          {{- if $.Values.app.elasticSearchSharedIndexHost }}
+          - name: ELASTICSEARCH_SHARED_INDEX_HOST
+            value: {{ $.Values.app.elasticSearchSharedIndexHost | quote }}
           {{- end }}
-          {{- if $.Values.app.elasticSearchClusterToIndex }}
-          - name: ELASTICSEARCH_CLUSTER_TO_INDEX
-            value: {{ $.Values.app.elasticSearchClusterToIndex | quote }}
+          {{- if $.Values.app.elasticSearchSharedIndexPrefix }}
+          - name: ELASTICSEARCH_SHARED_INDEX_PREFIX
+            value: {{ $.Values.app.elasticSearchSharedIndexPrefix | quote }}
+          {{- end }}
+          {{- if $.Values.app.elasticSearchClusterWithoutSharedIndex }}
+          - name: ELASTICSEARCH_CLUSTER_WITHOUT_SHARED_INDEX
+            value: {{ $.Values.app.elasticSearchClusterWithoutSharedIndex | quote }}
           {{- end }}
 
           - name: QUERY_SERVICE_HOST

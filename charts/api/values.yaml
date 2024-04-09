@@ -117,8 +117,9 @@ app:
   jwtSecretSecretKey: SomeSecretKey
   queryServiceHost: someHost:9999
   elasticSearchHost: someHost:1234
-  # elasticSearchSharedIndex: wiki_1
-  # elasticSearchClusterToIndex: all
+  # elasticSearchSharedIndexHost: somehost:1234
+  # elasticSearchSharedIndexPrefix: wiki_1
+  # elasticSearchClusterWithoutSharedIndex: all
   elasticsearch:
     curlTimeout:
       indexInit: 500
