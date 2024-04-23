@@ -104,6 +104,18 @@ Common lists of environment variables
 - name: TRUSTED_PROXY_PROXIES
   value: {{ join "," .Values.trustedProxy.proxies | quote }}
 {{- end }}
+{{- if .Values.app.elasticSearchSharedIndexHost }}
+- name: ELASTICSEARCH_SHARED_INDEX_HOST
+  value: {{ .Values.app.elasticSearchSharedIndexHost | quote }}
+{{- end }}
+{{- if .Values.app.elasticSearchSharedIndexPrefix }}
+- name: ELASTICSEARCH_SHARED_INDEX_PREFIX
+  value: {{ .Values.app.elasticSearchSharedIndexPrefix | quote }}
+{{- end }}
+{{- if .Values.app.elasticSearchClusterWithoutSharedIndex }}
+- name: ELASTICSEARCH_CLUSTER_WITHOUT_SHARED_INDEX
+  value: {{ .Values.app.elasticSearchClusterWithoutSharedIndex | quote }}
+{{- end }}
 {{- end -}}
 
 {{- define "api.staticStorageEnvVars" -}}
