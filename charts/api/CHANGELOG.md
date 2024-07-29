@@ -2,6 +2,22 @@
 
 This chart does not yet follow SemVer.
 
+## 0.29.1
+- Fix labels on api-queue pods to match
+
+## 0.29.0
+- Add option to deploy multiple named queue workers
+
+## 0.26.1
+- Add env var `LOG_LEVEL` (default `info`)
+
+## 0.26.0
+- Refactor Recaptcha values
+    - renamed env vars to `RECAPTCHA_V3_*`
+    - added env var `RECAPTCHA_V3_MIN_SCORE`
+    - removed from all deployments except api-app-web
+    - removed 'hide badge' value
+
 ## 0.21.0
 - Extend permissions for Kubernetes ServiceAccount role
 - Add dedicated Kubernetes namespace to run jobs in

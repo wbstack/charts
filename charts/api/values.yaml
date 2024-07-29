@@ -28,6 +28,17 @@ probes:
       periodSeconds: 10
       initialDelaySeconds: 10
 
+storage:
+  accessKeySecretName: gcs-hmac-key
+  accessKeySecretKey: access-key
+  secretKeySecretName: gcs-hmac-key
+  secretKeySecretKey: secret-key
+  endpoint: https://storage.googleapis.com
+  region: us-east-1
+  url: https://storage.googleapis.com
+  usePathStyleEndpoint: '1'
+  useBucketEndpoint: '0'
+
 replicaCount:
   web: 1
   backend: 1
@@ -36,6 +47,21 @@ replicaCount:
 
 queue:
   apiJobNamespace: api-jobs
+  # a list of integers defining the delays for backing off when retrying
+  # failed jobs from the queue. E.g. `[10,100,1000]`
+  backoff: []
+  queueNames: ['default']
+  horizon:
+    enabled: false
+    queueNames: ['default']
+    maxProcesses: 10
+    minProcesses: 1
+    balancingStrategy: 'auto'
+    autoScalingStrategy: 'time'
+    maxShift: 1
+    coolDown: 3
+    tries: 3
+    memory: 128
   mw:
     db:
       readHost: someHost
@@ -43,6 +69,10 @@ queue:
       username: someUser
       passwordSecretName: someSecretName
       passwordSecretKey: password
+
+serviceMonitor:
+  enabled: false
+  additionalLabels: {}
 
 platform:
   backendMwHost: someHost
@@ -55,6 +85,9 @@ wbstack:
   summaryCreationRateRanges: []
   signupThrottlingLimit:
   signupThrottlingRange:
+  qsBatchPendingTimeout:
+  qsBatchMarkFailerAfter:
+  qsBatchEntityLimit:
   maxWikisPerUser:
   subdomainSuffix: ".undefined.nohost"
   uiurl:
@@ -70,6 +103,7 @@ wbstack:
 app:
   name:
   env: production
+  logLevel: info
   # referring to a k8s secret key/name which holds the app key
   keySecretName: someSecretName
   keySecretKey: someSecretKey
@@ -83,6 +117,21 @@ app:
   jwtSecretSecretKey: SomeSecretKey
   queryServiceHost: someHost:9999
   elasticSearchHost: someHost:1234
+  ## @param app.elasticSearchSharedIndexHost
+  ## Example:
+  ## elasticSearchSharedIndexHost: somehost:1234
+  ##
+  elasticSearchSharedIndexHost: ""
+  ## @param app.elasticSearchSharedIndexPrefix
+  ## Example:
+  ## elasticSearchSharedIndexPrefix: wiki_1
+  ##
+  elasticSearchSharedIndexPrefix: ""
+  ## @param app.elasticSearchClusterWithoutSharedIndex
+  ## Example:
+  ## elasticSearchClusterWithoutSharedIndex: all
+  ##
+  elasticSearchClusterWithoutSharedIndex: ""
   elasticsearch:
     curlTimeout:
       indexInit: 500
@@ -130,13 +179,9 @@ app:
     # smtpPasswordSecretName: ""
     # smtpPasswordSecretKey: ""
   recaptcha:
-    sitekey: ""
-    # sitekeySecretName: ""
-    # sitekeySecretKey: ""
-    secret: ""
-    # secretSecretName: ""
-    # secretSecretKey: ""
-    badgehide: true
+    secretSecretName: ""
+    secretSecretKey: ""
+    minScore: 0.5
   gce:
     existingSecret:
     # existingSecret: foo
@@ -148,6 +193,11 @@ app:
     loggingEnabled: false
     tracingEnabled: false
     errorReportingEnabled: false
+
+trustedProxy:
+  # if planning to use this, pass a list of proxy IPs or CIDRs:
+  # ['10.0.1.100', '10.0.1.101']
+  proxies: null
 
 imagePullSecrets: []
 nameOverride: ""

@@ -29,6 +29,8 @@ spec:
               value: {{ .Values.platform.apiBackendHost }}
             - name: RESPONSE_CACHE_TTL
               value: {{ .Values.platform.responseCacheTTL | quote }}
+            - name: PROXY_TIMEOUT
+              value: {{ .Values.proxyTimeout | quote }}
           ports:
             - name: http
               containerPort: 80

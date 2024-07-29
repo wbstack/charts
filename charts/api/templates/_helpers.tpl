@@ -76,6 +76,18 @@ Common lists of environment variables
 - name: WBSTACK_SIGNUP_THROTTLING_RANGE
   value: {{ .Values.wbstack.signupThrottlingRange | quote }}
 {{- end }}
+{{- if .Values.wbstack.qsBatchPendingTimeout }}
+- name: WBSTACK_QS_BATCH_PENDING_TIMEOUT
+  value: {{ .Values.wbstack.qsBatchPendingTimeout | quote }}
+{{- end }}
+{{- if .Values.wbstack.qsBatchMarkFailedAfter }}
+- name: WBSTACK_QS_BATCH_MARK_FAILED_AFTER
+  value: {{ .Values.wbstack.qsBatchMarkFailedAfter | quote }}
+{{- end }}
+{{- if .Values.wbstack.qsBatchEntityLimit }}
+- name: WBSTACK_QS_BATCH_ENTITY_LIMIT
+  value: {{ .Values.wbstack.qsBatchEntityLimit | quote }}
+{{- end }}
 {{- if .Values.wbstack.contact.mail.recipient }}
 - name: WBSTACK_CONTACT_MAIL_RECIPIENT
   value: {{ .Values.wbstack.contact.mail.recipient | quote }}
@@ -88,6 +100,51 @@ Common lists of environment variables
 - name: WBSTACK_ELASTICSEARCH_ENABLED_BY_DEFAULT
   value: {{ .Values.wbstack.elasticSearch.enabledByDefault | quote }}
 {{- end }}
+{{- if .Values.trustedProxy.proxies }}
+- name: TRUSTED_PROXY_PROXIES
+  value: {{ join "," .Values.trustedProxy.proxies | quote }}
+{{- end }}
+{{- if .Values.app.elasticSearchSharedIndexHost }}
+- name: ELASTICSEARCH_SHARED_INDEX_HOST
+  value: {{ .Values.app.elasticSearchSharedIndexHost | quote }}
+{{- end }}
+{{- if .Values.app.elasticSearchSharedIndexPrefix }}
+- name: ELASTICSEARCH_SHARED_INDEX_PREFIX
+  value: {{ .Values.app.elasticSearchSharedIndexPrefix | quote }}
+{{- end }}
+{{- if .Values.app.elasticSearchClusterWithoutSharedIndex }}
+- name: ELASTICSEARCH_CLUSTER_WITHOUT_SHARED_INDEX
+  value: {{ .Values.app.elasticSearchClusterWithoutSharedIndex | quote }}
+{{- end }}
+{{- end -}}
+
+{{- define "api.staticStorageEnvVars" -}}
+- name: STATIC_STORAGE_BUCKET_NAME
+  valueFrom:
+    configMapKeyRef:
+      name: storage-bucket
+      key: gcs_api_static_bucket_name
+      optional: true
+- name: STATIC_STORAGE_ACCESS_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.storage.accessKeySecretName | quote }}
+      key: {{ .Values.storage.accessKeySecretKey | quote }}
+- name: STATIC_STORAGE_SECRET_KEY
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.storage.secretKeySecretName | quote }}
+      key: {{ .Values.storage.secretKeySecretKey | quote }}
+- name: STATIC_STORAGE_ENDPOINT
+  value: {{ .Values.storage.endpoint | quote }}
+- name: STATIC_STORAGE_URL
+  value: {{ .Values.storage.url | quote }}
+- name: STATIC_STORAGE_USE_BUCKET_ENDPOINT
+  value: {{ .Values.storage.useBucketEndpoint | quote }}
+- name: STATIC_STORAGE_USE_PATH_STYLE_ENDPOINT
+  value: {{ .Values.storage.usePathStyleEndpoint | quote }}
+- name: STATIC_STORAGE_REGION
+  value: {{ .Values.storage.region | quote }}
 {{- end -}}
 
 {{- define "api.smtpEnvVars" -}}
