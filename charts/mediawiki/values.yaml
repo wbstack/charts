@@ -4,6 +4,12 @@ replicaCount:
   webapi: 1
   alpha: 0
 
+web:
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 10
+
 image:
   repository: ghcr.io/wbstack/mediawiki
   tag: "1.37-7.4-20220621-fp-beta-0"
