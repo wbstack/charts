@@ -48,6 +48,6 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Common annotations
 */}}
 {{- define "ui.annotations" -}}
-meta.helm.sh/release-name: {{ .Release.Name }}
+meta.helm.sh/release-name: {{ include "ui.name" . }}
 meta.helm.sh/release-namespace: {{ .Release.Namespace }}
 {{- end -}}

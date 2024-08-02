@@ -21,7 +21,7 @@ spec:
           {{- toYaml . | nindent 8 }}
         {{- end }}
       annotations:
-      {{ include "ui.annotations" . | indent 6 }}
+{{ include "ui.annotations" . | indent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
