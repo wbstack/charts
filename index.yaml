@@ -698,6 +698,20 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/api-0.2.0/api-0.2.0.tgz
     version: 0.2.0
+  argocd-apps:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-09-10T08:53:25.750500727Z"
+    description: Chart to deploy ArgoCD configuration (including the argocd-apps chart)
+    digest: 0474b9de2239a823ef4f6402e15ac8ca8701e640f0c8d12cce0df347d4b6a80b
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: argocd-apps
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/argocd-apps-0.1.0/argocd-apps-0.1.0.tgz
+    version: 0.1.0
   elasticsearch:
   - apiVersion: v1
     appVersion: 6.8.22-wmde1
