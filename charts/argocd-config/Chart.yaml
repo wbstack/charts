@@ -1,5 +1,5 @@
 apiVersion: v2
-name: argocd-apps
+name: argocd-config
 description: Chart to deploy ArgoCD configuration (including the argocd-apps chart)
 type: application
 version: 0.1.0
