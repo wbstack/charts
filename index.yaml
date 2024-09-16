@@ -1392,6 +1392,20 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/queryservice-updater-0.1.0/queryservice-updater-0.1.0.tgz
     version: 0.1.0
+  redirects:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-09-16T12:40:42.602140959Z"
+    description: Create ingresses for redirecting subdomains elsewhere
+    digest: 5063e4f2fe76cdffedef5673507026f6e548d24dc67979529375317289bed99c
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: redirects
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/redirects-1.0.0/redirects-1.0.0.tgz
+    version: 1.0.0
   superset:
   - apiVersion: v2
     created: "2024-09-16T10:35:13.212184558Z"
