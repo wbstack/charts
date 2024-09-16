@@ -1392,6 +1392,19 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/queryservice-updater-0.1.0/queryservice-updater-0.1.0.tgz
     version: 0.1.0
+  superset:
+  - apiVersion: v2
+    created: "2024-09-16T10:35:13.212184558Z"
+    description: A Helm chart for Kubernetes
+    digest: 1d66e7d3ff9c33c3b004a781647be70dd110b7100286b4d5b64047ab93f58014
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: superset
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/superset-0.1.0/superset-0.1.0.tgz
+    version: 0.1.0
   tool-cradle:
   - apiVersion: v1
     appVersion: "1.0"
