@@ -726,6 +726,20 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/argocd-config-1.0.0/argocd-config-1.0.0.tgz
     version: 1.0.0
+  certificates:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-09-16T10:15:11.474979464Z"
+    description: A Helm chart for making generic certificates
+    digest: 77486ed1a286b3aa611e47224cffbade5ff8393e7392e676ced435d4c1dba3c0
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: certificates
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/certificates-0.1.0/certificates-0.1.0.tgz
+    version: 0.1.0
   elasticsearch:
   - apiVersion: v1
     appVersion: 6.8.22-wmde1
