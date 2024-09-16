@@ -4,3 +4,6 @@ description: Chart to deploy WBaaS apps in an "app-of-apps" pattern via ArgoCD
 type: application
 version: 1.0.0
 appVersion: "1.0"
+maintainers:
+  - name: WBstack
+    url: https://github.com/wbstack
