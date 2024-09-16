@@ -9,8 +9,8 @@ spec:
   project: {{ .Values.environment }}
   source:
     path: charts/argocd-apps
-    repoURL: {{ .Values.repoUrls.deploy }}
-    targetRevision: HEAD
+    repoURL: https://wbstack.github.io/charts
+    targetRevision: 1.0.1
     helm:
       values: |
 {{ toYaml .Values | indent 8 }}
