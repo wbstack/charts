@@ -1963,6 +1963,19 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/wbstack-opencura-ingress-0.1.0/wbstack-opencura-ingress-0.1.0.tgz
     version: 0.1.0
+  wikibase-cloud-clusterissuers:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-09-16T10:37:55.523673331Z"
+    description: A Helm chart for Kubernetes
+    digest: 0e90087084d5fb64475fc87aa845ffedf427705051d08ca0399e4ba41fef6679
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: wikibase-cloud-clusterissuers
+    urls:
+    - https://github.com/wbstack/charts/releases/download/wikibase-cloud-clusterissuers-0.1.0/wikibase-cloud-clusterissuers-0.1.0.tgz
+    version: 0.1.0
   wikibase-ingress:
   - apiVersion: v1
     appVersion: "1.0"
