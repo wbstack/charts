@@ -8,3 +8,6 @@ dependencies:
   - name: istiod
     version: 1.17.1
     repository: https://istio-release.storage.googleapis.com/charts
+maintainers:
+  - name: WBstack
+    url: https://github.com/wbstack
