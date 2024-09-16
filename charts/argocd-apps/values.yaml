@@ -1,3 +1,6 @@
+repoUrls:  
+  deploy: https://github.com/wmde/wbaas-deploy
+  charts: https://github.com/wbstack/charts.git
 clusterUrl: https://kubernetes.default.svc
 
 # "inherits" values from argocd-config chart
