@@ -813,6 +813,24 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/elasticsearch-legacy-6.8.22-wmde2/elasticsearch-legacy-6.8.22-wmde2.tgz
     version: 6.8.22-wmde2
+  istio-service-mesh:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-09-18T10:12:32.023619392Z"
+    dependencies:
+    - name: istiod
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.17.1
+    description: Create istiod as well as Pod and Service monitoring objects
+    digest: e0ff71c28e42953f60434bb6c13aa29e79852646d0972ee2eb5e010bc8f418b2
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: istio-service-mesh
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/istio-service-mesh-0.0.1/istio-service-mesh-0.0.1.tgz
+    version: 0.0.1
   mediawiki:
   - apiVersion: v1
     appVersion: "1.37"
