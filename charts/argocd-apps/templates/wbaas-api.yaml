@@ -13,7 +13,7 @@ spec:
   sources:
     - repoURL: {{ .Values.repoUrls.charts }}
       path: charts/api
-      targetRevision: HEAD
+      targetRevision: 0.31.2
       helm:
         valueFiles:
           - $values/k8s/argocd/{{ .Values.environment }}/api.values.yaml
