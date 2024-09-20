@@ -11,16 +11,16 @@ spec:
     server: {{ .Values.clusterUrl }}
   project: {{ .Values.environment }}
   sources:
-    - repoURL: {{ .Values.repoUrls.charts }}
+    - repoURL: {{ .Values.repoUrls.wbstack }}
       path: charts/api
       targetRevision: 0.31.2
       chart: api
       helm:
         valueFiles:
-          - $values/k8s/argocd/{{ .Values.environment }}/api.values.yaml
+          - $deployRepo/k8s/argocd/{{ .Values.environment }}/api.values.yaml
     - repoURL: {{ .Values.repoUrls.deploy }}
       targetRevision: HEAD
-      ref: values
+      ref: deployRepo
 
   syncPolicy:
     automated:
