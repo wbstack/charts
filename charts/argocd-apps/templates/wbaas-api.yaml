@@ -14,6 +14,7 @@ spec:
     - repoURL: {{ .Values.repoUrls.charts }}
       path: charts/api
       targetRevision: 0.31.2
+      chart: api
       helm:
         valueFiles:
           - $values/k8s/argocd/{{ .Values.environment }}/api.values.yaml
