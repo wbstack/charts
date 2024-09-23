@@ -8,9 +8,8 @@ spec:
     namespace: argocd
   project: {{ .Values.environment }}
   source:
-    path: charts/argocd-apps
-    repoURL: https://wbstack.github.io/charts
-    targetRevision: 1.0.1
+    repoURL: {{ .Values.repoUrls.wbstack }}
+    targetRevision: 1.0.2
     chart: argocd-apps
     helm:
       values: |
