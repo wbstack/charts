@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    server: {{ .Values.clusterUrl }}
+  project: {{ .Values.environment }}
+  sources:
+    - repoURL: {{ .Values.repoUrls.wbstack }}
+      targetRevision: 0.31.2
+      chart: api
+      helm:
+        valueFiles:
+          - $deployRepo/k8s/argocd/{{ .Values.environment }}/api.values.yaml
+    - repoURL: {{ .Values.repoUrls.deploy }}
+      targetRevision: HEAD
+      ref: deployRepo
+
+  syncPolicy:
+    automated:
+      # disable self-healing for local env so we can use skaffold
+      selfHeal: {{- if eq .Values.environment "local" }} false {{ else }} true {{ end }}
+      prune: false
