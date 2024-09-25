@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.32.0
+- Add missing `REDIS_HOST` env var to pre-install-job template
+
 ## 0.29.1
 - Fix labels on api-queue pods to match
 
