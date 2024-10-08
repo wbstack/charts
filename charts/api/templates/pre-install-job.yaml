@@ -57,6 +57,8 @@ spec:
           - name: APP_TIMEZONE
             value: {{ .Values.app.timezone | quote }}
 
+          - name: REDIS_HOST
+            value: {{ .Values.app.redis.host | quote }}
           - name: REDIS_PORT
             value: {{ .Values.app.redis.port | quote }}
           - name: REDIS_PASSWORD
