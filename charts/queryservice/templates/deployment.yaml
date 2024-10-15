@@ -30,6 +30,10 @@ spec:
           volumeMounts:
           - mountPath: "/wdqs/data"
             name: data
+          - mountPath: /wdqs/allowlist.txt
+            subPath: allowlist.txt
+            name: allowlist
+            readOnly: true
           ports:
             - name: http
               containerPort: 9999
@@ -73,7 +77,10 @@ spec:
           claimName: {{ .Values.persistence.existingClaim | default (include "wdqs.fullname" .) }}
       {{- else }}
         emptyDir: {}
-      {{- end -}}
+      {{- end }}
+      - name: allowlist
+        configMap:
+          name: {{ include "wdqs.fullname" . }}-allowlist
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
