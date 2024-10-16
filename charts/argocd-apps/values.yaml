@@ -3,7 +3,7 @@ repoUrls:
   charts: https://github.com/wbstack/charts.git
   wbstack: https://wbstack.github.io/charts
   bitnami: https://charts.bitnami.com/bitnami
-  btinamiGit: https://github.com/bitnami.git
+  btinamiGit: https://github.com/bitnami/charts.git
 clusterUrl: https://kubernetes.default.svc
 environment: production
 
