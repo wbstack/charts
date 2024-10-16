@@ -11,7 +11,7 @@ spec:
     server: {{ .Values.clusterUrl }}
   project: {{ .Values.environment }}
   sources:
-    - repoURL: {{ .Values.repoUrls.bitnami-git }}
+    - repoURL: {{ .Values.repoUrls.bitnamiGit }}
       targetRevision: 17.3.8
       path: bitnami/redis
       helm:
