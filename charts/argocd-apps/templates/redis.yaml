@@ -13,7 +13,7 @@ spec:
   sources:
     - repoURL: {{ .Values.repoUrls.bitnami }}
       targetRevision: 17.3.8
-      chart: bitnami/redis
+      chart: redis
       helm:
         valueFiles:
           - $deployRepo/k8s/argocd/{{ .Values.environment }}/redis.values.yaml
