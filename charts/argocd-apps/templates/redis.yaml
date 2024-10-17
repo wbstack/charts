@@ -11,10 +11,9 @@ spec:
     server: {{ .Values.clusterUrl }}
   project: {{ .Values.environment }}
   sources:
-    - repoURL: {{ .Values.repoUrls.bitnamiGit }}
-      # targetRevision: 17.3.8
-      targetRevision: HEAD
-      path: bitnami/redis
+    - repoURL: {{ .Values.repoUrls.bitnami }}
+      targetRevision: 17.3.8
+      chart: redis
       helm:
         valueFiles:
           - $deployRepo/k8s/argocd/{{ .Values.environment }}/redis.values.yaml
