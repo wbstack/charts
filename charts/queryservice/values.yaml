@@ -17,6 +17,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+allowListStatic: ""
+allowList: ""
+
 service:
   type: ClusterIP
   port: 9999
