@@ -19,5 +19,8 @@ spec:
   - {{ .Values.repoUrls.charts }}
   - {{ .Values.repoUrls.wbstack }}
   clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
+  - group: 
+    - rbac.authorization.k8s.io
+  - kind:
+    - ClusterRole
+    - ClusterRoleBinding
