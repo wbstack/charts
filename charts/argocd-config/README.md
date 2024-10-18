@@ -3,6 +3,10 @@
 Configures permissions Argo CD and deploys the "app-of-apps" (see ../argocd-apps/README.md)
 
 ## Changelog
+## 1.0.8
+- use app-of-apps chart v1.0.6
+- remove wbstack charts git repo URL
+
 ## 1.0.7
 - use app-of-apps chart v1.0.5
 - add bitnami chart repo URL
