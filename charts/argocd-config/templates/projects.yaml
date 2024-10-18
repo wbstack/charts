@@ -5,6 +5,9 @@ metadata:
 spec:
   description: The {{ .Values.environment }} deployment of wikibase.cloud
   destinations:
+  - name: in-cluster-monitoring
+    namespace: monitoring
+    server: https://kubernetes.default.svc
   - name: in-cluster-default
     namespace: default
     server: https://kubernetes.default.svc
@@ -16,3 +19,8 @@ spec:
   - {{ .Values.repoUrls.charts }}
   - {{ .Values.repoUrls.wbstack }}
   - {{ .Values.repoUrls.bitnami }}
+  clusterResourceWhitelist:
+  - group: rbac.authorization.k8s.io
+    kind: ClusterRole
+  - group: rbac.authorization.k8s.io
+    kind: ClusterRoleBinding
