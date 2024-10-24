@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.32.1
+- Extend permissions to include ConfigMaps for Kubernetes ServiceAccount role
+
 ## 0.32.0
 - Add missing `REDIS_HOST` env var to pre-install-job template
 
