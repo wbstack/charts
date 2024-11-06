@@ -6,4 +6,6 @@ repoUrls:
 clusterUrl: https://kubernetes.default.svc
 environment: production
 
+chartVersions:
+  redis: 17.3.8
 # "inherits" values from argocd-config chart
