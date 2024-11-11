@@ -7,13 +7,18 @@ spec:
     server: https://kubernetes.default.svc
     namespace: argocd
   project: {{ .Values.environment }}
-  source:
-    repoURL: {{ .Values.repoUrls.wbstack }}
+  sources:
+    - repoURL: {{ .Values.repoUrls.wbstack }}
     targetRevision: 1.0.6
     chart: argocd-apps
     helm:
       values: |
 {{ toYaml .Values | indent 8 }}
+      valueFiles:
+          - $deployRepo/k8s/argocd/{{ .Values.environment }}/app-of-apps.values.yaml
+    - repoURL: {{ .Values.repoUrls.deploy }}
+      targetRevision: HEAD
+      ref: deployRepo
   syncPolicy:
     automated:
       prune: false

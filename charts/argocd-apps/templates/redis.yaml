@@ -18,7 +18,7 @@ spec:
         valueFiles:
           - $deployRepo/k8s/argocd/{{ .Values.environment }}/redis.values.yaml
     - repoURL: {{ .Values.repoUrls.deploy }}
-      targetRevision: de/argo-redis2
+      targetRevision: HEAD
       ref: deployRepo
 
   syncPolicy:
