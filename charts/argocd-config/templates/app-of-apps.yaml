@@ -9,15 +9,18 @@ spec:
   project: {{ .Values.environment }}
   sources:
     - repoURL: https://github.com/wbstack/charts.git
-      targetRevision: 1.0.6
-      chart: argocd-apps
+      targetRevision: "de/argo-apps-redis-demo-dnm" # use this branch to
+      # get the new unreleased app-of-apps chart including the alteration
+      # to use the unmerged branch on the deploy repo for values in
+      # redis.yaml
+      path: "charts/argocd-apps"
       helm:
         values: |
 {{ toYaml .Values | indent 10 }}
         valueFiles:
           - $deployRepo/k8s/argocd/{{ .Values.environment }}/app-of-apps.values.yaml
     - repoURL: {{ .Values.repoUrls.deploy }}
-      targetRevision: HEAD
+      targetRevision:  de/argo-redis2 # use the unmerged branch on the deploy repository
       ref: deployRepo
   syncPolicy:
     automated:
