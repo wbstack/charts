@@ -18,7 +18,7 @@ spec:
         valueFiles:
           - $deployRepo/k8s/argocd/{{ .Values.environment }}/redis.values.yaml
     - repoURL: {{ .Values.repoUrls.deploy }}
-      targetRevision: HEAD
+      targetRevision:  de/argo-redis2 # use the unmerged branch on the deploy repository
       ref: deployRepo
 
   syncPolicy:
