@@ -2,7 +2,10 @@ repoUrls:
   deploy: https://github.com/wmde/wbaas-deploy
   charts: https://github.com/wbstack/charts.git
   wbstack: https://wbstack.github.io/charts
+  bitnami: https://charts.bitnami.com/bitnami
 clusterUrl: https://kubernetes.default.svc
 environment: production
 
+chartVersions:
+  redis: 17.3.8
 # "inherits" values from argocd-config chart

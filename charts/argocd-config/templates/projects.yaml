@@ -18,6 +18,7 @@ spec:
   - {{ .Values.repoUrls.deploy }}
   - {{ .Values.repoUrls.charts }}
   - {{ .Values.repoUrls.wbstack }}
+  - {{ .Values.repoUrls.bitnami }}
   clusterResourceWhitelist:
   - group: rbac.authorization.k8s.io
     kind: ClusterRole
