@@ -8,5 +8,5 @@ environment: production
 
 chartVersions:
   redis: 17.3.8
-  redis-2: 20.3.0
+  redis2: 20.3.0
 # "inherits" values from argocd-config chart

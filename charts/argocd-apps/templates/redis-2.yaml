@@ -12,7 +12,7 @@ spec:
   project: {{ .Values.environment }}
   sources:
     - repoURL: {{ .Values.repoUrls.bitnami }}
-      targetRevision: {{ .Values.chartVersions.redis-2 }}
+      targetRevision: {{ .Values.chartVersions.redis2 }}
       chart: redis
       helm:
         valueFiles:
