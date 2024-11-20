@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-2
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    server: {{ .Values.clusterUrl }}
+  project: {{ .Values.environment }}
+  sources:
+    - repoURL: {{ .Values.repoUrls.bitnami }}
+      targetRevision: {{ .Values.chartVersions.redis-2 }}
+      chart: redis
+      helm:
+        valueFiles:
+          - $deployRepo/k8s/argocd/{{ .Values.environment }}/redis-2.values.yaml
+    - repoURL: {{ .Values.repoUrls.deploy }}
+      targetRevision: HEAD
+      ref: deployRepo
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: false
