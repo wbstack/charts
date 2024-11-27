@@ -56,6 +56,10 @@ Common deployment environment variables
   value: {{ .Values.mw.redis.readServer }}
 - name: MW_REDIS_SERVER_WRITE
   value: {{ .Values.mw.redis.writeServer }}
+- name: MW_REDIS_CACHE_SERVER_READ
+  value: {{ .Values.mw.redis.readCacheServer }}
+- name: MW_REDIS_CACHE_SERVER_WRITE
+  value: {{ .Values.mw.redis.writeCacheServer }}
 - name: MW_REDIS_PASSWORD
 {{- if .Values.mw.redis.password }}
   value: {{ .Values.mw.redis.password | quote }}
