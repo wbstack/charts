@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: "1.37"
 description: A Helm wbstack flavoured MediaWiki
 name: mediawiki
-version: 0.12.0
+version: 0.13.0
 home: https://github.com/wbstack
 maintainers:
   - name: WBstack

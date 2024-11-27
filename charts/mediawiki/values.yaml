@@ -25,6 +25,8 @@ mw:
   redis:
     readServer: someRedisOtherServer
     writeServer: someRedisServer
+    readCacheServer: aThirdRedisServerForVeryVolatileKeys
+    writeCacheServer: aFourthRedisServerForVeryVolatileKeys
     password: abc123
     # passwordSecretName:
     # passwordSecretKey:
