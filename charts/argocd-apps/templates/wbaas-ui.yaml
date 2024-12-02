@@ -12,8 +12,8 @@ spec:
   project: {{ .Values.environment }}
   sources:
     - repoURL: {{ .Values.repoUrls.charts }}
-      path: charts/ui
-      targetRevision: HEAD
+      chart: ui
+      targetRevision: 0.4.0
       helm:
         valueFiles:
           - $values/k8s/argocd/{{ .Values.environment }}/ui.values.yaml
