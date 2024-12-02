@@ -16,7 +16,6 @@ spec:
     server: https://kubernetes.default.svc
   sourceRepos:
   - {{ .Values.repoUrls.deploy }}
-  - {{ .Values.repoUrls.charts }}
   - {{ .Values.repoUrls.wbstack }}
   - {{ .Values.repoUrls.bitnami }}
   clusterResourceWhitelist:
@@ -24,4 +23,3 @@ spec:
     kind: ClusterRole
   - group: rbac.authorization.k8s.io
     kind: ClusterRoleBinding
-  - {{ .Values.repoUrls.wbstack }}
