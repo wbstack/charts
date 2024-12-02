@@ -3,6 +3,15 @@
 Configures permissions Argo CD and deploys the "app-of-apps" (see ../argocd-apps/README.md)
 
 ## Changelog
+## 1.0.11
+- remove unused git repo URL to wbstack/charts
+
+## 1.0.10
+- use app-of-apps chart v1.0.7
+
+## 1.0.9
+- replace hardcoded app-of-apps repo URL with configurable value
+
 ## 1.0.8
 - use app-of-apps chart v1.0.6
 - remove wbstack charts git repo URL
