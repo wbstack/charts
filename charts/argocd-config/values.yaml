@@ -1,7 +1,8 @@
 environment: production
 
+appOfAppsVersion: 1.1.0
+
 repoUrls:
   deploy: https://github.com/wmde/wbaas-deploy
-  charts: https://github.com/wbstack/charts.git
   wbstack: https://wbstack.github.io/charts
   bitnami: https://charts.bitnami.com/bitnami

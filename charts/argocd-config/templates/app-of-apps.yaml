@@ -9,7 +9,7 @@ spec:
   project: {{ .Values.environment }}
   sources:
     - repoURL: {{ .Values.repoUrls.wbstack }}
-      targetRevision: 1.0.7
+      targetRevision: {{ .Values.appOfAppsVersion }}
       chart: argocd-apps
       helm:
         values: |

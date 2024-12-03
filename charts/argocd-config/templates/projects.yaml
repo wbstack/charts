@@ -16,7 +16,6 @@ spec:
     server: https://kubernetes.default.svc
   sourceRepos:
   - {{ .Values.repoUrls.deploy }}
-  - {{ .Values.repoUrls.charts }}
   - {{ .Values.repoUrls.wbstack }}
   - {{ .Values.repoUrls.bitnami }}
   clusterResourceWhitelist:
