@@ -6,6 +6,8 @@ clusterUrl: https://kubernetes.default.svc
 environment: production
 
 chartVersions:
+  wbaasUi: 0.4.0
+  wbaasApi: 0.32.1
   redis: 17.3.8
   redis2: 20.3.0
 # "inherits" values from argocd-config chart

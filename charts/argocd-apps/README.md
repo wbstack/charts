@@ -3,9 +3,10 @@
 Deploys actual `Application` manifests for Argo CD. This chart gets treated as it's own `Application`, the app-of-apps, by the chart [argocd-config](../argocd-config/README.md).
 
 ## Changelog
-## 1.0.8
-- remove git repo url for wbstack/charts
+## 1.1.0
+- move app chart versions to values file
 - use helm chart notation instead for the ui
+- remove git repo url for wbstack/charts
 
 ## 1.0.7
 - add redis-2 manifest
