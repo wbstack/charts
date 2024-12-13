@@ -5,5 +5,6 @@ This chart deploys cert-manager `ClusterIssuer` resources, which represent CAs t
 https://cert-manager.io/docs/configuration/
 
 ## changelog
+- 0.2.1: Add self-signed CA bootstrapping (docs: https://cert-manager.io/docs/configuration/selfsigned/#bootstrapping-ca-issuers)
 - 0.2.0: Add self-signed cluster issuer for local environment
 - 0.1.0: Initial tag
