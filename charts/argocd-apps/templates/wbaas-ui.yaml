@@ -11,7 +11,7 @@ spec:
     server: {{ .Values.clusterUrl }}
   project: {{ .Values.environment }}
   sources:
-    - repoURL: {{ .Values.repoUrls.charts }}
+    - repoURL: {{ .Values.repoUrls.wbstack }}
       targetRevision: {{ .Values.chartVersions.wbaasUi }}
       chart: ui
       helm:
