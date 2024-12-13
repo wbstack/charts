@@ -3,7 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: {{ .name }}
-  namespace: default
+  namespace: {{ .namespace | default "default" }}
 spec:
   commonName: {{ .commonName }}
   dnsNames:

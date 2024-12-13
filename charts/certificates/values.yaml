@@ -4,6 +4,7 @@ certificates: []
 # certificates:
 #   -
 #     name: wikibase-cloud-tls
+#     namespace: default
 #     commonName: somedomain.com
 #     dnsNames:
 #       - '*.somedomain.com'
