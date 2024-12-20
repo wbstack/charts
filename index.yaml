@@ -989,6 +989,19 @@ entries:
   certificates:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-12-20T10:18:29.037947693Z"
+    description: A Helm chart for making generic certificates
+    digest: 1446c01762fe6d2cb9f19ab89f7b33bea6a365d211b59043142e60555be84177
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: certificates
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/certificates-0.1.1/certificates-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-09-16T10:15:11.474979464Z"
     description: A Helm chart for making generic certificates
     digest: 77486ed1a286b3aa611e47224cffbade5ff8393e7392e676ced435d4c1dba3c0
