@@ -39,19 +39,16 @@ spec:
               value: {{ .Values.app.siConversionProperty | quote }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
-            - name: https
-              containerPort: 443
-              protocol: TCP
-          # livenessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
+          livenessProbe:
+            httpGet:
+              path: /querybuilder/
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /querybuilder/
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
