@@ -11,15 +11,15 @@ spec:
     server: {{ .Values.clusterUrl }}
   project: {{ .Values.environment }}
   sources:
-    - repoURL: {{ .Values.repoUrls.charts }}
-      path: charts/ui
-      targetRevision: HEAD
+    - repoURL: {{ .Values.repoUrls.wbstack }}
+      targetRevision: {{ .Values.chartVersions.wbaasUi }}
+      chart: ui
       helm:
         valueFiles:
-          - $values/k8s/argocd/{{ .Values.environment }}/ui.values.yaml
+          - $deployRepo/k8s/argocd/{{ .Values.environment }}/ui.values.yaml
     - repoURL: {{ .Values.repoUrls.deploy }}
       targetRevision: HEAD
-      ref: values
+      ref: deployRepo
 
   syncPolicy:
     automated:
