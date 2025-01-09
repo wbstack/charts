@@ -1772,6 +1772,20 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/tool-cradle-0.1.0/tool-cradle-0.1.0.tgz
     version: 0.1.0
+  tool-querybuilder:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-01-09T10:36:42.939897629Z"
+    description: A Helm chart for deploying the Wikidata query builder https://gerrit.wikimedia.org/g/wikidata/query-builder
+    digest: 23e5442ab4c8a43d8742fa8db249dff600221e05b31b6a108d7cd8bfd8e79e0c
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: tool-querybuilder
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-querybuilder-0.1.0/tool-querybuilder-0.1.0.tgz
+    version: 0.1.0
   tool-quickstatements:
   - apiVersion: v1
     appVersion: "1.0"
