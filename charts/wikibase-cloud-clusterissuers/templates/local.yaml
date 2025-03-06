@@ -1,3 +1,4 @@
+{{- if eq .Values.environment "local" }}
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -31,3 +32,4 @@ metadata:
 spec:
   ca:
     secretName: wikibase-local-root-secret
+{{- end }}

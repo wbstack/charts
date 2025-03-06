@@ -1,3 +1,4 @@
+{{- if eq .Values.environment "production" }}
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -34,4 +35,4 @@ spec:
             - {{ . | quote }}
           {{- end }}
         {{- end }}
-
+{{- end }}
