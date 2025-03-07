@@ -2,7 +2,7 @@ apiVersion: v2
 name: tool-querybuilder
 description: A Helm chart for deploying the Wikidata query builder https://gerrit.wikimedia.org/g/wikidata/query-builder
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: 1.0.0
 
 maintainers:
