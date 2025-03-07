@@ -20,10 +20,21 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+
+      volumes:
+        - name: extra-tls
+          secret:
+            secretName: {{ .Values.extraCert.secretName }}
+            optional: true
+
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: extra-tls
+              mountPath: /usr/share/ca-certificates/extra
+              readOnly: true
           env:
             - name: PLATFORM_MW_BACKEND_HOST
               value: {{ .Values.platform.mediawikiBackendHost | quote }}
