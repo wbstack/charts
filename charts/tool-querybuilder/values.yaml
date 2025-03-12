@@ -14,6 +14,10 @@ app:
   subclassPropertyMap: '{"default":"P279","P171":"P171","P131":"P131"}'
   siConversionProperty: 'P2370'
 
+# additional tls certificate source
+extraCert:
+  secretName: someTlsSecret
+
 podAnnotations: {}
 
 podSecurityContext: {}
