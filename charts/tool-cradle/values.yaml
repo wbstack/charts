@@ -9,6 +9,10 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+# additional tls certificate source
+extraCert:
+  secretName: someTlsSecret
+
 service:
   type: ClusterIP
   port: 80
