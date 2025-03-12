@@ -1739,6 +1739,19 @@ entries:
   tool-cradle:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2025-03-12T15:25:39.93397146Z"
+    description: A Helm chart for Kubernetes
+    digest: d946776f0766b35aeb42f68544425e8d2e42359c4854d009ec997599bb70625b
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: tool-cradle
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-cradle-0.2.0/tool-cradle-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-11-26T13:18:04.257948663Z"
     description: A Helm chart for Kubernetes
     digest: a6367b511b440b60deede8d02241428e6f11121504efc8109c7789599827b192
