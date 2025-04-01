@@ -5,8 +5,8 @@ kind: Ingress
 metadata:
   name: redirect-ingress-{{ .host }}
   annotations:
-    nginx.ingress.kubernetes.io/server-snippet: |
-      return {{ .statusCode }} {{ .toLocation }}$request_uri;  
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: {{ .toLocation }}/$1
 spec:
   ingressClassName: nginx
   rules:
