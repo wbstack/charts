@@ -1712,6 +1712,19 @@ entries:
   redirects:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-04-02T10:26:16.951780419Z"
+    description: Create ingresses for redirecting subdomains elsewhere
+    digest: 9b5f9521f8c93ddfed16ee86821553db9fa0de00640e10fd6317b2f7638b097d
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: redirects
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/redirects-2.0.0/redirects-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-09-16T12:40:42.602140959Z"
     description: Create ingresses for redirecting subdomains elsewhere
     digest: 5063e4f2fe76cdffedef5673507026f6e548d24dc67979529375317289bed99c
