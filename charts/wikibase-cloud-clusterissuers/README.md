@@ -5,6 +5,7 @@ This chart deploys cert-manager `ClusterIssuer` resources, which represent CAs t
 https://cert-manager.io/docs/configuration/
 
 ## changelog
+- 0.3.1: Fix previous conditions, since there was a confusion about Let's Encrypts staging & produciton and our staging environments
 - 0.3.0: Wrap resource definitions in conditional blocks, to ensure only relevant resources get deployed to the right environment
 - 0.2.1: Add self-signed CA bootstrapping (docs: https://cert-manager.io/docs/configuration/selfsigned/#bootstrapping-ca-issuers)
 - 0.2.0: Add self-signed cluster issuer for local environment
