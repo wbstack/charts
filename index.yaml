@@ -2376,6 +2376,18 @@ entries:
   wikibase-cloud-clusterissuers:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2025-05-26T11:35:37.890784164Z"
+    description: A Helm chart for Kubernetes
+    digest: 3f4be595b56f3ece758e1bef4d7e9a9a631cba9342fba56e81ba86a1063cc116
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: wikibase-cloud-clusterissuers
+    urls:
+    - https://github.com/wbstack/charts/releases/download/wikibase-cloud-clusterissuers-0.3.1/wikibase-cloud-clusterissuers-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2025-03-12T15:34:09.28535664Z"
     description: A Helm chart for Kubernetes
     digest: 2f6117cd85c53fbb30a4e544dfba2c3428d0dc5da84174e7a7289280b40ad9cc
