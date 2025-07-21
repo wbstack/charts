@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.33.0
+- Add configuration values for complaint form email sender and recipient
+
 ## 0.32.1
 - Extend permissions to include ConfigMaps for Kubernetes ServiceAccount role
 
