@@ -96,6 +96,14 @@ Common lists of environment variables
 - name: WBSTACK_CONTACT_MAIL_SENDER
   value: {{ .Values.wbstack.contact.mail.sender | quote }}
 {{- end }}
+{{- if .Values.wbstack.complaint.mail.recipient }}
+- name: WBSTACK_COMPLAINT_MAIL_RECIPIENT
+  value: {{ .Values.wbstack.complaint.mail.recipient | quote }}
+{{- end }}
+{{- if .Values.wbstack.complaint.mail.sender }}
+- name: WBSTACK_COMPLAINT_MAIL_SENDER
+  value: {{ .Values.wbstack.complaint.mail.sender | quote }}
+{{- end }}
 {{- if .Values.wbstack.elasticSearch.enabledByDefault }}
 - name: WBSTACK_ELASTICSEARCH_ENABLED_BY_DEFAULT
   value: {{ .Values.wbstack.elasticSearch.enabledByDefault | quote }}

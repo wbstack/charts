@@ -99,6 +99,10 @@ wbstack:
     mail:
       recipient: someone@wikimedia.de
       sender: contact-<subject>@wikibase.cloud
+  complaint:
+    mail:
+      recipient: someone@wikimedia.de
+      sender: dsa@wikimedia.de
 
 app:
   name:
