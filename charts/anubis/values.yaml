@@ -7,6 +7,16 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+config:
+  difficulty: 4
+  cookie:
+    expiration: "24h"
+  target: ""
+
+botPolicy:
+  bots:
+    - import: (data)/botPolicies.yaml
+
 podAnnotations: {}
 
 podSecurityContext: {}
