@@ -7,9 +7,12 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.service.port.http }}
       targetPort: http
       protocol: TCP
       name: http
+    - port: {{ .Values.service.port.metrics }}
+      protocol: TCP
+      name: metrics
   selector:
     {{- include "anubis.selectorLabels" . | nindent 4 }}

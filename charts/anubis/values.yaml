@@ -24,9 +24,16 @@ securityContext:
 
 service:
   type: ClusterIP
-  port: 8080
+  port:
+    http: 8080
+    metrics: 9090
 
 ingress:
   enabled: false
+
+serviceMonitor:
+  enabled: false
+  namespace: monitoring
+  additionalLabels: {}
 
 resources: {}

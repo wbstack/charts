@@ -33,7 +33,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: "BIND"
-              value: ":{{ .Values.service.port }}"
+              value: ":{{ .Values.service.port.http }}"
+            - name: "METRICS_BIND"
+              value: ":{{ .Values.service.port.metrics }}"
             - name: "DIFFICULTY"
               value: {{ .Values.config.difficulty | quote }}
             - name: "COOKIE_EXPIRATION_TIME"
@@ -48,7 +50,10 @@ spec:
               subPath: botPolicy.yaml
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: {{ .Values.service.port.http }}
+              protocol: TCP
+            - name: metrics
+              containerPort: {{ .Values.service.port.metrics }}
               protocol: TCP
           livenessProbe:
             exec:
