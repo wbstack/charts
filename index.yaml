@@ -1,5 +1,18 @@
 apiVersion: v1
 entries:
+  anubis:
+  - apiVersion: v2
+    created: "2025-08-07T14:51:01.109894836Z"
+    description: A Helm chart for Kubernetes
+    digest: 64f32606f36a25c49917aea21a3ca4f151922d8b261141b6ffba2c3e89b473c5
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: anubis
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/anubis-0.1.0/anubis-0.1.0.tgz
+    version: 0.1.0
   api:
   - apiVersion: v1
     appVersion: "1.0"
