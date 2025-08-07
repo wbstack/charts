@@ -1,0 +1,21 @@
+{{ if .Values.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "anubis.fullname" . }}
+  namespace: {{ .Values.serviceMonitor.namespace }}
+  labels:
+    {{- include "anubis.labels" . | nindent 4 }}
+    {{- .Values.serviceMonitor.additionalLabels | toYaml | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "anubis.selectorLabels" . | nindent 6 }}
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  endpoints:
+    - interval: 10s
+      path: /metrics
+      port: metrics
+{{ end }}

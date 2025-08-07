@@ -1,0 +1,49 @@
+image:
+  repository: ghcr.io/techarohq/anubis
+  pullPolicy: IfNotPresent
+  tag: "v1.21.3"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+config:
+  difficulty: 4
+  cookie:
+    expiration: "24h"
+  target: ""
+
+botPolicy:
+  bots:
+    - import: (data)/botPolicies.yaml
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+  runAsNonRoot: true
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+
+service:
+  type: ClusterIP
+  port:
+    http: 8080
+    metrics: 9090
+
+ingress:
+  enabled: false
+
+serviceMonitor:
+  enabled: false
+  namespace: monitoring
+  additionalLabels: {}
+
+resources: {}

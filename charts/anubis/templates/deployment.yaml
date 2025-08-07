@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "anubis.fullname" . }}
+  labels:
+    {{- include "anubis.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "anubis.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        botPolicy-hash: {{ .Values.botPolicy | toYaml | sha256sum | quote }}
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      labels:
+        {{- include "anubis.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: "BIND"
+              value: ":{{ .Values.service.port.http }}"
+            - name: "METRICS_BIND"
+              value: ":{{ .Values.service.port.metrics }}"
+            - name: "DIFFICULTY"
+              value: {{ .Values.config.difficulty | quote }}
+            - name: "COOKIE_EXPIRATION_TIME"
+              value: {{ .Values.config.cookie.expiration | quote }}
+            - name: "TARGET"
+              value: {{ .Values.config.target | quote }}
+            - name: "POLICY_FNAME"
+              value: "/data/cfg/botPolicy.yaml"
+          volumeMounts:
+            - name: config
+              mountPath: /data/cfg/botPolicy.yaml
+              subPath: botPolicy.yaml
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port.http }}
+              protocol: TCP
+            - name: metrics
+              containerPort: {{ .Values.service.port.metrics }}
+              protocol: TCP
+          livenessProbe:
+            exec:
+              command: ["anubis", "--healthcheck"]
+          readinessProbe:
+            exec:
+              command: ["anubis", "--healthcheck"]
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "anubis.fullname" . }}-config
+            defaultMode: 0755
