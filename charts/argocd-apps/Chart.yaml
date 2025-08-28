@@ -2,7 +2,7 @@ apiVersion: v2
 name: argocd-apps
 description: Chart to deploy WBaaS apps in an "app-of-apps" pattern via ArgoCD
 type: application
-version: 2.0.0
+version: 2.0.1
 appVersion: "1.0"
 maintainers:
   - name: WBstack
