@@ -753,6 +753,19 @@ entries:
   argocd-apps:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2025-08-28T10:50:57.265865071Z"
+    description: Chart to deploy WBaaS apps in an "app-of-apps" pattern via ArgoCD
+    digest: 4a8c9655f8be943892ce63a3b049d910ff7c0f84dec581187bfd21afd555988d
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: argocd-apps
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/argocd-apps-2.0.0/argocd-apps-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2024-12-13T10:24:28.034171716Z"
     description: Chart to deploy WBaaS apps in an "app-of-apps" pattern via ArgoCD
     digest: f01dd9525cd38f0bf209c43a453bd4d6794d160bc71a753eadfc8c34883dc251
@@ -869,6 +882,19 @@ entries:
     - https://github.com/wbstack/charts/releases/download/argocd-apps-0.1.0/argocd-apps-0.1.0.tgz
     version: 0.1.0
   argocd-config:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-08-28T10:50:57.425437938Z"
+    description: Chart to deploy ArgoCD configuration (including the argocd-apps chart)
+    digest: c8b373fd60b396c99d8c4adc0e161389504b19aa2b2638dd69b23e9cef7581d2
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: argocd-config
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/argocd-config-2.0.0/argocd-config-2.0.0.tgz
+    version: 2.0.0
   - apiVersion: v2
     appVersion: "1.0"
     created: "2024-12-10T08:13:57.082845815Z"
