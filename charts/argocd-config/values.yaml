@@ -6,4 +6,3 @@ repoUrls:
   deploy: https://github.com/wmde/wbaas-deploy
   wbstack: https://wbstack.github.io/charts
   bitnami: https://raw.githubusercontent.com/wbstack/bitnami-legacy/14b6efaa84c7ed5684885ca8d29479fe6e3ed973/bitnami
-
