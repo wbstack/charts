@@ -3,6 +3,9 @@
 Configures permissions Argo CD and deploys the "app-of-apps" (see ../argocd-apps/README.md)
 
 ## Changelog
+## 2.0.0
+- use Bitnami Archive URL
+
 ## 1.1.0
 - read app-of-apps chart version from wbaas-deploy repo
 
