@@ -2,7 +2,7 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: mediawiki-139-app-web
+  name: {{ include "mediawiki.fullname" . }}-app-web
   namespace: default
 spec:
   maxReplicas: {{ .Values.web.autoscaling.maxReplicas }}
@@ -17,5 +17,5 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: mediawiki-139-app-web
+    name: {{ include "mediawiki.fullname" . }}-app-web
 {{- end}}
