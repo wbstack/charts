@@ -3,6 +3,9 @@
 Configures permissions Argo CD and deploys the "app-of-apps" (see ../argocd-apps/README.md)
 
 ## Changelog
+## 2.1.0
+- remove redis deployments
+
 ## 2.0.0
 - use Bitnami Archive URL
 
