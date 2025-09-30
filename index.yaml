@@ -910,6 +910,19 @@ entries:
   argocd-config:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2025-09-30T14:10:14.073811242Z"
+    description: Chart to deploy ArgoCD configuration (including the argocd-apps chart)
+    digest: e7b1529db90bdcd4ae666db6d92a698a40438f805349451cbf59a5c20f2acca6
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: argocd-config
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/argocd-config-2.1.2/argocd-config-2.1.2.tgz
+    version: 2.1.2
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2025-09-30T13:15:51.180524747Z"
     description: Chart to deploy ArgoCD configuration (including the argocd-apps chart)
     digest: 5c0135513dc4c744640051289ed449357d74c3247bfead46488a5f3a60336b1e
