@@ -3,6 +3,9 @@
 Deploys actual `Application` manifests for Argo CD. This chart gets treated as it's own `Application`, the app-of-apps, by the chart [argocd-config](../argocd-config/README.md).
 
 ## Changelog
+## 2.1.0
+- remove redis deployments
+
 ## 1.1.1
 - fix repo URL for wbaas-ui
 

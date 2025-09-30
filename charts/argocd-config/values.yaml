@@ -1,6 +1,6 @@
 environment: production
 
-appOfAppsVersion: 2.0.1
+appOfAppsVersion: 2.1.0
 
 repoUrls:
   deploy: https://github.com/wmde/wbaas-deploy
