@@ -216,15 +216,28 @@ spec:
                 name: {{ template "api.fullname" . }}-app-passport-keys
                 {{- end }}
                 key: oauth-private.key
-      {{- if .Values.app.gce.serviceAccountSecret }}
           volumeMounts:
+            {{- if .values.app.gce.serviceAccountSecret }}
             - name: "service-account-wbstack-api"
               mountPath: "/var/run/secret/cloud.google.com"
+            {{- end }}
+
+            {{- if .Values.configMap.name }}
+            - name: "mediawiki-configMap"
+              mountPath: {{ .Values.configMap.mountPath }}
+            {{- end }}
       volumes:
+        {{- if .values.app.gce.serviceAccountSecret }}
         - name: "service-account-wbstack-api"
           secret:
             secretName: {{ .Values.app.gce.serviceAccountSecret | quote }}
-      {{- end }}
+        {{- end }}
+
+        {{- if .Values.configMap.name }}
+        - name: "mediawiki-configMap"
+          configMap:
+            name: {{ .Values.configMap.name }}
+        {{- end }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
