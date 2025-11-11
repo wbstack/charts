@@ -214,6 +214,10 @@ service:
 ingress:
   enabled: false
 
+configMap:
+  name: "mediawiki-host-map"
+  mountPath: "/config"
+
 resources:
   backend: {}
   web: {}
