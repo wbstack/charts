@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.34.0
+- Extend permissions for Kubernetes ServiceAccount role to add reading services
+
 ## 0.33.0
 - Add configuration values for complaint form email sender and recipient
 

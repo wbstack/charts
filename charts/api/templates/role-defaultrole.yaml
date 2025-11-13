@@ -9,7 +9,7 @@ rules:
   resources: ["ingresses"]
   verbs: ["get", "create", "list"]
 - apiGroups: [""]
-  resources: ["pods"]
+  resources: ["pods", "services"]
   verbs: ["get", "list", "watch"]
 - apiGroups: ["batch"]
   resources: ["jobs"]
