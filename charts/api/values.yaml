@@ -214,14 +214,9 @@ service:
 ingress:
   enabled: false
 
-configMap:
-  name: "mediawiki-host-map"
-  mountPath: "/config"
-  jsonMap: |
-    {
-      "mw1.39-wbs1": "139-app",
-      "mw1.43-wbs1": "143-app"
-    }
+mediawikiVersionConfigMap: |
+    mw1.39-wbs1: 139-app
+    mw1.43-wbs1: 143-app
 
 resources:
   backend: {}

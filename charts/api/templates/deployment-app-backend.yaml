@@ -222,10 +222,8 @@ spec:
               mountPath: "/var/run/secret/cloud.google.com"
             {{- end }}
 
-            {{- if .Values.configMap.name }}
             - name: "mediawiki-configMap"
-              mountPath: {{ .Values.configMap.mountPath }}
-            {{- end }}
+              mountPath: "/config"
       volumes:
         {{- if .values.app.gce.serviceAccountSecret }}
         - name: "service-account-wbstack-api"
@@ -233,11 +231,9 @@ spec:
             secretName: {{ .Values.app.gce.serviceAccountSecret | quote }}
         {{- end }}
 
-        {{- if .Values.configMap.name }}
         - name: "mediawiki-configMap"
           configMap:
-            name: {{ .Values.configMap.name }}
-        {{- end }}
+            name: "mediawiki-version-map"
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
