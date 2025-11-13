@@ -214,6 +214,10 @@ service:
 ingress:
   enabled: false
 
+mediawikiVersionConfigMap: |
+    mw1.39-wbs1: 139-app
+    mw1.43-wbs1: 143-app
+
 resources:
   backend: {}
   web: {}
