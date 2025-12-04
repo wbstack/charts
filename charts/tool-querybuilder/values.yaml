@@ -7,9 +7,6 @@ image:
   tag: "2024-12-03-110242"
   pullPolicy: IfNotPresent
 
-platform:
-  mediawikiBackendHost: someHost
-
 app:
   subclassPropertyMap: '{"default":"P279","P171":"P171","P131":"P131"}'
   siConversionProperty: 'P2370'
