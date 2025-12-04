@@ -9,9 +9,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-platform:
-  mediawikiBackendHost: someHost
-
 php:
   sessionSaveHandler: redis
   sessionSavePath: tcp://somePath
