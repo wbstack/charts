@@ -74,9 +74,6 @@ serviceMonitor:
   enabled: false
   additionalLabels: {}
 
-platform:
-  backendMwHost: someHost
-
 wbstack:
   summaryInactiveThreshold:
   # Ranges are passed in duration strings as expected by a PHP DateInterval
