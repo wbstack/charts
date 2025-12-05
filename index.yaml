@@ -1970,6 +1970,19 @@ entries:
   tool-querybuilder:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-12-05T14:04:42.367340925Z"
+    description: A Helm chart for deploying the Wikidata query builder https://gerrit.wikimedia.org/g/wikidata/query-builder
+    digest: 7e01b14f530331d2b31c586b087e5f691e5ac4f0bcee2ef8d59ab68ee2fa1084
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: tool-querybuilder
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-querybuilder-0.3.0/tool-querybuilder-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-03-12T15:23:01.993819932Z"
     description: A Helm chart for deploying the Wikidata query builder https://gerrit.wikimedia.org/g/wikidata/query-builder
     digest: 0a608bdbde2612f07aa00d175ecae18e0b722e694d146bcd52dfd8d7f27ce6b6
@@ -1995,6 +2008,19 @@ entries:
     - https://github.com/wbstack/charts/releases/download/tool-querybuilder-0.1.0/tool-querybuilder-0.1.0.tgz
     version: 0.1.0
   tool-quickstatements:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2025-12-05T14:04:42.505049559Z"
+    description: A Helm chart for Kubernetes
+    digest: f2c22a56e5518933a3be078db6bae879925829ac79001dea631d0137aa07d7f6
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: tool-quickstatements
+    urls:
+    - https://github.com/wbstack/charts/releases/download/tool-quickstatements-0.4.0/tool-quickstatements-0.4.0.tgz
+    version: 0.4.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2025-03-12T15:29:00.791784508Z"
