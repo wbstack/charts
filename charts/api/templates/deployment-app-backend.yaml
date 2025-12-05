@@ -85,8 +85,6 @@ spec:
 
           - name: QUERY_SERVICE_HOST
             value: {{ .Values.app.queryServiceHost | quote }}
-          - name: PLATFORM_MW_BACKEND_HOST
-            value: {{ .Values.platform.backendMwHost | quote }}
 
           - name: REDIS_HOST
             value: {{ .Values.app.redis.host | quote }}
