@@ -16,6 +16,7 @@ image:
   pullPolicy: IfNotPresent
 
 mw:
+  environment: somewhere
   settings:
     logToStdErr: false
     allowedProxyCidr: ""
