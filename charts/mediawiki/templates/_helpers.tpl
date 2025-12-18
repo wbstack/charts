@@ -48,6 +48,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Common deployment environment variables
 */}}
 {{- define "mediawiki.env" -}}
+- name: MW_ENVIRONMENT
+  value: {{ .Values.mw.environment }}
 - name: MW_DB_SERVER_MASTER
   value: {{ .Values.mw.db.master }}
 - name: MW_DB_SERVER_REPLICA
