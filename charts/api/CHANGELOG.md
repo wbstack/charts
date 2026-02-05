@@ -2,6 +2,15 @@
 
 This chart does not yet follow SemVer.
 
+## 0.36.0
+- Populates env var `ELASTICSEARCH_HOST`
+- Removes env vars
+  - `ELASTICSEARCH_CLUSTER_WITHOUT_SHARED_INDEX`
+  - `ELASTICSEARCH_SHARED_INDEX_HOST`
+
+## 0.35.0
+- Remove uses of `PLATFORM_MW_BACKEND_HOST`
+
 ## 0.34.0
 - Extend permissions for Kubernetes ServiceAccount role to add reading services
 
