@@ -16,6 +16,19 @@ entries:
   api:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2026-02-06T14:44:45.436501744Z"
+    description: A Helm chart for the WBStack API
+    digest: 57043a4d775bd1792c940bb97a0d5f09cd30df2b0e5fcd4c9cb705cee38833b1
+    home: https://github.com/wbstack
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: api
+    urls:
+    - https://github.com/wbstack/charts/releases/download/api-0.36.0/api-0.36.0.tgz
+    version: 0.36.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2025-12-05T13:38:11.731557171Z"
     description: A Helm chart for the WBStack API
     digest: 38ca644b75be3eff221b5c867974794b2ae432452033d71cc61af466778027fc
@@ -2669,4 +2682,4 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/wikibase-ingress-0.1.1/wikibase-ingress-0.1.1.tgz
     version: 0.1.1
-generated: "2021-10-12T22:01:06.264880402Z"
+generated: "2026-02-06T14:44:45.436952181Z"
