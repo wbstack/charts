@@ -76,11 +76,9 @@ spec:
           restartPolicy: {{ .Values.image.restartPolicy }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           livenessProbe:
-            exec:
-              command:
-              - /bin/sh
-              - -c
-              - 'curl -s http://localhost:8080/allowlist.txt | grep "wikidata.org"'
+            httpGet:
+              path: /allowlist.txt
+              port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
             #restart the container if it fails 3 times in 15 seconds

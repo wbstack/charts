@@ -4,12 +4,13 @@ metadata:
   name: nginx-sidecar-config
 data:
   nginx.conf: |
+    events {}
     http {
       server {
         listen 8080;
   
         location /allowlist.txt {
-          root /wdqs/
+          root /wdqs/;
         }
       }
     }
