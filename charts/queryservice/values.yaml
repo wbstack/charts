@@ -9,6 +9,7 @@ image:
   repository: ghcr.io/wbstack/queryservice
   tag: "0.3.6_0.6"
   pullPolicy: IfNotPresent
+  restartPolicy: Always
 
 app:
   heapSize: 2g
