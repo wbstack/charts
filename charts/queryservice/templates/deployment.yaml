@@ -70,6 +70,7 @@ spec:
             #TODO allow passing value in values
           - name: WDQS_ENTITY_NAMESPACES
             value: 120,122
+      initContainers:
         - name: queryservice-allowlist-nginx-sidecar
           image: nginx
           restartPolicy: {{ .Values.image.restartPolicy }}
