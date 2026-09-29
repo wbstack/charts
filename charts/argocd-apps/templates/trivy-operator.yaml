@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trivy-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: trivy-system
+    server: {{ .Values.clusterUrl }}
+  project: {{ .Values.environment }}
+  sources:
+    - repoURL: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
+      targetRevision: {{ .Values.chartVersions.trivy-exporter }}
+      chart: trivy-exporter
+      helm:
+        valuesObject:
+          operator:
+            namespace: trivy-system
+            scanJobTimeout: 60m
+    - repoURL: {{ .Values.repoUrls.deploy }}
+      targetRevision: HEAD
+      ref: deployRepo
+
+  syncPolicy:
+    automated:
+      # disable self-healing for local env so we can use skaffold
+      selfHeal: {{- if eq .Values.environment "local" }} false {{ else }} true {{ end }}
+      prune: false
