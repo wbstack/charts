@@ -17,6 +17,7 @@ spec:
   sourceRepos:
   - {{ .Values.repoUrls.deploy }}
   - {{ .Values.repoUrls.wbstack }}
+  {{- .Values.repoUrls.other | toYaml | nindent 2 }}
   clusterResourceWhitelist:
   - group: rbac.authorization.k8s.io
     kind: ClusterRole
