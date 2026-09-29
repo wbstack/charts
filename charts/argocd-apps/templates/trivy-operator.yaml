@@ -9,19 +9,15 @@ spec:
     namespace: trivy-system
     server: {{ .Values.clusterUrl }}
   project: {{ .Values.environment }}
-  sources:
-    - repoURL: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
-      targetRevision: {{ .Values.chartVersions.trivyOperator }}
-      chart: trivy-exporter
-      helm:
-        valuesObject:
-          operator:
-            namespace: trivy-system
-            scanJobTimeout: 60m
-    - repoURL: {{ .Values.repoUrls.deploy }}
-      targetRevision: HEAD
-      ref: deployRepo
-
+  source:
+    repoURL: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
+    targetRevision: {{ .Values.chartVersions.trivyOperator }}
+    chart: trivy-operator
+    helm:
+      valuesObject:
+        operator:
+          namespace: trivy-system
+          scanJobTimeout: 60m
   syncPolicy:
     automated:
       # disable self-healing for local env so we can use skaffold
