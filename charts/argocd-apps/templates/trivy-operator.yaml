@@ -1,0 +1,26 @@
+{{ if eq .Values.environment "staging" -}}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trivy-operator
+  namespace: argocd
+spec:
+  destination:
+    namespace: trivy-system
+    server: {{ .Values.clusterUrl }}
+  project: {{ .Values.environment }}
+  source:
+    repoURL: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
+    targetRevision: {{ .Values.chartVersions.trivyOperator }}
+    chart: trivy-operator
+    helm:
+      valuesObject:
+        operator:
+          namespace: trivy-system
+          scanJobTimeout: 60m
+  syncPolicy:
+    automated:
+      # disable self-healing for local env so we can use skaffold
+      selfHeal: {{- if eq .Values.environment "local" }} false {{ else }} true {{ end }}
+      prune: false
+{{- end }}

@@ -2,7 +2,7 @@ apiVersion: v2
 name: argocd-config
 description: Chart to deploy ArgoCD configuration (including the argocd-apps chart)
 type: application
-version: 2.1.2
+version: 2.1.3
 appVersion: "1.0"
 maintainers:
   - name: WBstack

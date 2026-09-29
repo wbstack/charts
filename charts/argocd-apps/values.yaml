@@ -7,4 +7,5 @@ environment: production
 chartVersions:
   wbaasUi: 0.4.0
   wbaasApi: 0.32.1
+  trivyOperator: 0.32.1
 # "inherits" values from argocd-config chart

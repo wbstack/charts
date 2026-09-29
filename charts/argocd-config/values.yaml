@@ -5,3 +5,5 @@ appOfAppsVersion: 2.1.0
 repoUrls:
   deploy: https://github.com/wmde/wbaas-deploy
   wbstack: https://wbstack.github.io/charts
+  other:
+  - oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
