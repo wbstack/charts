@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: trivy-exporter
+  name: trivy-operator
   namespace: argocd
 spec:
   destination:
