@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.36.1
+- Remove the duplicate `ELASTICSEARCH_HOST` from queue deployments; use the shared environment helper.
+
 ## 0.36.0
 - Populates env var `ELASTICSEARCH_HOST`
 - Removes env vars
