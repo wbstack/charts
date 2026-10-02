@@ -70,6 +70,27 @@ spec:
             #TODO allow passing value in values
           - name: WDQS_ENTITY_NAMESPACES
             value: 120,122
+      initContainers:
+        - name: queryservice-allowlist-nginx-sidecar
+          image: nginx
+          restartPolicy: {{ .Values.image.restartPolicy }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          livenessProbe:
+            httpGet:
+              path: /allowlist.txt
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            #restart the container if it fails 3 times in 15 seconds
+            failureThreshold: 3
+          volumeMounts:
+          - mountPath: /wdqs/allowlist.txt
+            subPath: allowlist.txt
+            name: allowlist
+            readOnly: true
+          - mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+            name: nginx-config
       volumes:
       - name: data
       {{- if .Values.persistence.enabled }}
@@ -81,6 +102,9 @@ spec:
       - name: allowlist
         configMap:
           name: {{ include "wdqs.fullname" . }}-allowlist
+      - name: nginx-config
+        configMap:
+          name: nginx-sidecar-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
