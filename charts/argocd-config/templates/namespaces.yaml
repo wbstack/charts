@@ -1,0 +1,8 @@
+# Remember to add the namespace to the projects.yaml too, we have a very restrictive list.
+# It could be argued that this file (or files) belongs in argocd-apps/templates but that would
+# require a lot more version bumps and if we're referencing it in the projects.yaml, it has a
+# more-than-tenuous reason to be here.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trivy-system

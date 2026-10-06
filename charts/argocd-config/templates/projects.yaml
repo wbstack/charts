@@ -14,6 +14,9 @@ spec:
   - name: in-cluster-argocd
     namespace: argocd
     server: https://kubernetes.default.svc
+  - name: in-cluster-trivy-system
+    namespace: trivy-system
+    server: https://kubernetes.default.svc
   sourceRepos:
   - {{ .Values.repoUrls.deploy }}
   - {{ .Values.repoUrls.wbstack }}
