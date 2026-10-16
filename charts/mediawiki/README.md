@@ -1,6 +1,13 @@
 # wbstack mediawiki
 
 ## Settings
+
+### mw.recaptcha.enabled
+
+Defaults to `true`. Set to `false` to pass `MW_RECAPTCHA_ENABLED=no` and omit
+reCAPTCHA keys and secret references. This requires a MediaWiki image that
+supports the opt-out. Per-wiki QuestyCaptcha settings remain unaffected.
+
 ### mw.settings.allowedProxyCidr 
 Sets `$wgCdnServersNoPurge` in mediawiki.
 
@@ -11,6 +18,7 @@ kubectl get ds kube-proxy -n kube-system -o=jsonpath="{.spec.template.spec.conta
 
 ## Changelog
 
+- 0.15.0: Add the default-enabled `mw.recaptcha.enabled` switch.
 - 0.10.6: Added `mw.settings.allowedProxyCidr` to set $wgCdnServersNoPurge
 - 0.10.5: New MW release with updated CirrusSearch sharding config, we missed one index.
 - 0.10.4: New MW release with CirrusSearch sharding config

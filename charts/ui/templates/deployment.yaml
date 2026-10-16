@@ -47,7 +47,13 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
-            {{- if .Values.ui.recaptchaSitekeySecretName }}
+            - name: RECAPTCHA_ENABLED
+              {{- if .Values.ui.recaptchaEnabled }}
+              value: "1"
+              {{- else }}
+              value: "0"
+              {{- end }}
+            {{- if and .Values.ui.recaptchaEnabled .Values.ui.recaptchaSitekeySecretName }}
             - name: RECAPTCHA_SITE_KEY
               valueFrom:
                 secretKeyRef:
