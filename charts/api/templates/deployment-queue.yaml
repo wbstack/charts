@@ -70,8 +70,6 @@ spec:
             value: {{ $.Values.app.elasticsearch.curlTimeout.indexInit | quote }}
             {{- end }}
 
-          - name: ELASTICSEARCH_HOST
-            value: {{ $.Values.app.elasticSearchHost | quote }}
           - name: QUERY_SERVICE_HOST
             value: {{ $.Values.app.queryServiceHost | quote }}
 
