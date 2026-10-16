@@ -17,6 +17,10 @@ spec:
         operator:
           namespace: trivy-system
           scanJobTimeout: 60m
+      serviceMonitor:
+        enabled: true
+        labels:
+          release: kube-prometheus-stack
   syncPolicy:
     automated:
       # disable self-healing for local env so we can use skaffold
