@@ -3,6 +3,9 @@
 Deploys actual `Application` manifests for Argo CD. This chart gets treated as it's own `Application`, the app-of-apps, by the chart [argocd-config](../argocd-config/README.md).
 
 ## Changelog
+## 2.5.1
+- fix trivy operator value file references
+
 ## 2.5.0
 - remove trivy operator from local env
 
