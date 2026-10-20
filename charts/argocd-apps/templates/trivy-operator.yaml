@@ -9,13 +9,16 @@ spec:
     namespace: trivy-system
     server: {{ .Values.clusterUrl }}
   project: {{ .Values.environment }}
-  source:
-    repoURL: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
-    targetRevision: {{ .Values.chartVersions.trivyOperator }}
-    chart: trivy-operator
-    helm:
-      valueFiles:
-        - $deployRepo/k8s/argocd/{{ .Values.environment }}/trivy-operator.values.yaml
+  sources:
+    - repoURL: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
+      targetRevision: {{ .Values.chartVersions.trivyOperator }}
+      chart: trivy-operator
+      helm:
+        valueFiles:
+          - $deployRepo/k8s/argocd/{{ .Values.environment }}/trivy-operator.values.yaml
+    - repoURL: {{ .Values.repoUrls.deploy }}
+      targetRevision: HEAD
+      ref: deployRepo
   syncPolicy:
     automated:
       selfHeal: true
