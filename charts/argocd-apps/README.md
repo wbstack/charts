@@ -3,6 +3,10 @@
 Deploys actual `Application` manifests for Argo CD. This chart gets treated as it's own `Application`, the app-of-apps, by the chart [argocd-config](../argocd-config/README.md).
 
 ## Changelog
+## 2.4.0
+- enable trivy operator serviceMonitor
+- read trivy values from deploy repo
+
 ## 2.3.0
 - add trivy operator to local and production
 

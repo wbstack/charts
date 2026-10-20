@@ -13,10 +13,8 @@ spec:
     targetRevision: {{ .Values.chartVersions.trivyOperator }}
     chart: trivy-operator
     helm:
-      valuesObject:
-        operator:
-          namespace: trivy-system
-          scanJobTimeout: 60m
+      valueFiles:
+        - $deployRepo/k8s/argocd/{{ .Values.environment }}/trivy-operator.values.yaml
   syncPolicy:
     automated:
       # disable self-healing for local env so we can use skaffold
