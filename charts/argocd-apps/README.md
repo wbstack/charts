@@ -4,7 +4,7 @@ Deploys actual `Application` manifests for Argo CD. This chart gets treated as i
 
 ## Changelog
 ## 2.6.0
-- adds two valkey deployments: a & b
+- add two valkey deployments a & b
 
 ## 2.5.1
 - fix trivy operator value file references
