@@ -7,3 +7,4 @@ repoUrls:
   wbstack: https://wbstack.github.io/charts
   other:
   - oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
+  - https://github.com/wbstack/valkey-helm.git
