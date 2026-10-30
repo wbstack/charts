@@ -3,6 +3,24 @@
 Configures permissions Argo CD and deploys the "app-of-apps" (see ../argocd-apps/README.md)
 
 ## Changelog
+## 2.3.0
+- allow valkey helm repo
+
+## 2.2.0
+- open up Cluster Resource Allowlist
+
+## 2.1.6
+- allow CRD resources
+
+## 2.1.5
+- add trivy namespace
+
+## 2.1.4
+- default value change
+
+## 2.1.3
+- allow trivy operator source
+
 ## 2.1.2
 - remove bitnami chart repo
 
