@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: valkey-a
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: {{ .Values.clusterUrl }}
+  project: {{ .Values.environment }}
+  sources:
+    - repoURL: https://github.com/wbstack/valkey-helm.git
+      targetRevision: {{ .Values.chartVersions.valkeyA }}
+      path: charts/valkey
+      helm:
+        valueFiles:
+          - $deployRepo/k8s/argocd/production/valkey-a.values.yaml
+          - $deployRepo/k8s/argocd/{{ .Values.environment }}/valkey-a.values.yaml
+    - repoURL: {{ .Values.repoUrls.deploy }}
+      targetRevision: HEAD
+      ref: deployRepo
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: false

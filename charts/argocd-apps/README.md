@@ -3,6 +3,9 @@
 Deploys actual `Application` manifests for Argo CD. This chart gets treated as it's own `Application`, the app-of-apps, by the chart [argocd-config](../argocd-config/README.md).
 
 ## Changelog
+## 2.6.0
+- add two valkey deployments a & b
+
 ## 2.5.1
 - fix trivy operator value file references
 
