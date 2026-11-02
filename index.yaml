@@ -1777,6 +1777,19 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/mediawiki-0.1.0/mediawiki-0.1.0.tgz
     version: 0.1.0
+  platform-nginx:
+  - apiVersion: v2
+    created: "2026-11-02T09:19:32.182326755Z"
+    description: A Helm chart for Kubernetes
+    digest: f2c33026987d7a1a1c983a91ac604723d3f600b2d3a27188c27806c0ad2cf26f
+    maintainers:
+    - name: WBstack
+      url: https://github.com/wbstack
+    name: platform-nginx
+    type: application
+    urls:
+    - https://github.com/wbstack/charts/releases/download/platform-nginx-0.1.0/platform-nginx-0.1.0.tgz
+    version: 0.1.0
   queryservice:
   - apiVersion: v1
     appVersion: "1.0"
@@ -2812,4 +2825,4 @@ entries:
     urls:
     - https://github.com/wbstack/charts/releases/download/wikibase-ingress-0.1.1/wikibase-ingress-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-26T15:56:47.043667892Z"
+generated: "2026-11-02T09:19:32.182611363Z"
