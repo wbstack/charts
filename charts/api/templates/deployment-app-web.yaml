@@ -81,6 +81,8 @@ spec:
             value: {{ .Values.app.url | quote }}
           - name: APP_TIMEZONE
             value: {{ .Values.app.timezone | quote }}
+          - name: RECAPTCHA_ENABLED
+            value: {{ .Values.app.recaptcha.enabled | quote }}
 
 {{ include "api.commonAppEnvVars" . | indent 10 }}
 
@@ -131,14 +133,14 @@ spec:
             value: {{ .Values.app.mail.fromname | quote }}
 {{ include "api.smtpEnvVars" . | indent 10 }}
 {{ include "api.staticStorageEnvVars" . | indent 10 }}
-          {{- if .Values.app.recaptcha.secretSecretName }}
+          {{- if and .Values.app.recaptcha.enabled .Values.app.recaptcha.secretSecretName }}
           - name: RECAPTCHA_V3_SECRET_KEY
             valueFrom:
               secretKeyRef:
                 name: {{ .Values.app.recaptcha.secretSecretName | quote }}
                 key: {{ .Values.app.recaptcha.secretSecretKey | quote }}
           {{- end }}
-          {{- if .Values.app.recaptcha.minScore }}
+          {{- if and .Values.app.recaptcha.enabled .Values.app.recaptcha.minScore }}
           - name: RECAPTCHA_V3_MIN_SCORE
             value: {{ .Values.app.recaptcha.minScore | quote }}
           {{- end }}

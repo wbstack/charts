@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.5.0
+- Add `ui.recaptchaEnabled` (default `true`) to pass `RECAPTCHA_ENABLED` to the UI and omit its reCAPTCHA site-key secret reference when disabled.
+
 ## 0.3.1
 - Allow setting additional labels on Deployment Pods
 

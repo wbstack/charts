@@ -170,6 +170,7 @@ app:
     # smtpPasswordSecretName: ""
     # smtpPasswordSecretKey: ""
   recaptcha:
+    enabled: true
     secretSecretName: ""
     secretSecretKey: ""
     minScore: 0.5

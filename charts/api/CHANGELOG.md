@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.37.0
+- Add `app.recaptcha.enabled` (default `true`) to pass `RECAPTCHA_ENABLED` to the web app and omit reCAPTCHA secret references when disabled.
+
 ## 0.36.0
 - Populates env var `ELASTICSEARCH_HOST`
 - Removes env vars
