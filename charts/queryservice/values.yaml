@@ -4,6 +4,8 @@
 
 replicaCount: 1
 useProbes: true
+startupProbe: {}
+probeTimeoutSeconds: 1
 
 image:
   repository: ghcr.io/wbstack/queryservice
@@ -12,6 +14,8 @@ image:
 
 app:
   heapSize: 2g
+  maxRam: 2g
+  maxDirectMemorySize: ""
 
 imagePullSecrets: []
 nameOverride: ""

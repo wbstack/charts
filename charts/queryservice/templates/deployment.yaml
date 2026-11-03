@@ -39,20 +39,24 @@ spec:
               containerPort: 9999
               protocol: TCP
           {{- if .Values.useProbes }}
+          {{- with .Values.startupProbe }}
+          startupProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           livenessProbe:
             httpGet:
               path: /bigdata/
               port: http
             # wdqs can take some time on initial boot, so take that into account
             initialDelaySeconds: 30
-            timeoutSeconds: 1
+            timeoutSeconds: {{ .Values.probeTimeoutSeconds }}
             periodSeconds: 15
           readinessProbe:
             httpGet:
               path: /bigdata/
               port: http
             initialDelaySeconds: 15
-            timeoutSeconds: 1
+            timeoutSeconds: {{ .Values.probeTimeoutSeconds }}
             periodSeconds: 15
           {{- end }}
           resources:
@@ -64,7 +68,7 @@ spec:
             value: {{ .Values.app.heapSize }}
             # TODO would use -XX:+UseSerialGC but conflicts with -XX:+UseG1GC in runBlazegraph.sh
           - name: EXTRA_JVM_OPTS
-            value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAM=2g -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+            value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAM={{ .Values.app.maxRam }}{{ if .Values.app.maxDirectMemorySize }} -XX:MaxDirectMemorySize={{ .Values.app.maxDirectMemorySize }}{{ end }} -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
           - name: GC_LOGS
             value: " "
             #TODO allow passing value in values
