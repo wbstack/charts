@@ -61,8 +61,6 @@ spec:
             value: app
           - name: ROUTES_LOAD_WEB
             value: {{ .Values.app.routes.load.web | quote }}
-          - name: ROUTES_LOAD_SANDBOX
-            value: {{ .Values.app.routes.load.sandbox | quote }}
           - name: ROUTES_LOAD_BACKEND
             value: "0"
 

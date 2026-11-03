@@ -129,7 +129,6 @@ app:
   routes:
     load:
       web: 1
-      sandbox: 0
   passport:
     public: contentOfPublicKey
     private: contentOfPrivateKey
