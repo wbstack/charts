@@ -2,6 +2,9 @@
 
 This chart does not yet follow SemVer.
 
+## 0.36.1
+- Restrict the API queue ServiceAccount to the namespaces it uses
+
 ## 0.36.0
 - Populates env var `ELASTICSEARCH_HOST`
 - Removes env vars

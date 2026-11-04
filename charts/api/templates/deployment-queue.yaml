@@ -239,6 +239,8 @@ spec:
                 key: oauth-private.key
           - name: API_JOB_NAMESPACE
             value: {{ $.Values.queue.apiJobNamespace }}
+          - name: WBSTACK_QS_JOB_NAMESPACE
+            value: {{ $.Values.queue.qsJobNamespace }}
       {{- if $.Values.app.gce.serviceAccountSecret }}
           volumeMounts:
             - name: "service-account-wbstack-api"
