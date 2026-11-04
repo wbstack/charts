@@ -1,0 +1,31 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "api.fullname" . }}-api-jobmanager
+  namespace: {{ .Values.queue.apiJobNamespace }}
+  labels:
+{{ include "api.labels" . | indent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "api.fullname" . }}-defaultrole
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: {{ include "api.fullname" . }}-api-jobmanager
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "api.fullname" . }}-qs-jobmanager
+  namespace: {{ .Values.queue.qsJobNamespace }}
+  labels:
+{{ include "api.labels" . | indent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "api.fullname" . }}-defaultrole
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: {{ include "api.fullname" . }}-qs-jobmanager
+  apiGroup: rbac.authorization.k8s.io
